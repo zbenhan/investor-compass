@@ -1,0 +1,21 @@
+{
+  "name": "投知罗盘",
+  "short_name": "投知罗盘",
+  "description": "投知罗盘是一个专业的投资风格测试平台，通过科学的测试题帮助投资者了解自己的投资偏好和风格。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css",
+      "sizes": "16x16 32x32 48x48 64x64 96x96 128x128 256x256 512x512",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "any",
+  "categories": ["finance", "investment", "education"],
+  "lang": "zh-CN",
+  "dir": "ltr"
+}
