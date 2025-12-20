@@ -1,95 +1,75 @@
 # Problems and Diagnostics
 
-## 1. Result Page Language Switching Chaos
-### Problem
-- Language switching caused content to display incorrectly or not update.
-- Multiple language management systems conflicted.
+## GitHub Pages DNS Configuration Issue
 
-### Diagnostics
-- Found that ResultPage class maintained its own language data, conflicting with global LanguageManager.
-- Discovered that extending LanguageManager's updatePage method caused infinite recursion.
+### Problem Description
+The custom domain `a-share.top` is showing a `NotServedByPagesError` when trying to access the GitHub Pages site. This means the domain is not resolving to the GitHub Pages server.
 
-### Solution
-- Added custom `languageChanged` event in `main.js` to standardize language switching notifications.
-- Simplified ResultPage to use global LanguageManager's translation data.
-- Implemented event listeners instead of method extension.
+### Root Causes
+1. **Incorrect DNS Records**: The domain `a-share.top` likely has incorrect DNS records configured at the domain registrar
+2. **GitHub Pages Custom Domain Not Verified**: The domain might not be properly verified in GitHub Pages settings
+3. **CNAME File Configuration**: The CNAME file might not be correctly configured
 
-## 2. Cannot Switch Back to Chinese
-### Problem
-- After switching to other languages, unable to switch back to Chinese.
-- Chinese language content failed to load.
+### Current Configuration
+- CNAME file: `a-share.top`
+- GitHub Pages source: master/main branch, root directory
 
-### Diagnostics
-- Found that LanguageManager's initialization logic had a bug, not properly loading Chinese as default.
-- LocalStorage sometimes retained incorrect language settings.
+### Solution Steps
 
-### Solution
-- Modified LanguageManager.init() to first load Chinese language file.
-- Only reloads other languages if explicitly selected by user.
-- Ensures Chinese is always available as fallback.
+#### 1. Update DNS Records at Domain Registrar
+Log into your domain registrar (where you purchased `a-share.top`) and configure the following DNS records:
 
-## 3. Home Page Cannot Display Chinese
-### Problem
-- Home page elements failed to display Chinese translations.
-- Language switching had no effect on home page content.
+| Record Type | Name | Value | TTL |
+|-------------|------|-------|-----|
+| A | @ | 185.199.108.153 | 3600 |
+| A | @ | 185.199.109.153 | 3600 |
+| A | @ | 185.199.110.153 | 3600 |
+| A | @ | 185.199.111.153 | 3600 |
+| CNAME | www | [your-username].github.io | 3600 |
 
-### Diagnostics
-- Found that LanguageManager's updatePage method was not properly updating all elements.
-- Home page relied heavily on data-lang attributes for translation.
+#### 2. Verify GitHub Pages Configuration
+1. Go to your GitHub repository settings
+2. Navigate to the "Pages" section
+3. Under "Custom domain", enter `a-share.top`
+4. Click "Save"
+5. Check the "Enforce HTTPS" option once the domain is verified
 
-### Solution
-- Ensured LanguageManager.updatePage() correctly updates all elements with data-lang attributes.
-- Fixed initialization sequence to load Chinese first.
-- Verified that all home page elements have proper data-lang attributes.
+#### 3. Wait for DNS Propagation
+DNS changes can take up to 24-48 hours to propagate worldwide. You can check the status using tools like:
+- https://dnschecker.org
+- https://www.whatsmydns.net
 
-## 4. Test Questions Not Updating with Language Change
-### Problem
-- Test questions and options remained in the initial language when switching languages.
-- Only UI elements updated, not dynamic content.
+#### 4. Test Access
+After DNS propagation is complete, test access to your site:
+- `http://a-share.top`
+- `https://a-share.top` (after HTTPS is enabled)
 
-### Diagnostics
-- Test.js loaded questions once on initialization, without listening for language changes.
-- Used localStorage directly instead of languageManager for current language.
+### Troubleshooting
 
-### Solution
-- Added languageChanged event listener in test.js.
-- Updated loadQuestion method to use languageManager.currentLanguage.
-- Ensured questions and options refresh when language changes.
+#### If the issue persists after 48 hours:
+1. Verify that the CNAME file in your repository exactly matches `a-share.top` (no extra spaces or newlines)
+2. Check GitHub Pages settings for any error messages
+3. Ensure your GitHub Pages build is successful (check the "Actions" tab)
+4. Contact GitHub Support if all else fails
 
-## 5. Radar Chart Labels Not Translating
-### Problem
-- Radar chart labels showed incorrect language or no translation.
-- Chart tooltip text did not match current language.
+### Additional Notes
+- GitHub Pages custom domains require proper DNS configuration to work correctly
+- Always use the official GitHub Pages IP addresses for A records
+- HTTPS can be enabled only after the domain is properly verified
 
-### Diagnostics
-- Radar chart used hardcoded language suffixes.
-- Did not access languageManager's translation data.
+## Previous Issues Fixed
 
-### Solution
-- Updated drawRadarChart method to use languageManager's translations.
-- Added dynamic language suffix based on current language.
-- Ensured chart labels and tooltips match current language.
+### 1. Missing Translations in Chinese Language File
+**Fixed**: Added complete translation data for all investment schools in `data/languages/zh.js`
 
-## 6. Investment School Details Not Translating
-### Problem
-- Strengths, weaknesses, notes, and improvement paths did not translate.
-- Only school names and core concepts translated.
+### 2. Language Switching Functionality
+**Verified**: Confirmed proper language switching across all pages
 
-### Diagnostics
-- DisplaySchoolDetails method used hardcoded Chinese content.
-- Did not access translated content from language files.
+### 3. School Details Display
+**Verified**: School details correctly display in all languages
 
-### Solution
-- Updated displaySchoolDetails to use languageManager's translations.
-- Added translation support for all school details.
-- Ensured complete content translation for all investment schools.
+### 4. Result Download Functionality
+**Verified**: html2canvas library properly loaded and functional
 
-## Technical Summary
-- All language switching issues have been resolved.
-- Implemented a unified language management system.
-- Added custom events for consistent language change notifications.
-- Ensured proper initialization sequence for language files.
-- Verified that all pages and components respond correctly to language changes.
-- Supports Chinese, English, French, and Spanish across all content.
-
-The website now has a robust and consistent multi-language support system, with smooth language switching across all pages and components.
+### 5. Encoding Issues
+**Verified**: All HTML files have proper UTF-8 encoding
