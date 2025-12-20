@@ -41,29 +41,151 @@ const translations = {
         selectOption: "Please select an option before continuing!",
         completeAll: "Please complete all questions before submitting!"
     },
+    schools: {
+        value: {
+            name: "Value/Fundamental School",
+            core: "Focus on intrinsic value, seeking undervalued quality assets",
+            introduction: "Value investing is a classic investment philosophy that emphasizes buying quality assets at prices below their intrinsic value and holding them for the long term. This style requires investors to have in-depth financial analysis capabilities, able to identify the true value and long-term growth potential of enterprises. Value investors typically focus on valuation metrics such as P/E ratio and P/B ratio, looking for opportunities that are undervalued by the market.",
+            strengths: [
+                "Focus on long-term value, avoid short-term volatility interference",
+                "Based on solid fundamental research, more robust decisions",
+                "Use market sentiment fluctuations to create buying opportunities",
+                "Focus on long-term corporate competitiveness and moats"
+            ],
+            weaknesses: [
+                "May miss short-term market hotspots and trend opportunities",
+                "Long research cycle, requires a lot of time and professional knowledge",
+                "May bear greater pressure during long-term market irrationality",
+                "Difficult to evaluate emerging industries and non-profitable enterprises"
+            ],
+            notes: [
+                "Avoid over-diversification or over-concentration of positions",
+                "Regularly re-evaluate changes in corporate fundamentals",
+                "Be vigilant against value traps, distinguish between temporary undervaluation and permanent decline",
+                "Maintain a sufficient margin of safety"
+            ],
+            improvement: [
+                "Strengthen understanding of new technologies and emerging industries",
+                "Learn appropriate technical analysis to assist in judging buying timing",
+                "Pay attention to changes in corporate management and strategic adjustments",
+                "Establish more systematic valuation models and decision-making processes"
+            ]
+        },
+        trend: {
+            name: "Trend/Technical School",
+            core: "Follow market trends, use technical analysis to formulate trading strategies",
+            introduction: "Trend investing is a trading strategy based on market trends, identifying the direction and strength of price movements through technical analysis. Trend investors believe that 'the trend is your friend' and will follow the main trends of the market for trading, while setting strict stop-loss levels to control risk. This style requires investors to have good market sensitivity and discipline.",
+            strengths: [
+                "Can quickly respond to market changes, capture short-term opportunities",
+                "Clear entry and stop-loss rules, controllable risk",
+                "Suitable for various market environments, including bear markets",
+                "Does not require in-depth research on corporate fundamentals"
+            ],
+            weaknesses: [
+                "Easily disturbed by market noise and false breakouts",
+                "Poor performance in sideways oscillating markets",
+                "Long-term compound returns may be lower than value investing",
+                "Requires strict discipline to overcome psychological biases"
+            ],
+            notes: [
+                "Avoid over-trading, control transaction costs",
+                "Use multiple technical indicators to verify each other, reduce false signals",
+                "Set reasonable stop-loss levels to avoid significant losses",
+                "Do not over-rely on a single technical analysis method"
+            ],
+            improvement: [
+                "Learn fundamental analysis to assist in judging the sustainability of trends",
+                "Optimize trading systems, reduce win rate but improve profit-loss ratio",
+                "Cultivate patience, wait for high-certainty trading signals",
+                "Record trading logs, summarize experience and lessons"
+            ]
+        },
+        macro: {
+            name: "Macro/Cycle School",
+            core: "Formulate investment strategies based on macroeconomic cycles and policy changes",
+            introduction: "Macro investing is a top-down investment approach that first analyzes the macroeconomic environment, policy trends, and market cycles, then selects suitable asset classes and industries. Macro investors pay attention to macro indicators such as GDP growth, inflation, and interest rate changes, trying to grasp major market trends and asset allocation opportunities.",
+            strengths: [
+                "Able to grasp major market cycles and trends",
+                "Has macro guiding significance for asset allocation",
+                "Obvious advantages during economic transformation periods",
+                "Suitable for large funds and long-term asset allocation"
+            ],
+            weaknesses: [
+                "Macro forecasting is difficult, low accuracy",
+                "Insufficient attention to micro enterprise situations",
+                "May miss structural opportunities",
+                "Requires a longer investment cycle"
+            ],
+            notes: [
+                "Avoid overconfidence, maintain risk diversification",
+                "Pay attention to multiple macro indicators, avoid single-factor decision-making",
+                "Combine industry analysis and enterprise research",
+                "Regularly update macroeconomic models"
+            ],
+            improvement: [
+                "Learn industry analysis, deepen understanding of industrial chains",
+                "Combine technical analysis to judge specific timing of cycle inflection points",
+                "Pay attention to global macroeconomic interactions",
+                "Cultivate sensitivity to policy changes"
+            ]
+        },
+        narrative: {
+            name: "Information/Narrative School",
+            core: "Focus on market sentiment and narrative spread, capture market hotspots and thematic investment opportunities",
+            introduction: "Information narrative investing focuses on the impact of market sentiment, news events, and thematic stories on asset prices. Investors of this style are good at capturing market hotspots and emerging trends, looking for investment opportunities by analyzing information dissemination and market reactions. Information narrative investing requires investors to have the ability to quickly obtain and analyze information, while being vigilant against market bubbles and excessive speculation.",
+            strengths: [
+                "Can quickly grasp market hotspots and emerging trends",
+                "Sensitive to market sentiment changes",
+                "Suitable for emerging industries and innovative field investments",
+                "Large short-term return potential"
+            ],
+            weaknesses: [
+                "Easily fall into bubbles and excessive speculation",
+                "Lack of solid fundamental support",
+                "Information overload, difficult to distinguish true from false",
+                "High long-term holding risks"
+            ],
+            notes: [
+                "Avoid chasing high prices, establish strict stop-profit and stop-loss rules",
+                "Verify the reliability of information sources",
+                "Pay attention to the sustainability and realization ability of narratives",
+                "Control positions, avoid over-concentration"
+            ],
+            improvement: [
+                "Learn fundamental analysis, evaluate the rationality of narratives",
+                "Establish information screening and verification mechanisms",
+                "Cultivate independent judgment ability, avoid following the crowd",
+                "Combine technical analysis to judge market sentiment turning points"
+            ]
+        }
+    },
     result: {
         title: "Investment Style Test Results",
-        yourSchool: "Your Investment School:",
+        yourSchool: "Your Investment Style: ",
         radarChart: "Investment Style Radar Chart",
         strengths: "Strengths Analysis",
         weaknesses: "Weaknesses Analysis",
         notes: "Notes",
         improvement: "Future Improvement Path",
-        actionText: "You can copy and share the URL with more friends to help them understand their investment styles. You can also download the test results for future reference.",
+        styleIntro: "Your investment style is primarily reflected as {name}, {core}. {introduction}Understanding your investment style helps you formulate a more suitable investment strategy, leverage your strengths, avoid risks, and achieve long-term investment goals. You also exhibit varying degrees of performance in other styles, which reflects the diversity and flexibility of your investment philosophy.",
+        actionText: "You can copy and share the URL with more friends to help them understand their investment style. You can download this test result for future reference.",
+        shareText: "You can copy and share the URL with more friends to help them understand their investment style.",
+        downloadText: "You can download this test result for future reference.",
         copyUrl: "Copy URL",
-        downloadResult: "Download Results",
+        downloadResult: "Download Result",
         backHome: "Back to Home",
         viewArticles: "View Articles",
         copySuccess: "URL copied to clipboard!",
-        copyFailed: "Copy failed. Please copy the URL manually:",
-        downloadFailed: "Download failed. Please try again!",
+        copyFailed: "Copy failed, please copy the URL manually: ",
+        downloadFailed: "Download failed, please try again!",
         noResults: "Please complete the test first!"
     },
     articles: {
         title: "Investment Knowledge",
         category: "Category",
         recent: "Recent Articles",
-        popular: "Popular Articles"
+        popular: "Popular Articles",
+        basic: "Basic Articles"
     },
     terms: {
         title: "Terms of Service",

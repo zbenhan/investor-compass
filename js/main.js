@@ -7,14 +7,18 @@ class LanguageManager {
     }
 
     init() {
+        // 加载默认语言文件（中文）
+        this.loadLanguage('zh');
+
         // 从localStorage加载用户上次选择的语言
         const savedLanguage = localStorage.getItem('language');
         if (savedLanguage && ['zh', 'en', 'fr', 'es'].includes(savedLanguage)) {
             this.currentLanguage = savedLanguage;
+            // 如果不是中文，重新加载用户选择的语言
+            if (savedLanguage !== 'zh') {
+                this.loadLanguage(savedLanguage);
+            }
         }
-
-        // 加载默认语言文件
-        this.loadLanguage(this.currentLanguage);
 
         // 设置语言选择器事件
         this.setupLanguageSelector();
@@ -46,6 +50,10 @@ class LanguageManager {
 
             // 更新页面内容
             this.updatePage();
+            
+            // 触发自定义语言变更事件
+            const languageChangedEvent = new Event('languageChanged');
+            window.dispatchEvent(languageChangedEvent);
         } catch (error) {
             console.error('Error loading language:', error);
         }

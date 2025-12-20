@@ -11,11 +11,22 @@ class InvestmentTest {
         this.loadQuestion();
         this.setupEventListeners();
         this.loadSavedProgress();
+        this.setupLanguageChangeHandler();
+    }
+    
+    setupLanguageChangeHandler() {
+        // 监听自定义语言变更事件
+        window.addEventListener('languageChanged', () => {
+            this.loadQuestion();
+        });
     }
 
     loadQuestion() {
-        // 获取当前语言
-        const currentLanguage = localStorage.getItem('language') || 'zh';
+        // 获取当前语言，优先使用languageManager
+        let currentLanguage = localStorage.getItem('language') || 'zh';
+        if (typeof languageManager !== 'undefined') {
+            currentLanguage = languageManager.currentLanguage;
+        }
         const question = testQuestions[this.currentQuestionIndex];
         
         // 更新题目信息
@@ -88,7 +99,7 @@ class InvestmentTest {
         const currentQuestion = this.currentQuestionIndex + 1;
         const progressPercent = (currentQuestion / this.maxQuestions) * 100;
         
-        $('#progressText').text(`第 ${currentQuestion}/${this.maxQuestions} 题`);
+        $('#progressText').text(`${currentQuestion}/${this.maxQuestions}`);
         $('#progressBar').css('width', `${progressPercent}%`).attr('aria-valuenow', progressPercent);
     }
 

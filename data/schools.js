@@ -27,7 +27,7 @@ const investmentSchools = {
             "关注企业管理层变化和战略调整",
             "建立更系统的估值模型和决策流程"
         ],
-        color: "#28a745" // 绿色
+        color: "#fd7e14" // 橘黄色
     },
     trend: {
         name: "趋势/技术派",
@@ -56,7 +56,7 @@ const investmentSchools = {
             "培养耐心，等待高确定性的交易信号",
             "记录交易日志，总结经验教训"
         ],
-        color: "#007bff" // 蓝色
+        color: "#17a2b8" // 浅蓝色
     },
     macro: {
         name: "宏观/周期派",
@@ -85,7 +85,7 @@ const investmentSchools = {
             "关注全球宏观经济相互影响",
             "培养对政策变化的敏感度"
         ],
-        color: "#ffc107" // 黄色
+        color: "#0056b3" // 深蓝色
     },
     narrative: {
         name: "信息/叙事派",
@@ -114,6 +114,6 @@ const investmentSchools = {
             "培养独立判断能力，避免随波逐流",
             "结合技术分析判断市场情绪转折点"
         ],
-        color: "#dc3545" // 红色
+        color: "#6f42c1" // 紫色
     }
 };

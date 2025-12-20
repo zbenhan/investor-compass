@@ -41,15 +41,136 @@ const translations = {
         selectOption: "Veuillez sélectionner une option avant de continuer !",
         completeAll: "Veuillez terminer toutes les questions avant de soumettre !"
     },
+    schools: {
+        value: {
+            name: "École de la Valeur/Fondamentale",
+            core: "Se concentrer sur la valeur intrinsèque, rechercher des actifs de qualité sous-évalués",
+            introduction: "L'investissement en valeur est une philosophie d'investissement classique qui met l'accent sur l'achat d'actifs de qualité à des prix inférieurs à leur valeur intrinsèque et leur détention à long terme. Ce style nécessite des investisseurs qui ont des capacités d'analyse financière approfondies, capables d'identifier la vraie valeur et le potentiel de croissance à long terme des entreprises. Les investisseurs en valeur se concentrent généralement sur des indicateurs de valorisation tels que le ratio P/E et le ratio P/B, à la recherche d'opportunités sous-évaluées par le marché.",
+            strengths: [
+                "Se concentrer sur la valeur à long terme, éviter les perturbations des fluctuations à court terme",
+                "Basé sur une recherche fondamentale solide, décisions plus robustes",
+                "Utiliser les fluctuations de l' sentiment du marché pour créer des opportunités d'achat",
+                "S'intéresser à la compétitivité à long terme des entreprises et à leurs fossés stratégiques"
+            ],
+            weaknesses: [
+                "Peut manquer les tendances à court terme et les opportunités chaudes du marché",
+                "Cycle de recherche long, nécessite beaucoup de temps et de connaissances professionnelles",
+                "Peut subir une pression plus forte pendant une irrationalité prolongée du marché",
+                "Difficile à évaluer les industries émergentes et les entreprises non rentables"
+            ],
+            notes: [
+                "Éviter la sur-diversification ou la sur-concentration des positions",
+                "Réévaluer régulièrement les changements des fondamentaux des entreprises",
+                "Être vigilant contre les pièges de la valeur, distinguer l'undervaluation temporaire de la déclin permanente",
+                "Maintenir une marge de sécurité suffisante"
+            ],
+            improvement: [
+                "Renforcer la compréhension des nouvelles technologies et des industries émergentes",
+                "Apprendre une analyse technique appropriée pour aider à juger le moment d'achat",
+                "Prêter attention aux changements de direction et aux ajustements stratégiques des entreprises",
+                "Établir des modèles de valorisation et des processus de décision plus systématiques"
+            ]
+        },
+        trend: {
+            name: "École de la Tendance/Technique",
+            core: "Suivre les tendances du marché, utiliser l'analyse technique pour formuler des stratégies de trading",
+            introduction: "L'investissement tendanciel est une stratégie de trading basée sur les tendances du marché, identifiant la direction et la force des mouvements de prix grâce à l'analyse technique. Les investisseurs tendanciels croient que 'la tendance est votre ami' et suivront les tendances principales du marché pour trader, tout en définissant des niveaux de stop-loss stricts pour contrôler le risque. Ce style nécessite des investisseurs qui ont une bonne sensibilité au marché et une discipline.",
+            strengths: [
+                "Peut répondre rapidement aux changements du marché, capturer des opportunités à court terme",
+                "Règles claires d'entrée et de stop-loss, risque contrôlable",
+                "Adapté à divers environnements de marché, y compris les marchés baissiers",
+                "Ne nécessite pas de recherche approfondie sur les fondamentaux des entreprises"
+            ],
+            weaknesses: [
+                "Facilement perturbé par le bruit du marché et les fausses ruptures",
+                "Performance médiocre dans les marchés oscillants latéraux",
+                "Retours composés à long terme peuvent être inférieurs à l'investissement en valeur",
+                "Nécessite une discipline stricte pour surmonter les biais psychologiques"
+            ],
+            notes: [
+                "Éviter le surtrading, contrôler les coûts de transaction",
+                "Utiliser plusieurs indicateurs techniques pour se vérifier mutuellement, réduire les faux signaux",
+                "Définir des niveaux de stop-loss raisonnables pour éviter des pertes significatives",
+                "Ne pas trop dépendre d'une seule méthode d'analyse technique"
+            ],
+            improvement: [
+                "Apprendre l'analyse fondamentale pour aider à juger la durabilité des tendances",
+                "Optimiser les systèmes de trading, réduire le taux de victoire mais améliorer le rapport profit-perte",
+                "Cultiver la patience, attendre des signaux de trading à haute certitude",
+                "Enregistrer des journaux de trading, résumer les expériences et les leçons"
+            ]
+        },
+        macro: {
+            name: "École Macro/Cyclique",
+            core: "Formuler des stratégies d'investissement basées sur les cycles économiques macro et les changements de politique",
+            introduction: "L'investissement macro est une approche d'investissement descendante qui analyse d'abord l'environnement économique macro, les tendances politiques et les cycles du marché, puis sélectionne les classes d'actifs et les industries appropriées. Les investisseurs macro prêtent attention à des indicateurs macro tels que la croissance du PIB, l'inflation et les changements de taux d'intérêt, essayant de saisir les grandes tendances du marché et les opportunités d'allocation d'actifs.",
+            strengths: [
+                "Capable de saisir les grands cycles et tendances du marché",
+                "A une significance directive macro pour l'allocation des actifs",
+                "Avantages évidents pendant les périodes de transformation économique",
+                "Adapté aux grands fonds et à l'allocation d'actifs à long terme"
+            ],
+            weaknesses: [
+                "Prévision macro difficile, faible précision",
+                "Attention insuffisante aux situations micro-entreprises",
+                "Peut manquer des opportunités structurelles",
+                "Nécessite un cycle d'investissement plus long"
+            ],
+            notes: [
+                "Éviter la surconfiance, maintenir la diversification des risques",
+                "Prêter attention à plusieurs indicateurs macro, éviter la décision à facteur unique",
+                "Combiner l'analyse industrielle et la recherche sur les entreprises",
+                "Mettre à jour régulièrement les modèles macroéconomiques"
+            ],
+            improvement: [
+                "Apprendre l'analyse industrielle, approfondir la compréhension des chaînes d'approvisionnement",
+                "Combiner l'analyse technique pour juger le moment précis des points de retournement des cycles",
+                "Prêter attention aux interactions macroéconomiques mondiales",
+                "Cultiver la sensibilité aux changements politiques"
+            ]
+        },
+        narrative: {
+            name: "École de l'Information/Récit",
+            core: "Se concentrer sur le sentiment du marché et la diffusion des récits, capturer les points chauds du marché et les opportunités d'investissement thématiques",
+            introduction: "L'investissement par récit d'information se concentre sur l'impact du sentiment du marché, des événements d'actualité et des histoires thématiques sur les prix des actifs. Les investisseurs de ce style sont bons à capturer les points chauds du marché et les tendances émergentes, à la recherche d'opportunités d'investissement en analysant la diffusion de l'information et les réactions du marché. L'investissement par récit d'information nécessite des investisseurs qui ont la capacité d'obtenir et d'analyser rapidement l'information, tout en étant vigilants contre les bulles du marché et la spéculation excessive.",
+            strengths: [
+                "Peut rapidement saisir les points chauds du marché et les tendances émergentes",
+                "Sensible aux changements de sentiment du marché",
+                "Adapté aux investissements dans les industries émergentes et les domaines innovants",
+                "Grand potentiel de rendement à court terme"
+            ],
+            weaknesses: [
+                "Facilement tomber dans les bulles et la spéculation excessive",
+                "Manque de support fondamental solide",
+                "Surabondance d'informations, difficile de distinguer le vrai du faux",
+                "Risques élevés de détention à long terme"
+            ],
+            notes: [
+                "Éviter de courir après les prix élevés, établir des règles strictes de stop-profit et stop-loss",
+                "Vérifier la fiabilité des sources d'information",
+                "Prêter attention à la durabilité et à la capacité de réalisation des récits",
+                "Contrôler les positions, éviter la sur-concentration"
+            ],
+            improvement: [
+                "Apprendre l'analyse fondamentale, évaluer la rationalité des récits",
+                "Établir des mécanismes de filtrage et de vérification des informations",
+                "Cultiver la capacité de jugement indépendant, éviter de suivre le troupeau",
+                "Combiner l'analyse technique pour juger les points de retournement du sentiment du marché"
+            ]
+        }
+    },
     result: {
         title: "Résultats du test de style d'investissement",
-        yourSchool: "Votre école d'investissement :",
+        yourSchool: "Votre style d'investissement :",
         radarChart: "Diagramme radar du style d'investissement",
         strengths: "Analyse des forces",
         weaknesses: "Analyse des faiblesses",
         notes: "Notes",
         improvement: "Chemin d'amélioration future",
+        styleIntro: "Votre style d'investissement s'incarne principalement en tant que {name}, {core}. {introduction} Comprendre votre style d'investissement aide à formuler une stratégie d'investissement plus adaptée à vous-même, à exercer vos forces, à éviter les risques et à atteindre vos objectifs d'investissement à long terme. Vous avez également des performances différentes dans d'autres styles, ce qui reflète la diversité et la flexibilité de votre philosophie d'investissement.",
         actionText: "Vous pouvez copier et partager l'URL avec plus d'amis pour les aider à comprendre leurs styles d'investissement. Vous pouvez également télécharger les résultats du test pour référence future.",
+        shareText: "Vous pouvez copier et partager l'URL avec plus d'amis pour les aider à comprendre leurs styles d'investissement.",
+        downloadText: "Vous pouvez télécharger les résultats du test pour référence future.",
         copyUrl: "Copier l'URL",
         downloadResult: "Télécharger les résultats",
         backHome: "Retour à l'accueil",
@@ -63,7 +184,8 @@ const translations = {
         title: "Connaissances sur les investissements",
         category: "Catégorie",
         recent: "Articles récents",
-        popular: "Articles populaires"
+        popular: "Articles populaires",
+        basic: "Articles de base"
     },
     terms: {
         title: "Conditions d'utilisation",
