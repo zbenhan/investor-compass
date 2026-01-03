@@ -1,0 +1,22 @@
+{
+  "name": "investor-compass",
+  "version": "1.0.0",
+  "description": "Investor Compass - Investment Style Test and Macro Economic Indicator Analysis",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "start": "npx http-server -p 8000 -o -y",
+    "serve": "npx http-server -p 8000 -y"
+  },
+  "keywords": [
+    "investment",
+    "macro",
+    "economic-indicators",
+    "style-test"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

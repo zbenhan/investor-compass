@@ -6,9 +6,10 @@
     <title data-lang="site.title">投知罗盘</title>
     <meta name="description" data-lang="site.description">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-    <script>LA.init({id:"3NlvSR2kT1afN6AF",ck:"3NlvSR2kT1afN6AF"})</script>
+    <script>if(typeof LA!=='undefined'){LA.init({id:"3NlvSR2kT1afN6AF",ck:"3NlvSR2kT1afN6AF"})}</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1YGJVMJE8"></script>
     <script>
@@ -36,6 +37,9 @@
                         <a class="nav-link" href="test.html" data-lang="nav.test">开始测试</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="macro-indicators.html" data-lang="nav.macro">宏观指标</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="articles.html" data-lang="nav.articles">投资知识</a>
                     </li>
                 </ul>
@@ -55,9 +59,26 @@
         <div class="container">
             <h1 class="display-3" data-lang="home.heroTitle">投知罗盘</h1>
             <p class="text-muted">A-share.top</p>
-            <p class="lead" data-lang="home.heroSubtitle">三分钟，挖掘您的投资潜力</p>
+            <p class="lead" data-lang="home.macroIndicatorsDesc">探索利率、失业率、GDP、债券收益率等宏观经济指标之间的复杂联动关系，深入理解经济传导机制。</p>
             <div class="mt-5">
-                <a href="test.html" class="btn btn-primary btn-lg" data-lang="home.startButton">开始测试</a>
+                <a href="macro-indicators.html" class="btn btn-primary btn-lg" data-lang="home.macroIndicatorsButton">查看指标关系</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 投资风格测试入口 -->
+    <section class="test-entry py-5" style="background-color: var(--color-info); background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+        background-position: 0 0, 0 0, 0 0, 0 0;">
+        <div class="container">
+            <h2 class="text-center mb-4 text-white" data-lang="home.heroSubtitle">三分钟，挖掘您的投资潜力</h2>
+            <div class="text-center">
+                <p class="text-white" data-lang="home.aboutContent">投知罗盘是一个专业的投资风格测试平台，通过科学的测试题帮助投资者了解自己的投资偏好和风格，从而制定更合适的投资策略。</p>
+                <a href="test.html" class="btn btn-light" data-lang="home.startButton">开始测试</a>
             </div>
         </div>
     </section>
@@ -75,39 +96,51 @@
     </section>
 
     <!-- 投资门派 -->
-    <section class="schools py-5">
+    <section class="schools py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-lang="home.schools">投资门派</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card card-primary text-center h-100">
-                        <div class="card-body">
-                            <h5 class="card-title" data-lang="home.schoolsValue">价值/基本面派</h5>
-                            <p class="card-text" data-lang="home.schoolsValueDesc">以资产内在价值为核心，深入研究公司财务、商业模式和护城河，长期持有优质资产。</p>
+            <h2 class="text-center mb-5 fw-bold" data-lang="home.schools">投资门派</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3 text-primary">
+                                <i class="bi bi-graph-up-arrow fs-1"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3" data-lang="home.schoolsValue">价值/基本面派</h5>
+                            <p class="card-text text-muted" data-lang="home.schoolsValueDesc">以资产内在价值为核心，深入研究公司财务、商业模式和护城河，长期持有优质资产。</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card card-info text-center h-100">
-                        <div class="card-body">
-                            <h5 class="card-title" data-lang="home.schoolsTrend">趋势/技术派</h5>
-                            <p class="card-text" data-lang="home.schoolsTrendDesc">跟随市场趋势，通过图表分析、技术指标和交易系统，捕捉价格波动带来的投资机会。</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3 text-info">
+                                <i class="bi bi-lightning-charge fs-1"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3" data-lang="home.schoolsTrend">趋势/技术派</h5>
+                            <p class="card-text text-muted" data-lang="home.schoolsTrendDesc">跟随市场趋势，通过图表分析、技术指标和交易系统，捕捉价格波动带来的投资机会。</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card card-success text-center h-100">
-                        <div class="card-body">
-                            <h5 class="card-title" data-lang="home.schoolsMacro">宏观/周期派</h5>
-                            <p class="card-text" data-lang="home.schoolsMacroDesc">基于宏观经济周期和政策环境，配置不同资产类别，把握经济周期转换带来的投资机会。</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3 text-success">
+                                <i class="bi bi-globe fs-1"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3" data-lang="home.schoolsMacro">宏观/周期派</h5>
+                            <p class="card-text text-muted" data-lang="home.schoolsMacroDesc">基于宏观经济周期和政策环境，配置不同资产类别，把握经济周期转换带来的投资机会。</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card card-warning text-center h-100">
-                        <div class="card-body">
-                            <h5 class="card-title" data-lang="home.schoolsNarrative">信息/叙事派</h5>
-                            <p class="card-text" data-lang="home.schoolsNarrativeDesc">关注市场情绪和叙事传播，通过快速捕捉和验证新的投资故事，获取超额收益。</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3 text-warning">
+                                <i class="bi bi-chat-quote fs-1"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3" data-lang="home.schoolsNarrative">信息/叙事派</h5>
+                            <p class="card-text text-muted" data-lang="home.schoolsNarrativeDesc">关注市场情绪和叙事传播，通过快速捕捉和验证新的投资故事，获取超额收益。</p>
                         </div>
                     </div>
                 </div>
@@ -115,6 +148,8 @@
         </div>
     </section>
 
+    <!-- 宏观经济指标关联关系 - 已移动到Hero区域，此处删除 -->
+    
     <!-- 页脚 -->
     <footer class="py-4 mt-5">
         <div class="container">

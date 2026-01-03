@@ -6,7 +6,8 @@ const translations = {
     },
     nav: {
         home: "Home",
-        test: "Start Test",
+        test: "Style Test",
+        macro: "Macro Indicators",
         articles: "Investment Knowledge"
     },
     language: {
@@ -16,9 +17,10 @@ const translations = {
         es: "Español"
     },
     home: {
-        heroTitle: "Investment Compass",
-        heroSubtitle: "Test your investment style to understand which investment school you belong to",
+        heroTitle: "Investor Compass",
+        heroSubtitle: "Discover your investment potential in 3 minutes.",
         startButton: "Start Test",
+        styleTestButton: "Investment Style",
         about: "About Us",
         aboutContent: "Investment Compass is a professional investment style testing platform that helps investors understand their investment preferences and styles through scientific test questions, thereby developing more suitable investment strategies.",
         schools: "Investment Schools",
@@ -29,7 +31,10 @@ const translations = {
         schoolsMacro: "Macro/Cyclical School",
         schoolsMacroDesc: "Allocating different asset classes based on macroeconomic cycles and policy environments, seizing investment opportunities brought about by economic cycle transitions.",
         schoolsNarrative: "Information/Narrative School",
-        schoolsNarrativeDesc: "Focusing on market sentiment and narrative communication, obtaining excess returns by quickly capturing and verifying new investment stories."
+        schoolsNarrativeDesc: "Focusing on market sentiment and narrative communication, obtaining excess returns by quickly capturing and verifying new investment stories.",
+        macroIndicators: "Macroeconomic Indicators Relationships",
+        macroIndicatorsDesc: "Explore the complex interrelationships between interest rates, unemployment, GDP, bond yields, and other macroeconomic indicators to deeply understand economic transmission mechanisms.",
+        macroIndicatorsButton: "View Indicator Relationships"
     },
     test: {
         title: "Investment Style Test",
@@ -268,5 +273,191 @@ const translations = {
         terms: "Terms of Service",
         about: "About the Website",
         copyright: "© 2025 Investment Compass - A-share.com. All rights reserved."
+    },
+    macro: {
+        title: "Macroeconomic Indicators Relationships - Investment Compass",
+        description: "Explore the complex interrelationships between interest rates, unemployment, bond prices/yields, import/export, and GDP",
+        mainTitle: "Macroeconomic Indicators Relationships",
+        subTitle: "Explore the complex interrelationships between interest rates, unemployment, bond prices/yields, import/export, and GDP",
+        overview: "Core Relationship Overview",
+        overviewContent1: "Interest rates, unemployment, bond prices/yields, import/export, and GDP have complex and close interrelationships, forming the backbone of macroeconomic analysis. We can organize their relationships into a dynamic network with \"economic growth (GDP)\" and \"central banks (through interest rate regulation)\" at its core.",
+        overviewContent2: "The diagram above shows the main transmission mechanisms between indicators. Below, we explain each link in detail.",
+        network: "Indicator Relationship Network",
+        legend: {
+            positive: "Positive Correlation (Same Direction)",
+            negative: "Negative Correlation (Opposite Direction)"
+        },
+        importantNotes: "Important Notes",
+        note1: "<strong>Expectations are crucial</strong>: Financial markets trade on \"expectations\". Sometimes the data hasn't changed yet, but the market has already reacted in advance based on expectations (e.g., bond yields rise in anticipation of a rate hike).",
+        note2: "<strong>Time lag effect</strong>: It usually takes 6-18 months for policy rate changes to transmit to the real economy (affecting GDP and unemployment).",
+        note3: "<strong>External shocks</strong>: External shocks such as wars, pandemics, and energy crises can simultaneously disrupt multiple indicators, breaking traditional correlations.",
+        note4: "<strong>Complex causal relationships</strong>: These relationships are bidirectional and dynamic, not simply unidirectional. For example, GDP growth itself affects interest rate expectations, which in turn affects bond yields.",
+        noteConclusion: "Understanding the relationships between these indicators is fundamental to analyzing macroeconomic trends, conducting asset allocation, and formulating investment strategies. You can imagine them as a sophisticated ecosystem where changes in any part trigger chain reactions.",
+        indicators: {
+            interestRate: "Interest Rate",
+            gdp: "GDP",
+            unemployment: "Unemployment",
+            bondYield: "Bond Yield",
+            export: "Export",
+            import: "Import"
+        },
+        controlSection: "Indicator Control",
+        controlDesc: "Click the \"Rise\" or \"Fall\" buttons below to observe the transmission paths and detailed explanations between indicators",
+        reset: "Reset All Indicators",
+        transmissionTitle: "Transmission Paths and Explanations",
+        waitingForChange: "Waiting for indicator changes...",
+        clickIndicatorToSee: "Click the \"Rise\" or \"Fall\" buttons above to observe the transmission paths and detailed explanations between indicators.",
+        indicatorsDetail: "Key Indicators Details and Transmission Mechanisms",
+        definition: "Definition",
+        howItWorks: "How it works",
+        keyRelationship: "Key relationship",
+        mainInfluencingFactors: "Main influencing factors",
+        importExportFactors: ": Exchange rates and the strength of domestic and foreign demand.",
+        transmissionChain: "Transmission chain",
+        keyCharacteristics: "Key characteristics",
+        relationshipsWithOtherIndicators: "Relationships with other indicators",
+        indicator1Title: "1. Interest Rate —— The \"Conductor\" of the entire system",
+        indicator2Title: "2. Bond Prices/Yields —— The \"Thermometer\" of the market",
+        indicator3Title: "3. Import/Export —— The \"Bridge\" connecting internal and external economies",
+        indicator4Title: "4. GDP —— The \"Scorecard\" of final goals",
+        indicator5Title: "5. Unemployment —— A lagging but critical \"livelihood indicator\"",
+        scenarioExercise: "Comprehensive Scenario Exercises",
+        scenario1Title: "Scenario 1: Economic overheating, high inflation",
+        scenario2Title: "Scenario 2: Economic recession, high unemployment",
+        cause: "Cause",
+        centralBankAction: "Central Bank Action",
+        marketTransmission: "Market Transmission",
+        finalResult: "Final Result",
+        // Indicator detailed content
+        interestRateDefinition: "Mainly refers to the policy interest rate set by the central bank (such as the Federal Funds Rate in the United States), which is the benchmark for all interest rates in the financial market.",
+        interestRateEffect1: "Impact on domestic demand: Interest rate ↓ → lower corporate borrowing costs, lower personal mortgage/consumer loan costs → stimulate corporate investment and household consumption → aggregate demand ↑ → GDP ↑.",
+        interestRateEffect2: "Impact on international capital flows and exchange rates: Domestic interest rate ↑ → attracts foreign capital inflows to pursue higher returns → increased demand for local currency → appreciation of local currency. The opposite is also true.",
+        interestRateEffect3: "Direct impact on bond prices: There is an inverse relationship between market interest rates and bond prices. When interest rates ↑, the fixed interest of already issued bonds becomes less attractive, so their prices ↓ (bond yields rise).",
+        bondYieldDefinition: "Bond yield (especially long-term government bond yield) reflects market interest rates and reflects market expectations for economic growth, inflation, and monetary policy.",
+        bondYieldRelationship1: "Bond price ↑ = Bond yield ↓",
+        bondYieldRelationship2: "Bond price ↓ = Bond yield ↑",
+        bondYieldEffect1: "Economic expectations: When the market expects future economic growth (GDP↑) and rising inflation, it expects the central bank to raise interest rates, leading to a decline in bond prices (yield rise).",
+        bondYieldEffect2: "Safe-haven sentiment: When economic prospects are poor (GDP↓) or a crisis occurs, funds flow into government bonds for safety, pushing bond prices higher (yields lower).",
+        gdpDefinition: "Gross Domestic Product, measures the total value of all final goods and services produced in a country. From the expenditure approach: GDP = Consumption + Investment + Government Spending + Net Exports (Exports - Imports).",
+        gdpEffect1: "It is the result: The above interest rate changes ultimately manifest in GDP growth by affecting consumption, investment, and net exports.",
+        gdpEffect2: "It is the cause: The strength of GDP (economic growth rate) in turn affects central bank policies, unemployment, and market expectations.",
+        unemploymentDefinition: "The proportion of unemployed people in the labor force.",
+        unemploymentCharacteristics: "Lagging indicator. When the economy worsens (GDP↓), companies do not immediately lay off workers; when the economy improves (GDP↑), companies do not immediately hire on a large scale.",
+        unemploymentRelationship1: "With GDP: Okun's law empirically states that when GDP growth is higher than potential growth, unemployment will fall.",
+        unemploymentRelationship2: "With interest rates/central bank policies: Unemployment is a key indicator for central banks (especially the Fed) to implement their 'dual mandate' (price stability, full employment). High unemployment usually supports the central bank to maintain low interest rates or cut rates.",
+        // Scenario content
+        scenario1Cause: "GDP growth is too fast, unemployment is very low, and inflation continues to rise.",
+        scenario1Action: "The central bank raises interest rates to suppress aggregate demand.",
+        scenario1Transmission1: "Market interest rates rise → bond prices fall (yields rise).",
+        scenario1Transmission2: "Financing costs rise → corporate investment and household consumption slow down → expected GDP growth declines.",
+        scenario1Transmission3: "Local currency may appreciate → exports are suppressed, imports increase → net exports' contribution to GDP may decrease.",
+        scenario1Result: "Economic growth (GDP) returns to stability.",
+        scenario2Cause: "GDP has declined for several consecutive quarters, unemployment has risen, and inflation is low.",
+        scenario2Action: "The central bank cuts interest rates to stimulate the economy.",
+        scenario2Transmission1: "Market interest rates fall → bond prices rise (yields fall).",
+        scenario2Transmission2: "Financing costs decrease → encourage investment and consumption.",
+        scenario2Transmission3: "Local currency may depreciate → improve export competitiveness, suppress imports → net exports improve.",
+        scenario2Result: "The economy moves toward recovery.",
+        // Button texts
+        rise: "Rise",
+        fall: "Fall",
+        // Relationship descriptions
+        interestRateToGdp: "Interest rate ↑ → borrowing costs ↑ → investment consumption ↓ → GDP ↓",
+        interestRateToGdp_rise: "Interest rate ↑ → borrowing costs ↑ → investment consumption ↓ → GDP ↓",
+        interestRateToGdp_fall: "Interest rate ↓ → borrowing costs ↓ → investment consumption ↑ → GDP ↑",
+        
+        interestRateToBondYield: "Interest rate ↑ → bond prices ↓ → bond yields ↑",
+        interestRateToBondYield_rise: "Interest rate ↑ → bond prices ↓ → bond yields ↑",
+        interestRateToBondYield_fall: "Interest rate ↓ → bond prices ↑ → bond yields ↓",
+        
+        interestRateToUnemployment: "Interest rate ↑ → economic activity ↓ → unemployment ↑",
+        interestRateToUnemployment_rise: "Interest rate ↑ → economic activity ↓ → unemployment ↑",
+        interestRateToUnemployment_fall: "Interest rate ↓ → economic activity ↑ → unemployment ↓",
+        
+        interestRateToExport: "Interest rate ↑ → local currency appreciation → export goods prices ↑ → exports ↓",
+        interestRateToExport_rise: "Interest rate ↑ → local currency appreciation → export goods prices ↑ → exports ↓",
+        interestRateToExport_fall: "Interest rate ↓ → local currency depreciation → export goods prices ↓ → exports ↑",
+        
+        interestRateToImport: "Interest rate ↑ → local currency appreciation → import goods prices ↓ → imports ↑",
+        interestRateToImport_rise: "Interest rate ↑ → local currency appreciation → import goods prices ↓ → imports ↑",
+        interestRateToImport_fall: "Interest rate ↓ → local currency depreciation → import goods prices ↑ → imports ↓",
+        
+        gdpToInterestRate: "GDP ↑ → inflation pressure ↑ → central bank raises interest rates → interest rate ↑",
+        gdpToInterestRate_rise: "GDP ↑ → inflation pressure ↑ → central bank raises interest rates → interest rate ↑",
+        gdpToInterestRate_fall: "GDP ↓ → inflation pressure ↓ → central bank cuts interest rates → interest rate ↓",
+        
+        gdpToUnemployment: "GDP ↑ → economic activity ↑ → employment opportunities ↑ → unemployment ↓",
+        gdpToUnemployment_rise: "GDP ↑ → economic activity ↑ → employment opportunities ↑ → unemployment ↓",
+        gdpToUnemployment_fall: "GDP ↓ → economic activity ↓ → employment opportunities ↓ → unemployment ↑",
+        
+        gdpToBondYield: "GDP ↑ → economic growth expectations ↑ → bond yields ↑",
+        gdpToBondYield_rise: "GDP ↑ → economic growth expectations ↑ → bond yields ↑",
+        gdpToBondYield_fall: "GDP ↓ → economic growth expectations ↓ → bond yields ↓",
+        
+        gdpToImport: "GDP ↑ → domestic demand ↑ → imports ↑",
+        gdpToImport_rise: "GDP ↑ → domestic demand ↑ → imports ↑",
+        gdpToImport_fall: "GDP ↓ → domestic demand ↓ → imports ↓",
+        
+        unemploymentToInterestRate: "Unemployment ↑ → central bank cuts interest rates → interest rate ↓",
+        unemploymentToInterestRate_rise: "Unemployment ↑ → central bank cuts interest rates → interest rate ↓",
+        unemploymentToInterestRate_fall: "Unemployment ↓ → central bank raises interest rates → interest rate ↑",
+        
+        unemploymentToGdp: "Unemployment ↑ → consumption capacity ↓ → GDP ↓",
+        unemploymentToGdp_rise: "Unemployment ↑ → consumption capacity ↓ → GDP ↓",
+        unemploymentToGdp_fall: "Unemployment ↓ → consumption capacity ↑ → GDP ↑",
+        
+        unemploymentToBondYield: "Unemployment ↑ → economic recession expectations ↑ → bond yields ↓",
+        unemploymentToBondYield_rise: "Unemployment ↑ → economic recession expectations ↑ → bond yields ↓",
+        unemploymentToBondYield_fall: "Unemployment ↓ → economic recession expectations ↓ → bond yields ↑",
+        
+        bondYieldToInterestRate: "Bond yields ↑ → market interest rate expectations ↑ → central bank raises interest rates → interest rate ↑",
+        bondYieldToInterestRate_rise: "Bond yields ↑ → market interest rate expectations ↑ → central bank raises interest rates → interest rate ↑",
+        bondYieldToInterestRate_fall: "Bond yields ↓ → market interest rate expectations ↓ → central bank cuts interest rates → interest rate ↓",
+        
+        bondYieldToGdp: "Bond yields ↑ → borrowing costs ↑ → investment ↓ → GDP ↓",
+        bondYieldToGdp_rise: "Bond yields ↑ → borrowing costs ↑ → investment ↓ → GDP ↓",
+        bondYieldToGdp_fall: "Bond yields ↓ → borrowing costs ↓ → investment ↑ → GDP ↑",
+        
+        exportToGdp: "Exports ↑ → net exports ↑ → GDP ↑",
+        exportToGdp_rise: "Exports ↑ → net exports ↑ → GDP ↑",
+        exportToGdp_fall: "Exports ↓ → net exports ↓ → GDP ↓",
+        
+        exportToInterestRate: "Exports ↑ → economic growth ↑ → inflation pressure ↑ → interest rate ↑",
+        exportToInterestRate_rise: "Exports ↑ → economic growth ↑ → inflation pressure ↑ → interest rate ↑",
+        exportToInterestRate_fall: "Exports ↓ → economic growth ↓ → inflation pressure ↓ → interest rate ↓",
+        
+        exportToUnemployment: "Exports ↑ → production expansion ↑ → employment opportunities ↑ → unemployment ↓",
+        exportToUnemployment_rise: "Exports ↑ → production expansion ↑ → employment opportunities ↑ → unemployment ↓",
+        exportToUnemployment_fall: "Exports ↓ → production contraction → employment opportunities ↓ → unemployment ↑",
+        
+        importToGdp: "Imports ↑ → net exports ↓ → GDP ↓",
+        importToGdp_rise: "Imports ↑ → net exports ↓ → GDP ↓",
+        importToGdp_fall: "Imports ↓ → net exports ↑ → GDP ↑",
+        
+        importToInterestRate: "Imports ↑ → economic pressure ↑ → central bank cuts interest rates → interest rate ↓",
+        importToInterestRate_rise: "Imports ↑ → economic pressure ↑ → central bank cuts interest rates → interest rate ↓",
+        importToInterestRate_fall: "Imports ↓ → economic pressure ↓ → central bank raises interest rates → interest rate ↑",
+        
+        importToUnemployment: "Imports ↑ → domestic industry competition ↑ → unemployment ↑",
+        importToUnemployment_rise: "Imports ↑ → domestic industry competition ↑ → unemployment ↑",
+        importToUnemployment_fall: "Imports ↓ → domestic industry competition ↓ → unemployment ↓",
+        
+        gdpToExport: "GDP ↑ → production capacity ↑ → export competitiveness ↑ → exports ↑",
+        gdpToExport_rise: "GDP ↑ → production capacity ↑ → export competitiveness ↑ → exports ↑",
+        gdpToExport_fall: "GDP ↓ → production capacity ↓ → export competitiveness ↓ → exports ↓",
+        
+        bondYieldToUnemployment: "Bond yields ↑ → corporate borrowing costs ↑ → layoffs ↑ → unemployment ↑",
+        bondYieldToUnemployment_rise: "Bond yields ↑ → corporate borrowing costs ↑ → layoffs ↑ → unemployment ↑",
+        bondYieldToUnemployment_fall: "Bond yields ↓ → corporate borrowing costs ↓ → hiring ↑ → unemployment ↓",
+        // Additional transmission effects
+        exportImportEffect1: "Interest rates → Exchange rates → Import/Export: As mentioned above, interest rate ↑ → local currency appreciation → domestic export goods become more expensive, imported goods become cheaper → export volume ↓, import volume ↑ (may worsen trade balance).",
+        exportImportEffect2: "GDP (domestic demand) → Imports: Strong GDP growth → robust domestic demand → usually increases demand for foreign goods → import volume ↑.",
+        // Transmission explanation texts
+        initialChange: "Initial Change",
+        transmissionPaths: "Transmission Paths",
+        level: "Level",
+        levelFormat: "Level {0} Transmission",
+        explanationTitleFormat: "{2} of {0} {1}",
+        valueChangeFormat: "{0} {1}"
     }
 };

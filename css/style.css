@@ -252,6 +252,16 @@ body {
     font-size: 0.95rem;
 }
 
+/* 悬停卡片效果 */
+.hover-card {
+    transition: all 0.3s ease !important;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
 /* 按钮样式 */
 .btn {
     font-weight: 500;
@@ -498,96 +508,4 @@ footer a {
     transition: none;
     display: inline-block;
     padding: 3px 0;
-    font-size: 0.9rem;
-}
-
-footer a:hover {
-    color: #495057;
-    transform: none;
-}
-
-/* 移除动画 */
-@keyframes fadeInUp {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1);
-    }
-}
-
-@keyframes progressShine {
-    0% {
-        left: 0;
-    }
-    100% {
-        left: 0;
-    }
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem !important;
-    }
-    
-    .hero {
-        padding: 60px 0 !important;
-        margin: 0;
-    }
-    
-    .navbar-brand {
-        font-size: 1.3rem;
-    }
-    
-    .nav-link {
-        padding: 10px 0 !important;
-    }
-    
-    main {
-        margin: 10px;
-        padding: 15px !important;
-    }
-    
-    .card-body {
-        padding: 1rem;
-    }
-    
-    #questionText {
-        font-size: 1rem;
-    }
-    
-    .list-group-item {
-        padding: 12px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 1.8rem !important;
-    }
-    
-    .hero p {
-        font-size: 1rem !important;
-    }
-    
-    .schools h2,
-    .about h2 {
-        font-size: 1.5rem;
-    }
-    
-    .card-title {
-        font-size: 1.1rem;
-    }
 }

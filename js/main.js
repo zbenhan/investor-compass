@@ -3,68 +3,122 @@ class LanguageManager {
     constructor() {
         this.currentLanguage = 'zh'; // 默认语言为中文
         this.translations = {};
+        this.isLoaded = false;
         this.init();
     }
 
     init() {
-        // 加载默认语言文件（中文）
-        this.loadLanguage('zh');
-
         // 从localStorage加载用户上次选择的语言
         const savedLanguage = localStorage.getItem('language');
-        if (savedLanguage && ['zh', 'en', 'fr', 'es'].includes(savedLanguage)) {
-            this.currentLanguage = savedLanguage;
-            // 如果不是中文，重新加载用户选择的语言
-            if (savedLanguage !== 'zh') {
-                this.loadLanguage(savedLanguage);
-            }
-        }
+        const initialLanguage = savedLanguage && ['zh', 'en', 'fr', 'es'].includes(savedLanguage) ? savedLanguage : 'zh';
+        
+        // 加载初始语言（默认或用户保存的语言）
+        this.loadLanguageSync(initialLanguage);
 
         // 设置语言选择器事件
         this.setupLanguageSelector();
+        
+        // 标记初始化完成
+        this.isLoaded = true;
     }
 
-    async loadLanguage(lang) {
+    loadLanguageSync(lang) {
         try {
-            // 动态加载语言文件
-            const response = await fetch(`data/languages/${lang}.js`);
-            if (!response.ok) {
-                throw new Error(`Failed to load language file: ${lang}`);
-            }
-
-            // 清空当前的translations对象
-            for (const key in this.translations) {
-                if (Object.prototype.hasOwnProperty.call(this.translations, key)) {
-                    delete this.translations[key];
+            console.log(`Loading language: ${lang}`);
+            
+            // 使用同步的XHR请求加载语言文件
+            const xhr = new XMLHttpRequest();
+            // Add timestamp to prevent caching
+            xhr.open('GET', `data/languages/${lang}.js?v=${new Date().getTime()}`, false);
+            xhr.send();
+            
+            if (xhr.status === 200) {
+                // 执行语言文件代码，使用try-catch确保安全性
+                let translationsObj = {};
+                try {
+                    // 创建一个新的函数作用域来执行语言文件
+                    const scriptFn = new Function('window', xhr.responseText + '; return translations;');
+                    translationsObj = scriptFn(window);
+                } catch (scriptError) {
+                    console.error(`Error executing language file for ${lang}:`, scriptError);
+                    return false;
                 }
-            }
-
-            // 执行语言文件代码
-            const scriptText = await response.text();
-            const script = new Function(scriptText + '; return translations;');
-            this.translations = script();
-
-            // 更新当前语言
-            this.currentLanguage = lang;
-            localStorage.setItem('language', lang);
-
-            // 更新页面内容
+                
+                // 验证翻译对象结构
+                if (typeof translationsObj !== 'object' || translationsObj === null) {
+                    console.error(`Invalid translations object for ${lang}`);
+                    return false;
+                }
+                
+                // 更新翻译对象
+                this.translations = translationsObj;
+                this.currentLanguage = lang;
+                localStorage.setItem('language', lang);
+                
+                console.log(`Language loaded successfully: ${lang}`);
+                
+                // 更新页面内容
             this.updatePage();
+            
+            // 更新语言选择器的值
+            const selector = document.getElementById('language-selector');
+            if (selector) {
+                selector.value = this.currentLanguage;
+            }
             
             // 触发自定义语言变更事件
             const languageChangedEvent = new Event('languageChanged');
             window.dispatchEvent(languageChangedEvent);
+                
+                return true;
+            } else {
+                console.error(`Failed to load language file for ${lang}: HTTP ${xhr.status}`);
+                return false;
+            }
         } catch (error) {
-            console.error('Error loading language:', error);
+            console.error(`Error loading language ${lang}:`, error);
+            return false;
         }
     }
 
     updatePage() {
+        console.log('Updating page content for language:', this.currentLanguage);
+        
         // 更新页面标题
-        document.title = this.translations.site.title;
+        const titleElement = document.querySelector('title');
+        if (titleElement) {
+            const titleKey = titleElement.getAttribute('data-lang');
+            if (titleKey) {
+                const titleValue = this.getValueByKey(titleKey);
+                if (titleValue) {
+                    document.title = titleValue;
+                }
+            } else {
+                // 如果没有data-lang属性，使用默认的site.title
+                document.title = this.translations.site?.title || "投知罗盘";
+            }
+        }
+        
+        // 更新meta标签的属性
+        document.querySelectorAll('meta[data-lang]').forEach(metaElement => {
+            const langKey = metaElement.getAttribute('data-lang');
+            const value = this.getValueByKey(langKey);
+            if (value) {
+                // 设置meta标签的content属性
+                metaElement.setAttribute('content', value);
+            }
+        });
         
         // 更新所有带有data-lang属性的元素
-        document.querySelectorAll('[data-lang]').forEach(element => {
+        const elementsWithLang = document.querySelectorAll('[data-lang]');
+        console.log(`Found ${elementsWithLang.length} elements with data-lang attribute`);
+        
+        elementsWithLang.forEach(element => {
+            // 跳过meta标签，已经单独处理过了
+            if (element.tagName === 'META') {
+                return;
+            }
+            
             const langKey = element.getAttribute('data-lang');
             const value = this.getValueByKey(langKey);
             if (value) {
@@ -72,22 +126,33 @@ class LanguageManager {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = value;
                 } else {
-                    element.textContent = value;
+                    element.innerHTML = value;
                 }
+            } else {
+                console.log(`No translation found for key: ${langKey}`);
             }
         });
     }
 
     getValueByKey(key) {
+        if (!key || typeof key !== 'string') {
+            return null;
+        }
+        
         const keys = key.split('.');
         let value = this.translations;
         
-        for (const k of keys) {
-            if (value && typeof value === 'object' && k in value) {
-                value = value[k];
-            } else {
-                return null;
+        try {
+            for (const k of keys) {
+                if (value && typeof value === 'object' && k in value) {
+                    value = value[k];
+                } else {
+                    return null;
+                }
             }
+        } catch (error) {
+            console.error(`Error getting value for key ${key}:`, error);
+            return null;
         }
         
         return value;
@@ -101,7 +166,9 @@ class LanguageManager {
             
             // 添加语言切换事件
             selector.addEventListener('change', (e) => {
-                this.loadLanguage(e.target.value);
+                const newLang = e.target.value;
+                console.log(`Language selector changed to: ${newLang}`);
+                this.loadLanguageSync(newLang);
             });
         }
     }

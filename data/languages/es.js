@@ -6,7 +6,8 @@ const translations = {
     },
     nav: {
         home: "Inicio",
-        test: "Empezar Prueba",
+        test: "Prueba de estilo",
+        macro: "Indicadores Macroeconómicos",
         articles: "Conocimiento de Inversión"
     },
     language: {
@@ -16,10 +17,11 @@ const translations = {
         es: "Español"
     },
     home: {
-        heroTitle: "Brújula de Inversión",
-        heroSubtitle: "Pruebe su estilo de inversión para entender a qué escuela de inversión pertenece",
-        startButton: "Empezar Prueba",
-        about: "Sobre Nosotros",
+        heroTitle: "Brújula del Inversor",
+        heroSubtitle: "Descubre tu potencial de inversión en 3 minutos.",
+        startButton: "Comenzar prueba",
+        styleTestButton: "Estilo de inversión",
+        about: "Sobre nosotros",
         aboutContent: "Brújula de Inversión es una plataforma profesional de prueba de estilo de inversión que ayuda a los inversores a comprender sus preferencias y estilos de inversión a través de preguntas de prueba científicas, desarrollando así estrategias de inversión más adecuadas.",
         schools: "Escuelas de Inversión",
         schoolsValue: "Escuela de Valor/Fundamental",
@@ -29,7 +31,10 @@ const translations = {
         schoolsMacro: "Escuela Macro/Cíclica",
         schoolsMacroDesc: "Asigna diferentes clases de activos según los ciclos económicos macro y los entornos políticos, aprovechando las oportunidades de inversión brindadas por las transiciones de los ciclos económicos.",
         schoolsNarrative: "Escuela de Información/Narración",
-        schoolsNarrativeDesc: "Se enfoca en el sentimiento del mercado y la comunicación narrativa, obteniendo rendimientos excesivos capturando y verificando rápidamente nuevas historias de inversión."
+        schoolsNarrativeDesc: "Se enfoca en el sentimiento del mercado y la comunicación narrativa, obteniendo rendimientos excesivos capturando y verificando rápidamente nuevas historias de inversión.",
+        macroIndicators: "Relaciones entre Indicadores Macroeconómicos",
+        macroIndicatorsDesc: "Explora las complejas interrelaciones entre tasas de interés, desempleo, PIB, rendimientos de bonos y otros indicadores macroeconómicos para comprender en profundidad los mecanismos de transmisión económica.",
+        macroIndicatorsButton: "Ver Relaciones entre Indicadores"
     },
     test: {
         title: "Prueba de Estilo de Inversión",
@@ -268,5 +273,216 @@ const translations = {
         terms: "Términos de Servicio",
         about: "Sobre el Sitio Web",
         copyright: "© 2025 Brújula de Inversión - A-share.com. Todos los derechos reservados."
+    },
+    macro: {
+        title: "Relaciones entre Indicadores Macroeconómicos - Brújula de Inversión",
+        description: "Explore las complejas relaciones entre tasas de interés, desempleo, precios/rendimientos de bonos, importaciones/exportaciones y PIB",
+        mainTitle: "Relaciones entre Indicadores Macroeconómicos",
+        subTitle: "Explore las complejas relaciones entre tasas de interés, desempleo, precios/rendimientos de bonos, importaciones/exportaciones y PIB",
+        overview: "Visión General de Relaciones Clave",
+        overviewContent1: "Las tasas de interés, el desempleo, los precios/rendimientos de bonos, las importaciones/exportaciones y el PIB tienen relaciones complejas y estrechas, formando la columna vertebral del análisis macroeconómico. Podemos organizar sus relaciones en una red dinámica con \"crecimiento económico (PIB)\" y \"bancos centrales (a través de la regulación de tasas de interés)\" en su núcleo.",
+        overviewContent2: "El diagrama anterior muestra los principales mecanismos de transmisión entre indicadores. A continuación, explicamos cada enlace en detalle.",
+        network: "Red de Relaciones entre Indicadores",
+        legend: {
+            positive: "Correlación Positiva (Misma Dirección)",
+            negative: "Correlación Negativa (Dirección Opuesta)"
+        },
+        importantNotes: "Notas Importantes",
+        note1: "<strong>Las expectativas son cruciales</strong> : Los mercados financieros operan con \"expectativas\". A veces, los datos aún no han cambiado, pero el mercado ya ha reaccionado anticipadamente basado en expectativas (por ejemplo, los rendimientos de los bonos aumentan en anticipación de un aumento de tasas).",
+        note2: "<strong>Efecto de retardo</strong> : Por lo general, se necesitan 6-18 meses para que los cambios en las tasas de política monetaria se transmitan a la economía real (afectando al PIB y al desempleo).",
+        note3: "<strong>Choques externos</strong> : Los choques externos como guerras, pandemias y crisis energéticas pueden perturbar simultáneamente múltiples indicadores, rompiendo las correlaciones tradicionales.",
+        note4: "<strong>Relaciones causales complejas</strong> : Estas relaciones son bidireccionales y dinámicas, no simplemente unidireccionales. Por ejemplo, el crecimiento del PIB afecta las expectativas de tasas de interés, lo que a su vez afecta los rendimientos de los bonos.",
+        noteConclusion: "Comprender las relaciones entre estos indicadores es fundamental para analizar tendencias macroeconómicas, realizar asignación de activos y formular estrategias de inversión. Puedes imaginarlo como un ecosistema sofisticado donde los cambios en cualquier parte desencadenan reacciones en cadena.",
+        indicators: {
+            interestRate: "Tasa de interés",
+            gdp: "PIB",
+            unemployment: "Desempleo",
+            bondYield: "Rendimiento de bonos",
+            export: "Exportación",
+            import: "Importación"
+        },
+        controlSection: "Control de indicadores",
+        controlDesc: "Haga clic en los botones \"Subir\" o \"Bajar\" a continuación para observar las rutas de transmisión y explicaciones detalladas entre los indicadores",
+        reset: "Restablecer Todos los Indicadores",
+        transmissionTitle: "Rutas de transmisión y explicaciones",
+        waitingForChange: "Esperando cambios en los indicadores...",
+        clickIndicatorToSee: "Haga clic en los botones \"Subir\" o \"Bajar\" arriba para observar las rutas de transmisión y explicaciones detalladas entre los indicadores.",
+        indicatorsDetail: "Detalles clave de los indicadores y mecanismos de transmisión",
+        definition: "Definición",
+        howItWorks: "Cómo funciona",
+        keyRelationship: "Relación clave",
+        mainInfluencingFactors: "Principales factores influyentes",
+        importExportFactors: ": Tipos de cambio y fortaleza de la demanda interna y externa.",
+        transmissionChain: "Cadena de transmisión",
+        keyCharacteristics: "Características clave",
+        relationshipsWithOtherIndicators: "Relaciones con otros indicadores",
+        indicator1Title: "1. Tasa de interés —— El \"director\" de todo el sistema",
+        indicator2Title: "2. Precios/rendimientos de bonos —— El \"termómetro\" del mercado",
+        indicator3Title: "3. Importaciones/exportaciones —— El \"puente\" que conecta la economía interna y externa",
+        indicator4Title: "4. PIB —— La \"tarjeta de puntuación\" de los objetivos finales",
+        indicator5Title: "5. Desempleo —— Un indicador \"de nivel de vida\" con retraso pero crítico",
+        scenarioExercise: "Ejercicios de escenarios completos",
+        scenario1Title: "Escenario 1: Sobrecalentamiento económico, alta inflación",
+        scenario2Title: "Escenario 2: Recesión económica, alto desempleo",
+        cause: "Causa",
+        centralBankAction: "Acción del banco central",
+        marketTransmission: "Transmisión del mercado",
+        finalResult: "Resultado final",
+        // Button texts
+        rise: "Subir",
+        fall: "Bajar",
+        // Relationship descriptions
+        interestRateToGdp: "Tasa de interés ↑ → costos de préstamo ↑ → consumo de inversión ↓ → PIB ↓",
+        interestRateToGdp_rise: "Tasa de interés ↑ → costos de préstamo ↑ → consumo de inversión ↓ → PIB ↓",
+        interestRateToGdp_fall: "Tasa de interés ↓ → costos de préstamo ↓ → consumo de inversión ↑ → PIB ↑",
+        
+        interestRateToBondYield: "Tasa de interés ↑ → precios de bonos ↓ → rendimientos de bonos ↑",
+        interestRateToBondYield_rise: "Tasa de interés ↑ → precios de bonos ↓ → rendimientos de bonos ↑",
+        interestRateToBondYield_fall: "Tasa de interés ↓ → precios de bonos ↑ → rendimientos de bonos ↓",
+        
+        interestRateToUnemployment: "Tasa de interés ↑ → actividad económica ↓ → desempleo ↑",
+        interestRateToUnemployment_rise: "Tasa de interés ↑ → actividad económica ↓ → desempleo ↑",
+        interestRateToUnemployment_fall: "Tasa de interés ↓ → actividad económica ↑ → desempleo ↓",
+        
+        interestRateToExport: "Tasa de interés ↑ → apreciación de moneda local → precios de bienes de exportación ↑ → exportaciones ↓",
+        interestRateToExport_rise: "Tasa de interés ↑ → apreciación de moneda local → precios de bienes de exportación ↑ → exportaciones ↓",
+        interestRateToExport_fall: "Tasa de interés ↓ → depreciación de moneda local → precios de bienes de exportación ↓ → exportaciones ↑",
+        
+        interestRateToImport: "Tasa de interés ↑ → apreciación de moneda local → precios de bienes de importación ↓ → importaciones ↑",
+        interestRateToImport_rise: "Tasa de interés ↑ → apreciación de moneda local → precios de bienes de importación ↓ → importaciones ↑",
+        interestRateToImport_fall: "Tasa de interés ↓ → depreciación de moneda local → precios de bienes de importación ↑ → importaciones ↓",
+        
+        gdpToInterestRate: "PIB ↑ → presión inflacionaria ↑ → banco central sube tasas de interés → tasa de interés ↑",
+        gdpToInterestRate_rise: "PIB ↑ → presión inflacionaria ↑ → banco central sube tasas de interés → tasa de interés ↑",
+        gdpToInterestRate_fall: "PIB ↓ → presión inflacionaria ↓ → banco central baja tasas de interés → tasa de interés ↓",
+        
+        gdpToUnemployment: "PIB ↑ → actividad económica ↑ → oportunidades de empleo ↑ → desempleo ↓",
+        gdpToUnemployment_rise: "PIB ↑ → actividad económica ↑ → oportunidades de empleo ↑ → desempleo ↓",
+        gdpToUnemployment_fall: "PIB ↓ → actividad económica ↓ → oportunidades de empleo ↓ → desempleo ↑",
+        
+        gdpToBondYield: "PIB ↑ → expectativas de crecimiento económico ↑ → rendimientos de bonos ↑",
+        gdpToBondYield_rise: "PIB ↑ → expectativas de crecimiento económico ↑ → rendimientos de bonos ↑",
+        gdpToBondYield_fall: "PIB ↓ → expectativas de crecimiento económico ↓ → rendimientos de bonos ↓",
+        
+        gdpToImport: "PIB ↑ → demanda interna ↑ → importaciones ↑",
+        gdpToImport_rise: "PIB ↑ → demanda interna ↑ → importaciones ↑",
+        gdpToImport_fall: "PIB ↓ → demanda interna ↓ → importaciones ↓",
+        
+        unemploymentToInterestRate: "Desempleo ↑ → banco central baja tasas de interés → tasa de interés ↓",
+        unemploymentToInterestRate_rise: "Desempleo ↑ → banco central baja tasas de interés → tasa de interés ↓",
+        unemploymentToInterestRate_fall: "Desempleo ↓ → banco central sube tasas de interés → tasa de interés ↑",
+        
+        unemploymentToGdp: "Desempleo ↑ → capacidad de consumo ↓ → PIB ↓",
+        unemploymentToGdp_rise: "Desempleo ↑ → capacidad de consumo ↓ → PIB ↓",
+        unemploymentToGdp_fall: "Desempleo ↓ → capacidad de consumo ↑ → PIB ↑",
+        
+        unemploymentToBondYield: "Desempleo ↑ → expectativas de recesión económica ↑ → rendimientos de bonos ↓",
+        unemploymentToBondYield_rise: "Desempleo ↑ → expectativas de recesión económica ↑ → rendimientos de bonos ↓",
+        unemploymentToBondYield_fall: "Desempleo ↓ → expectativas de recesión económica ↓ → rendimientos de bonos ↑",
+        
+        bondYieldToInterestRate: "Rendimientos de bonos ↑ → expectativas de tasas de interés del mercado ↑ → banco central sube tasas de interés → tasa de interés ↑",
+        bondYieldToInterestRate_rise: "Rendimientos de bonos ↑ → expectativas de tasas de interés del mercado ↑ → banco central sube tasas de interés → tasa de interés ↑",
+        bondYieldToInterestRate_fall: "Rendimientos de bonos ↓ → expectativas de tasas de interés del mercado ↓ → banco central baja tasas de interés → tasa de interés ↓",
+        
+        bondYieldToGdp: "Rendimientos de bonos ↑ → costos de préstamo ↑ → inversión ↓ → PIB ↓",
+        bondYieldToGdp_rise: "Rendimientos de bonos ↑ → costos de préstamo ↑ → inversión ↓ → PIB ↓",
+        bondYieldToGdp_fall: "Rendimientos de bonos ↓ → costos de préstamo ↓ → inversión ↑ → PIB ↑",
+        
+        exportToGdp: "Exportaciones ↑ → exportaciones netas ↑ → PIB ↑",
+        exportToGdp_rise: "Exportaciones ↑ → exportaciones netas ↑ → PIB ↑",
+        exportToGdp_fall: "Exportaciones ↓ → exportaciones netas ↓ → PIB ↓",
+        
+        exportToInterestRate: "Exportaciones ↑ → crecimiento económico ↑ → presión inflacionaria ↑ → tasa de interés ↑",
+        exportToInterestRate_rise: "Exportaciones ↑ → crecimiento económico ↑ → presión inflacionaria ↑ → tasa de interés ↑",
+        exportToInterestRate_fall: "Exportaciones ↓ → crecimiento económico ↓ → presión inflacionaria ↓ → tasa de interés ↓",
+        
+        exportToUnemployment: "Exportaciones ↑ → expansión de producción ↑ → oportunidades de empleo ↑ → desempleo ↓",
+        exportToUnemployment_rise: "Exportaciones ↑ → expansión de producción ↑ → oportunidades de empleo ↑ → desempleo ↓",
+        exportToUnemployment_fall: "Exportaciones ↓ → contracción de producción → oportunidades de empleo ↓ → desempleo ↑",
+        
+        importToGdp: "Importaciones ↑ → exportaciones netas ↓ → PIB ↓",
+        importToGdp_rise: "Importaciones ↑ → exportaciones netas ↓ → PIB ↓",
+        importToGdp_fall: "Importaciones ↓ → exportaciones netas ↑ → PIB ↑",
+        
+        importToInterestRate: "Importaciones ↑ → presión económica ↑ → banco central baja tasas de interés → tasa de interés ↓",
+        importToInterestRate_rise: "Importaciones ↑ → presión económica ↑ → banco central baja tasas de interés → tasa de interés ↓",
+        importToInterestRate_fall: "Importaciones ↓ → presión económica ↓ → banco central sube tasas de interés → tasa de interés ↑",
+        
+        importToUnemployment: "Importaciones ↑ → competencia industrial doméstica ↑ → desempleo ↑",
+        importToUnemployment_rise: "Importaciones ↑ → competencia industrial doméstica ↑ → desempleo ↑",
+        importToUnemployment_fall: "Importaciones ↓ → competencia industrial doméstica ↓ → desempleo ↓",
+        
+        gdpToExport: "PIB ↑ → capacidad de producción ↑ → competitividad de exportaciones ↑ → exportaciones ↑",
+        gdpToExport_rise: "PIB ↑ → capacidad de producción ↑ → competitividad de exportaciones ↑ → exportaciones ↑",
+        gdpToExport_fall: "PIB ↓ → capacidad de producción ↓ → competitividad de exportaciones ↓ → exportaciones ↓",
+        
+        bondYieldToUnemployment: "Rendimientos de bonos ↑ → costos de préstamo de empresas ↑ → despidos ↑ → desempleo ↑",
+        bondYieldToUnemployment_rise: "Rendimientos de bonos ↑ → costos de préstamo de empresas ↑ → despidos ↑ → desempleo ↑",
+        bondYieldToUnemployment_fall: "Rendimientos de bonos ↓ → costos de préstamo de empresas ↓ → contrataciones ↑ → desempleo ↓",
+        // Transmission explanation texts
+        initialChange: "Cambio inicial",
+        transmissionPaths: "Rutas de transmisión",
+        level: "Nivel",
+        levelFormat: "Transmisión de nivel {0}",
+        explanationTitleFormat: "{2} de {0} {1}",
+        valueChangeFormat: "{0} {1}",
+
+        // Indicator detailed content
+        indicatorsDetail: "Detalles clave de los indicadores y mecanismos de transmisión",
+        definition: "Definición",
+        howItWorks: "Cómo funciona",
+        keyRelationship: "Relación clave",
+        mainInfluencingFactors: "Principales factores influyentes",
+        transmissionChain: "Cadena de transmisión",
+        keyCharacteristics: "Características clave",
+        relationshipsWithOtherIndicators: "Relaciones con otros indicadores",
+        indicator1Title: "1. Tasa de interés —— El \"director\" de todo el sistema",
+        indicator2Title: "2. Precios/rendimientos de bonos —— El \"termómetro\" del mercado",
+        indicator3Title: "3. Importaciones/exportaciones —— El \"puente\" que conecta la economía interna y externa",
+        indicator4Title: "4. PIB —— La \"tarjeta de puntuación\" de los objetivos finales",
+        indicator5Title: "5. Desempleo —— Un indicador \"de nivel de vida\" con retraso pero crítico",
+        
+        scenarioExercise: "Ejercicios de escenarios completos",
+        scenario1Title: "Escenario 1: Sobrecalentamiento económico, alta inflación",
+        scenario2Title: "Escenario 2: Recesión económica, alto desempleo",
+        cause: "Causa",
+        centralBankAction: "Acción del banco central",
+        marketTransmission: "Transmisión del mercado",
+        finalResult: "Resultado final",
+
+        interestRateDefinition: "Se refiere principalmente a la tasa de interés de política establecida por el banco central (como la Tasa de Fondos Federales en los Estados Unidos), que es la referencia para todas las tasas de interés en el mercado financiero.",
+        interestRateEffect1: "Impacto en la demanda interna: Tasa de interés ↓ → costos de endeudamiento corporativo ↓, costos de préstamos hipotecarios/consumo personal ↓ → estimular la inversión corporativa y el consumo de los hogares → demanda agregada ↑ → PIB ↑.",
+        interestRateEffect2: "Impacto en los flujos de capital internacional y tipos de cambio: Tasa de interés doméstica ↑ → atrae flujos de capital extranjero para buscar mayores rendimientos → mayor demanda de moneda local → apreciación de la moneda local. Lo contrario también es cierto.",
+        interestRateEffect3: "Impacto directo en los precios de los bonos: Existe una relación inversa entre las tasas de interés del mercado y los precios de los bonos. Cuando las tasas de interés ↑, el interés fijo de los bonos ya emitidos se vuelve menos atractivo, por lo que sus precios ↓ (los rendimientos de los bonos aumentan).",
+        bondYieldDefinition: "El rendimiento de los bonos (especialmente el rendimiento de los bonos del gobierno a largo plazo) refleja las tasas de interés del mercado y las expectativas del mercado sobre el crecimiento económico, la inflación y la política monetaria.",
+        bondYieldRelationship1: "Precio del bono ↑ = Rendimiento del bono ↓",
+        bondYieldRelationship2: "Precio del bono ↓ = Rendimiento del bono ↑",
+        bondYieldEffect1: "Expectativas económicas: Cuando el mercado espera un crecimiento económico futuro (PIB↑) y un aumento de la inflación, espera que el banco central aumente las tasas de interés, lo que lleva a una caída en los precios de los bonos (aumento de los rendimientos).",
+        bondYieldEffect2: "Sentimiento de refugio: Cuando las perspectivas económicas son malas (PIB↓) o ocurre una crisis, los fondos fluyen hacia los bonos del gobierno por seguridad, empujando los precios de los bonos al alza (rendimientos a la baja).",
+        gdpDefinition: "Producto Interno Bruto, mide el valor total de todos los bienes y servicios finales producidos en un país. Desde el enfoque del gasto: PIB = Consumo + Inversión + Gasto del Gobierno + Exportaciones Netas (Exportaciones - Importaciones).",
+        gdpEffect1: "Es el resultado: Los cambios en las tasas de interés anteriores se manifiestan finalmente en el crecimiento del PIB al afectar el consumo, la inversión y las exportaciones netas.",
+        gdpEffect2: "Es la causa: La fortaleza del PIB (tasa de crecimiento económico) afecta a su vez las políticas del banco central, el desempleo y las expectativas del mercado.",
+        unemploymentDefinition: "La proporción de personas desempleadas en la fuerza laboral.",
+        unemploymentCharacteristics: "Indicador rezagado. Cuando la economía empeora (PIB↓), las empresas no despiden inmediatamente a los trabajadores; cuando la economía mejora (PIB↑), las empresas no contratan inmediatamente a gran escala.",
+        unemploymentRelationship1: "Con el PIB: La ley de Okun establece empíricamente que cuando el crecimiento del PIB es superior al crecimiento potencial, el desempleo caerá.",
+        unemploymentRelationship2: "Con las tasas de interés/políticas del banco central: El desempleo es un indicador clave para los bancos centrales (especialmente la Fed) para implementar su 'doble mandato' (estabilidad de precios, pleno empleo). El alto desempleo generalmente apoya al banco central para mantener bajas las tasas de interés o recortar las tasas.",
+        
+        // Scenario content
+        scenario1Cause: "El crecimiento del PIB es demasiado rápido, el desempleo es muy bajo y la inflación continúa aumentando.",
+        scenario1Action: "El banco central aumenta las tasas de interés para suprimir la demanda agregada.",
+        scenario1Transmission1: "Las tasas de interés del mercado aumentan → los precios de los bonos caen (los rendimientos aumentan).",
+        scenario1Transmission2: "Los costos de financiamiento aumentan → la inversión corporativa y el consumo de los hogares se desaceleran → el crecimiento esperado del PIB disminuye.",
+        scenario1Transmission3: "La moneda local puede apreciarse → las exportaciones se suprimen, las importaciones aumentan → la contribución de las exportaciones netas al PIB puede disminuir.",
+        scenario1Result: "El crecimiento económico (PIB) vuelve a la estabilidad.",
+        scenario2Cause: "El PIB ha disminuido durante varios trimestres consecutivos, el desempleo ha aumentado y la inflación es baja.",
+        scenario2Action: "El banco central recorta las tasas de interés para estimular la economía.",
+        scenario2Transmission1: "Las tasas de interés del mercado caen → los precios de los bonos aumentan (los rendimientos caen).",
+        scenario2Transmission2: "Los costos de financiamiento disminuyen → fomentar la inversión y el consumo.",
+        scenario2Transmission3: "La moneda local puede depreciarse → mejorar la competitividad de las exportaciones, suprimir las importaciones → las exportaciones netas mejoran.",
+        scenario2Result: "La economía avanza hacia la recuperación.",
+        
+        // Additional transmission effects
+        exportImportEffect1: "Tasas de interés → Tipos de cambio → Importación/Exportación: Como se mencionó anteriormente, tasa de interés ↑ → apreciación de la moneda local → los bienes de exportación nacionales se vuelven más caros, los bienes importados se vuelven más baratos → volumen de exportación ↓, volumen de importación ↑ (puede empeorar la balanza comercial).",
+        exportImportEffect2: "PIB (demanda interna) → Importaciones: Fuerte crecimiento del PIB → demanda interna robusta → generalmente aumenta la demanda de bienes extranjeros → volumen de importación ↑."
     }
 };

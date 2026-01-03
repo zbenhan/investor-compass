@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang="site.title">宏观经济指标关联关系 - 投知罗盘</title>
-    <meta name="description" data-lang="site.description">
+    <title data-lang="macro.title">宏观经济指标关联关系 - 利率、失业率、GDP、债券收益率联动分析</title>
+    <meta name="description" data-lang="macro.description">
+    <meta name="keywords" content="宏观经济指标, 利率, 失业率, GDP, 债券收益率, 进出口, 经济指标关联, 投资分析, 宏观经济分析, 经济传导机制, 货币政策, 宏观经济关系网络, 经济指标联动, 投资策略, 资产配置, 经济周期">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-    <script>LA.init({id:"3NlvSR2kT1afN6AF",ck:"3NlvSR2kT1afN6AF"})</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1YGJVMJE8"></script>
     <script>
@@ -65,6 +64,15 @@
             gap: 10px;
             margin-top: 20px;
         }
+
+        .indicator-btn {
+            white-space: normal;
+            min-height: 31px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+        }
         
         .indicator-network {
             position: relative;
@@ -74,12 +82,31 @@
             border-radius: 8px;
             margin: 20px 0;
             padding: 20px;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 992px) {
+            .indicator-network {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .indicator-network {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .indicator-network {
+                height: 250px;
+            }
         }
         
         .indicator-node {
             position: absolute;
-            width: 120px;
-            height: 120px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             background: #007bff;
             color: white;
@@ -90,6 +117,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 2; /* 确保节点在连接线之上 */
         }
         
         .indicator-node:hover {
@@ -110,12 +138,14 @@
         }
         
         .node-label {
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            color: orange;
         }
         
         .node-value {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            color: orange;
         }
         
         .connection-line {
@@ -180,7 +210,10 @@
                         <a class="nav-link" href="test.html" data-lang="nav.test">开始测试</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="articles.html" data-lang="nav.articles">投资知识</a>
+                        <a class="nav-link active" href="macro-indicators.html" data-lang="nav.macro">宏观指标</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="articles.html" data-lang="nav.articles">投资知识</a>
                     </li>
                 </ul>
                 <!-- 语言选择器 -->
@@ -196,215 +229,261 @@
 
     <!-- 主要内容 -->
     <main class="container py-5">
-        <h1 class="text-center mb-5">宏观经济指标关联关系</h1>
-        <p class="text-center mb-5 text-muted">探索利率、失业率、债券价格/收益率、进出口额和GDP等指标之间的复杂联动关系</p>
+        <h1 class="text-center mb-5" data-lang="macro.mainTitle">宏观经济指标关联关系</h1>
+        <p class="text-center mb-5 text-muted" data-lang="macro.subTitle">探索利率、失业率、债券价格/收益率、进出口额和GDP等指标之间的复杂联动关系</p>
 
-        <!-- 宏观经济指标基础知识 -->
+        <!-- 指标关系可视化区域 - 放在最前面，突出核心功能 -->
         <section class="mb-5">
-            <h2 class="mb-4">核心关系总览</h2>
-            <div class="explanation-section">
-                <p>利率、失业率、债券价格/收益率、进出口额和GDP等指标之间存在着复杂而紧密的联动关系，构成了宏观经济分析的骨架。我们可以将它们之间的关系梳理成一个动态的网络，核心是 "经济增长（GDP）" 和 "中央银行（通过利率调控）"。</p>
-                <p>上图展示了各指标间的主要传导机制，下面我们对每个环节进行具体阐释。</p>
+            <h2 class="mb-4 text-center" data-lang="macro.network">指标关系网络</h2>
+            <div class="d-flex justify-content-center mb-3">
+                <div class="d-flex align-items-center me-4">
+                    <span style="display:inline-block; width: 30px; height: 3px; background-color: #28a745; margin-right: 8px;"></span>
+                    <span data-lang="macro.legend.positive">正相关 (同向变动)</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span style="display:inline-block; width: 30px; height: 3px; background-color: #dc3545; margin-right: 8px;"></span>
+                    <span data-lang="macro.legend.negative">负相关 (反向变动)</span>
+                </div>
             </div>
-        </section>
-
-        <!-- 指标关系可视化区域 -->
-        <section class="mb-5">
-            <h2 class="mb-4">指标关系网络</h2>
-            <div class="indicator-network" id="indicatorNetwork">
+            <div class="indicator-network border border-primary rounded-3 shadow-lg" id="indicatorNetwork">
                 <!-- 指标节点将通过JavaScript动态生成 -->
             </div>
         </section>
 
         <!-- 指标控制区域 -->
-        <section class="mb-5">
-            <h2 class="mb-4">指标控制</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="indicator-card">
-                        <h3 class="indicator-title">利率</h3>
-                        <div class="indicator-value stable" id="interestRateValue">稳定</div>
-                        <div class="indicator-controls">
-                            <button class="btn btn-success" onclick="changeIndicator('interestRate', 'rise')">上涨</button>
-                            <button class="btn btn-danger" onclick="changeIndicator('interestRate', 'fall')">下跌</button>
+        <section class="mb-5 bg-light rounded-3 p-4 shadow-sm">
+            <h2 class="mb-4 text-center" data-lang="macro.controlSection">指标控制</h2>
+            <p class="text-center text-muted mb-4" data-lang="macro.controlDesc">点击以下指标的"上涨"或"下跌"按钮，观察指标间的传导路径和详细解释</p>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="indicator-card h-100 p-2 p-md-3">
+                        <h3 class="indicator-title fs-5 mb-2 text-center" data-lang="macro.indicators.interestRate">利率</h3>
+                        <div class="indicator-value stable my-1" id="interestRateValue"></div>
+                        <div class="indicator-controls flex-column flex-sm-row gap-1 gap-sm-2">
+                            <button class="btn btn-outline-success btn-sm flex-fill indicator-btn" data-indicator="interestRate" data-direction="rise" onclick="changeIndicator('interestRate', 'rise')" aria-label="Rise">
+                                <span class="d-none d-sm-inline" data-lang="macro.rise">上涨</span><span class="d-inline d-sm-none">↑</span>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm flex-fill indicator-btn" data-indicator="interestRate" data-direction="fall" onclick="changeIndicator('interestRate', 'fall')" aria-label="Fall">
+                                <span class="d-none d-sm-inline" data-lang="macro.fall">下跌</span><span class="d-inline d-sm-none">↓</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="indicator-card">
-                        <h3 class="indicator-title">GDP</h3>
-                        <div class="indicator-value stable" id="gdpValue">稳定</div>
-                        <div class="indicator-controls">
-                            <button class="btn btn-success" onclick="changeIndicator('gdp', 'rise')">上涨</button>
-                            <button class="btn btn-danger" onclick="changeIndicator('gdp', 'fall')">下跌</button>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="indicator-card h-100 p-2 p-md-3">
+                        <h3 class="indicator-title fs-5 mb-2 text-center" data-lang="macro.indicators.gdp">GDP</h3>
+                        <div class="indicator-value stable my-1" id="gdpValue"></div>
+                        <div class="indicator-controls flex-column flex-sm-row gap-1 gap-sm-2">
+                            <button class="btn btn-outline-success btn-sm flex-fill indicator-btn" data-indicator="gdp" data-direction="rise" onclick="changeIndicator('gdp', 'rise')" aria-label="Rise">
+                                <span class="d-none d-sm-inline" data-lang="macro.rise">上涨</span><span class="d-inline d-sm-none">↑</span>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm flex-fill indicator-btn" data-indicator="gdp" data-direction="fall" onclick="changeIndicator('gdp', 'fall')" aria-label="Fall">
+                                <span class="d-none d-sm-inline" data-lang="macro.fall">下跌</span><span class="d-inline d-sm-none">↓</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="indicator-card">
-                        <h3 class="indicator-title">失业率</h3>
-                        <div class="indicator-value stable" id="unemploymentValue">稳定</div>
-                        <div class="indicator-controls">
-                            <button class="btn btn-success" onclick="changeIndicator('unemployment', 'rise')">上涨</button>
-                            <button class="btn btn-danger" onclick="changeIndicator('unemployment', 'fall')">下跌</button>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="indicator-card h-100 p-2 p-md-3">
+                        <h3 class="indicator-title fs-5 mb-2 text-center" data-lang="macro.indicators.unemployment">失业率</h3>
+                        <div class="indicator-value stable my-1" id="unemploymentValue"></div>
+                        <div class="indicator-controls flex-column flex-sm-row gap-1 gap-sm-2">
+                            <button class="btn btn-outline-success btn-sm flex-fill indicator-btn" data-indicator="unemployment" data-direction="rise" onclick="changeIndicator('unemployment', 'rise')" aria-label="Rise">
+                                <span class="d-none d-sm-inline" data-lang="macro.rise">上涨</span><span class="d-inline d-sm-none">↑</span>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm flex-fill indicator-btn" data-indicator="unemployment" data-direction="fall" onclick="changeIndicator('unemployment', 'fall')" aria-label="Fall">
+                                <span class="d-none d-sm-inline" data-lang="macro.fall">下跌</span><span class="d-inline d-sm-none">↓</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="indicator-card">
-                        <h3 class="indicator-title">债券收益率</h3>
-                        <div class="indicator-value stable" id="bondYieldValue">稳定</div>
-                        <div class="indicator-controls">
-                            <button class="btn btn-success" onclick="changeIndicator('bondYield', 'rise')">上涨</button>
-                            <button class="btn btn-danger" onclick="changeIndicator('bondYield', 'fall')">下跌</button>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="indicator-card h-100 p-2 p-md-3">
+                        <h3 class="indicator-title fs-5 mb-2 text-center" data-lang="macro.indicators.bondYield">债券收益率</h3>
+                        <div class="indicator-value stable my-1" id="bondYieldValue"></div>
+                        <div class="indicator-controls flex-column flex-sm-row gap-1 gap-sm-2">
+                            <button class="btn btn-outline-success btn-sm flex-fill indicator-btn" data-indicator="bondYield" data-direction="rise" onclick="changeIndicator('bondYield', 'rise')" aria-label="Rise">
+                                <span class="d-none d-sm-inline" data-lang="macro.rise">上涨</span><span class="d-inline d-sm-none">↑</span>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm flex-fill indicator-btn" data-indicator="bondYield" data-direction="fall" onclick="changeIndicator('bondYield', 'fall')" aria-label="Fall">
+                                <span class="d-none d-sm-inline" data-lang="macro.fall">下跌</span><span class="d-inline d-sm-none">↓</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="indicator-card">
-                        <h3 class="indicator-title">出口</h3>
-                        <div class="indicator-value stable" id="exportValue">稳定</div>
-                        <div class="indicator-controls">
-                            <button class="btn btn-success" onclick="changeIndicator('export', 'rise')">上涨</button>
-                            <button class="btn btn-danger" onclick="changeIndicator('export', 'fall')">下跌</button>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="indicator-card h-100 p-2 p-md-3">
+                        <h3 class="indicator-title fs-5 mb-2 text-center" data-lang="macro.indicators.export">出口</h3>
+                        <div class="indicator-value stable my-1" id="exportValue"></div>
+                        <div class="indicator-controls flex-column flex-sm-row gap-1 gap-sm-2">
+                            <button class="btn btn-outline-success btn-sm flex-fill indicator-btn" data-indicator="export" data-direction="rise" onclick="changeIndicator('export', 'rise')" aria-label="Rise">
+                                <span class="d-none d-sm-inline" data-lang="macro.rise">上涨</span><span class="d-inline d-sm-none">↑</span>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm flex-fill indicator-btn" data-indicator="export" data-direction="fall" onclick="changeIndicator('export', 'fall')" aria-label="Fall">
+                                <span class="d-none d-sm-inline" data-lang="macro.fall">下跌</span><span class="d-inline d-sm-none">↓</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="indicator-card">
-                        <h3 class="indicator-title">进口</h3>
-                        <div class="indicator-value stable" id="importValue">稳定</div>
-                        <div class="indicator-controls">
-                            <button class="btn btn-success" onclick="changeIndicator('import', 'rise')">上涨</button>
-                            <button class="btn btn-danger" onclick="changeIndicator('import', 'fall')">下跌</button>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="indicator-card h-100 p-2 p-md-3">
+                        <h3 class="indicator-title fs-5 mb-2 text-center" data-lang="macro.indicators.import">进口</h3>
+                        <div class="indicator-value stable my-1" id="importValue"></div>
+                        <div class="indicator-controls flex-column flex-sm-row gap-1 gap-sm-2">
+                            <button class="btn btn-outline-success btn-sm flex-fill indicator-btn" data-indicator="import" data-direction="rise" onclick="changeIndicator('import', 'rise')" aria-label="Rise">
+                                <span class="d-none d-sm-inline" data-lang="macro.rise">上涨</span><span class="d-inline d-sm-none">↑</span>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm flex-fill indicator-btn" data-indicator="import" data-direction="fall" onclick="changeIndicator('import', 'fall')" aria-label="Fall">
+                                <span class="d-none d-sm-inline" data-lang="macro.fall">下跌</span><span class="d-inline d-sm-none">↓</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-3">
-                <button class="btn btn-secondary" onclick="resetIndicators()">重置所有指标</button>
+            <div class="text-center mt-4">
+                <button class="btn btn-secondary btn-lg" onclick="resetIndicators()" data-lang="macro.reset">重置所有指标</button>
             </div>
         </section>
 
-        <!-- 传导路径和解释区域 -->
+        <!-- 传导路径和解释区域 - 动态展示，增强交互性 -->
         <section class="mb-5">
-            <h2 class="mb-4">传导路径和解释</h2>
-            <div class="explanation-section" id="transmissionExplanation">
-                <h3>等待指标变化...</h3>
-                <p>点击上方指标的"上涨"或"下跌"按钮，观察指标间的传导路径和详细解释。</p>
+            <h2 class="mb-4 text-center" data-lang="macro.transmissionTitle">传导路径和解释</h2>
+            <div class="explanation-section border border-primary rounded-3 shadow-sm p-4" id="transmissionExplanation">
+                <h3 class="text-center mb-3" data-lang="macro.waitingForChange">等待指标变化...</h3>
+                <p class="text-center text-muted" data-lang="macro.clickIndicatorToSee">点击上方指标的"上涨"或"下跌"按钮，观察指标间的传导路径和详细解释。</p>
+            </div>
+        </section>
+
+        <!-- 宏观经济指标基础知识 -->
+        <section class="mb-5">
+            <h2 class="mb-4 text-center" data-lang="macro.overview">核心关系总览</h2>
+            <div class="explanation-section bg-light rounded-3 p-4 shadow-sm">
+                <p data-lang="macro.overviewContent1">利率、失业率、债券价格/收益率、进出口额和GDP等指标之间存在着复杂而紧密的联动关系，构成了宏观经济分析的骨架。我们可以将它们之间的关系梳理成一个动态的网络，核心是 "经济增长（GDP）" 和 "中央银行（通过利率调控）"。</p>
             </div>
         </section>
 
         <!-- 指标详解 -->
         <section class="mb-5">
-            <h2 class="mb-4">关键指标详解与传导机制</h2>
+            <h2 class="mb-4 text-center" data-lang="macro.indicatorsDetail">关键指标详解与传导机制</h2>
             
-            <div class="explanation-section mb-4">
-                <h3>1. 利率 —— 整个体系的"指挥棒"</h3>
-                <p><strong>定义</strong>：这里主要指由中央银行设定的政策利率（如美国的联邦基金利率），它是整个金融市场利率的基准。</p>
-                <p><strong>如何作用</strong>：</p>
-                <ul>
-                    <li>影响国内需求：利率↓ → 企业贷款成本↓、个人房贷/消费贷成本↓ → 刺激企业投资和居民消费 → 总需求↑ → GDP↑。</li>
-                    <li>影响国际资本流动与汇率：本国利率↑ → 吸引海外资本流入以追求更高回报 → 本币需求↑ → 本币汇率升值。反之亦然。</li>
-                    <li>直接影响债券价格：市场利率与债券价格存在反向关系。利率↑，则已发行债券的固定利息吸引力下降，其价格↓（债券收益率上升）。</li>
-                </ul>
-            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="explanation-section bg-light rounded-3 p-4 shadow-sm h-100">
+                        <h3 data-lang="macro.indicator1Title">1. 利率 —— 整个体系的"指挥棒"</h3>
+                        <p><strong data-lang="macro.definition">定义</strong>：<span data-lang="macro.interestRateDefinition">这里主要指由中央银行设定的政策利率（如美国的联邦基金利率），它是整个金融市场利率的基准。</span></p>
+                        <p><strong data-lang="macro.howItWorks">如何作用</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.interestRateEffect1">影响国内需求：利率↓ → 企业贷款成本↓、个人房贷/消费贷成本↓ → 刺激企业投资和居民消费 → 总需求↑ → GDP↑。</li>
+                            <li data-lang="macro.interestRateEffect2">影响国际资本流动与汇率：本国利率↑ → 吸引海外资本流入以追求更高回报 → 本币需求↑ → 本币汇率升值。反之亦然。</li>
+                            <li data-lang="macro.interestRateEffect3">直接影响债券价格：市场利率与债券价格存在反向关系。利率↑，则已发行债券的固定利息吸引力下降，其价格↓（债券收益率上升）。</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="explanation-section mb-4">
-                <h3>2. 债券价格/收益率 —— 市场的"温度计"</h3>
-                <p><strong>定义</strong>：债券收益率（尤其是长期国债收益率）是市场利率的体现，反映了市场对经济增长、通胀和货币政策的预期。</p>
-                <p><strong>关键关系</strong>：</p>
-                <ul>
-                    <li>债券价格 ↑ = 债券收益率 ↓</li>
-                    <li>债券价格 ↓ = 债券收益率 ↑</li>
-                </ul>
-                <p><strong>如何作用</strong>：</p>
-                <ul>
-                    <li>经济预期：当市场预期未来经济增长（GDP↑）、通胀升温时，会预期央行将加息，从而导致债券价格下跌（收益率上升）。</li>
-                    <li>避险情绪：经济前景不佳（GDP↓）或出现危机时，资金涌入国债避险，推高债券价格（收益率下降）。</li>
-                    <li>基准利率：长期债券收益率是抵押贷款、企业债等长期利率的定价基准，直接影响全社会融资成本。</li>
-                </ul>
-            </div>
+                <div class="col-md-6">
+                    <div class="explanation-section bg-light rounded-3 p-4 shadow-sm h-100">
+                        <h3 data-lang="macro.indicator2Title">2. 债券价格/收益率 —— 市场的"温度计"</h3>
+                        <p><strong data-lang="macro.definition">定义</strong>：<span data-lang="macro.bondYieldDefinition">债券收益率（尤其是长期国债收益率）是市场利率的体现，反映了市场对经济增长、通胀和货币政策的预期。</span></p>
+                        <p><strong data-lang="macro.keyRelationship">关键关系</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.bondYieldRelationship1">债券价格 ↑ = 债券收益率 ↓</li>
+                            <li data-lang="macro.bondYieldRelationship2">债券价格 ↓ = 债券收益率 ↑</li>
+                        </ul>
+                        <p><strong data-lang="macro.howItWorks">如何作用</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.bondYieldEffect1">经济预期：当市场预期未来经济增长（GDP↑）、通胀升温时，会预期央行将加息，从而导致债券价格下跌（收益率上升）。</li>
+                            <li data-lang="macro.bondYieldEffect2">避险情绪：经济前景不佳（GDP↓）或出现危机时，资金涌入国债避险，推高债券价格（收益率下降）。</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="explanation-section mb-4">
-                <h3>3. 进出口额 —— 连接内外的"桥梁"</h3>
-                <p><strong>主要影响因素</strong>：汇率和国内外的需求强弱。</p>
-                <p><strong>传导链条</strong>：</p>
-                <ul>
-                    <li>利率 → 汇率 → 进出口：如上所述，利率↑ → 本币升值 → 本国出口商品变贵、进口商品变便宜 → 出口额↓，进口额↑（可能恶化贸易差额）。</li>
-                    <li>GDP（国内需求） → 进口：本国GDP增长强劲 → 内需旺盛 → 通常会增加对国外商品的需求 → 进口额↑。</li>
-                    <li>国外GDP → 出口：主要贸易伙伴国的GDP增长 → 其需求增加 → 本国出口额↑。</li>
-                </ul>
-            </div>
+                <div class="col-md-6">
+                    <div class="explanation-section bg-light rounded-3 p-4 shadow-sm h-100">
+                        <h3 data-lang="macro.indicator3Title">3. 进出口额 —— 连接内外的"桥梁"</h3>
+                        <p><strong data-lang="macro.mainInfluencingFactors">主要影响因素</strong><span data-lang="macro.importExportFactors">：汇率和国内外的需求强弱。</span></p>
+                        <p><strong data-lang="macro.transmissionChain">传导链条</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.exportImportEffect1">利率 → 汇率 → 进出口：如上所述，利率↑ → 本币升值 → 本国出口商品变贵、进口商品变便宜 → 出口额↓，进口额↑（可能恶化贸易差额）。</li>
+                            <li data-lang="macro.exportImportEffect2">GDP（国内需求） → 进口：本国GDP增长强劲 → 内需旺盛 → 通常会增加对国外商品的需求 → 进口额↑。</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="explanation-section mb-4">
-                <h3>4. GDP —— 最终目标的"记分牌"</h3>
-                <p><strong>定义</strong>：国内生产总值，衡量一个国家最终产出的总和。从支出法看：GDP = 消费 + 投资 + 政府支出 + 净出口（出口 - 进口）。</p>
-                <p><strong>如何作用</strong>：</p>
-                <ul>
-                    <li>它是结果：上述的利率变化通过影响消费、投资、净出口，最终会体现在GDP的增速上。</li>
-                    <li>它是原因：GDP的强弱（经济增长率）反过来又会影响央行政策、失业率和市场预期。</li>
-                    <li>GDP持续强劲增长 → 失业率↓，通胀风险↑ → 央行可能加息。</li>
-                    <li>GDP增长疲软 → 失业率↑，通胀风险↓ → 央行可能降息。</li>
-                </ul>
-            </div>
+                <div class="col-md-6">
+                    <div class="explanation-section bg-light rounded-3 p-4 shadow-sm h-100">
+                        <h3 data-lang="macro.indicator4Title">4. GDP —— 最终目标的"记分牌"</h3>
+                        <p><strong data-lang="macro.definition">定义</strong>：<span data-lang="macro.gdpDefinition">国内生产总值，衡量一个国家最终产出的总和。从支出法看：GDP = 消费 + 投资 + 政府支出 + 净出口（出口 - 进口）。</span></p>
+                        <p><strong data-lang="macro.howItWorks">如何作用</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.gdpEffect1">它是结果：上述的利率变化通过影响消费、投资、净出口，最终会体现在GDP的增速上。</li>
+                            <li data-lang="macro.gdpEffect2">它是原因：GDP的强弱（经济增长率）反过来又会影响央行政策、失业率和市场预期。</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="explanation-section">
-                <h3>5. 失业率 —— 滞后但关键的"民生指标"</h3>
-                <p><strong>定义</strong>：失业人口占劳动人口的比例。</p>
-                <p><strong>关键特性</strong>：滞后指标。经济变差（GDP↓）时，企业不会立即裁员；经济变好（GDP↑）时，企业也不会立即大规模招聘。</p>
-                <p><strong>与其它指标的关系</strong>：</p>
-                <ul>
-                    <li>与GDP：存在奥肯定律的经验关系——GDP增长率高于潜在增长率时，失业率会下降。</li>
-                    <li>与利率/央行政策：失业率是央行（尤其是美联储）实施"双重使命"（物价稳定、充分就业）时重点关注的指标。高失业率通常支持央行维持低利率或降息。</li>
-                </ul>
+                <div class="col-md-12">
+                    <div class="explanation-section bg-light rounded-3 p-4 shadow-sm">
+                        <h3 data-lang="macro.indicator5Title">5. 失业率 —— 滞后但关键的"民生指标"</h3>
+                        <p><strong data-lang="macro.definition">定义</strong>：<span data-lang="macro.unemploymentDefinition">失业人口占劳动人口的比例。</span></p>
+                        <p><strong data-lang="macro.keyCharacteristics">关键特性</strong>：<span data-lang="macro.unemploymentCharacteristics">滞后指标。经济变差（GDP↓）时，企业不会立即裁员；经济变好（GDP↑）时，企业也不会立即大规模招聘。</span></p>
+                        <p><strong data-lang="macro.relationshipsWithOtherIndicators">与其它指标的关系</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.unemploymentRelationship1">与GDP：存在奥肯定律的经验关系——GDP增长率高于潜在增长率时，失业率会下降。</li>
+                            <li data-lang="macro.unemploymentRelationship2">与利率/央行政策：失业率是央行（尤其是美联储）实施"双重使命"（物价稳定、充分就业）时重点关注的指标。高失业率通常支持央行维持低利率或降息。</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- 场景演练区域 -->
         <section class="mb-5">
-            <h2 class="mb-4">综合情景演练</h2>
+            <h2 class="mb-4 text-center" data-lang="macro.scenarioExercise">综合情景演练</h2>
             
-            <div class="scenario-card">
-                <h3 class="scenario-title">情景一：经济过热，通胀高企</h3>
-                <p><strong>起因</strong>：GDP增长过快，失业率很低，通胀持续上升。</p>
-                <p><strong>央行行动</strong>：中央银行加息以抑制总需求。</p>
-                <p><strong>市场传导</strong>：</p>
-                <ul>
-                    <li>市场利率上升 → 债券价格下跌（收益率上升）。</li>
-                    <li>融资成本上升 → 企业投资和居民消费放缓 → GDP增速预期下降。</li>
-                    <li>本币汇率可能升值 → 出口受抑制，进口增加 → 净出口对GDP的贡献可能减少。</li>
-                    <li>总需求降温最终导致通胀压力减轻，失业率可能小幅上升。</li>
-                </ul>
-                <p><strong>最终结果</strong>：经济增速（GDP）回归平稳。</p>
-            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="scenario-card bg-light rounded-3 p-4 shadow-sm h-100">
+                        <h3 class="scenario-title" data-lang="macro.scenario1Title">情景一：经济过热，通胀高企</h3>
+                        <p><strong data-lang="macro.cause">起因</strong>：<span data-lang="macro.scenario1Cause">GDP增长过快，失业率很低，通胀持续上升。</span></p>
+                        <p><strong data-lang="macro.centralBankAction">央行行动</strong>：<span data-lang="macro.scenario1Action">中央银行加息以抑制总需求。</span></p>
+                        <p><strong data-lang="macro.marketTransmission">市场传导</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.scenario1Transmission1">市场利率上升 → 债券价格下跌（收益率上升）。</li>
+                            <li data-lang="macro.scenario1Transmission2">融资成本上升 → 企业投资和居民消费放缓 → GDP增速预期下降。</li>
+                            <li data-lang="macro.scenario1Transmission3">本币汇率可能升值 → 出口受抑制，进口增加 → 净出口对GDP的贡献可能减少。</li>
+                        </ul>
+                        <p><strong data-lang="macro.finalResult">最终结果</strong>：<span data-lang="macro.scenario1Result">经济增速（GDP）回归平稳。</span></p>
+                    </div>
+                </div>
 
-            <div class="scenario-card">
-                <h3 class="scenario-title">情景二：经济衰退，失业率高企</h3>
-                <p><strong>起因</strong>：GDP连续下滑，失业率攀升，通胀低迷。</p>
-                <p><strong>央行行动</strong>：中央银行降息以刺激经济。</p>
-                <p><strong>市场传导</strong>：</p>
-                <ul>
-                    <li>市场利率下降 → 债券价格上涨（收益率下降）。</li>
-                    <li>融资成本降低 → 鼓励投资和消费。</li>
-                    <li>本币汇率可能贬值 → 提升出口竞争力，抑制进口 → 净出口改善。</li>
-                    <li>总需求被刺激，最终促进GDP复苏，失业率逐步下降。</li>
-                </ul>
-                <p><strong>最终结果</strong>：经济走向复苏。</p>
+                <div class="col-md-6">
+                    <div class="scenario-card bg-light rounded-3 p-4 shadow-sm h-100">
+                        <h3 class="scenario-title" data-lang="macro.scenario2Title">情景二：经济衰退，失业率高企</h3>
+                        <p><strong data-lang="macro.cause">起因</strong>：<span data-lang="macro.scenario2Cause">GDP连续下滑，失业率攀升，通胀低迷。</span></p>
+                        <p><strong data-lang="macro.centralBankAction">央行行动</strong>：<span data-lang="macro.scenario2Action">中央银行降息以刺激经济。</span></p>
+                        <p><strong data-lang="macro.marketTransmission">市场传导</strong>：</p>
+                        <ul>
+                            <li data-lang="macro.scenario2Transmission1">市场利率下降 → 债券价格上涨（收益率下降）。</li>
+                            <li data-lang="macro.scenario2Transmission2">融资成本降低 → 鼓励投资和消费。</li>
+                            <li data-lang="macro.scenario2Transmission3">本币汇率可能贬值 → 提升出口竞争力，抑制进口 → 净出口改善。</li>
+                        </ul>
+                        <p><strong data-lang="macro.finalResult">最终结果</strong>：<span data-lang="macro.scenario2Result">经济走向复苏。</span></p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- 重要提醒 -->
         <section class="mb-5">
-            <h2 class="mb-4">重要提醒</h2>
-            <div class="explanation-section">
+            <h2 class="mb-4 text-center" data-lang="macro.importantNotes">重要提醒</h2>
+            <div class="explanation-section bg-light rounded-3 p-4 shadow-sm">
                 <ul>
-                    <li><strong>预期至关重要</strong>：金融市场交易的是"预期"。有时数据尚未变化，但市场已因预期而提前反应（如债券收益率因预期加息而提前上升）。</li>
-                    <li><strong>时滞效应</strong>：政策利率变化传导至实体经济（影响GDP、失业率）通常需要6-18个月的时间。</li>
-                    <li><strong>外部冲击</strong>：战争、疫情、能源危机等外部冲击会同时扰动多个指标，打破传统关联。</li>
-                    <li><strong>因果关系复杂</strong>：这些关系是双向、动态的，并非简单单向。例如，GDP增长本身也会影响利率预期，从而影响债券收益率。</li>
+                    <li data-lang="macro.note1"><strong>预期至关重要</strong>：金融市场交易的是"预期"。有时数据尚未变化，但市场已因预期而提前反应（如债券收益率因预期加息而提前上升）。</li>
+                    <li data-lang="macro.note2"><strong>时滞效应</strong>：政策利率变化传导至实体经济（影响GDP、失业率）通常需要6-18个月的时间。</li>
+                    <li data-lang="macro.note3"><strong>外部冲击</strong>：战争、疫情、能源危机等外部冲击会同时扰动多个指标，打破传统关联。</li>
+                    <li data-lang="macro.note4"><strong>因果关系复杂</strong>：这些关系是双向、动态的，并非简单单向。例如，GDP增长本身也会影响利率预期，从而影响债券收益率。</li>
                 </ul>
-                <p>理解这些指标的关联，是分析宏观经济走势、进行资产配置和制定投资策略的基础。您可以将它们想象成一个精密的生态系统，任何一个部分的变化都会引发连锁反应。</p>
+                <p data-lang="macro.noteConclusion" class="mt-3">理解这些指标的关联，是分析宏观经济走势、进行资产配置和制定投资策略的基础。您可以将它们想象成一个精密的生态系统，任何一个部分的变化都会引发连锁反应。</p>
             </div>
         </section>
     </main>
@@ -437,7 +516,7 @@
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/macro-indicators.js"></script>
+    <script src="js/main.js?v=2"></script>
+    <script src="js/macro-indicators.js?v=2"></script>
 </body>
 </html>

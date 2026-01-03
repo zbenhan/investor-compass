@@ -6,7 +6,8 @@ const translations = {
     },
     nav: {
         home: "首页",
-        test: "开始测试",
+        test: "风格测试",
+        macro: "宏观指标",
         articles: "投资知识"
     },
     language: {
@@ -19,6 +20,7 @@ const translations = {
         heroTitle: "投知罗盘",
         heroSubtitle: "三分钟，挖掘您的投资潜力。",
         startButton: "开始测试",
+        styleTestButton: "投资风格",
         about: "关于我们",
         aboutContent: "投知罗盘是一个专业的投资风格测试平台，通过科学的测试题帮助投资者了解自己的投资偏好和风格，从而制定更合适的投资策略。",
         schools: "投资门派",
@@ -29,7 +31,10 @@ const translations = {
         schoolsMacro: "宏观/周期派",
         schoolsMacroDesc: "基于宏观经济周期和政策环境，配置不同资产类别，把握经济周期转换带来的投资机会。",
         schoolsNarrative: "信息/叙事派",
-        schoolsNarrativeDesc: "关注市场情绪和叙事传播，通过快速捕捉和验证新的投资故事，获取超额收益。"
+        schoolsNarrativeDesc: "关注市场情绪和叙事传播，通过快速捕捉和验证新的投资故事，获取超额收益。",
+        macroIndicators: "宏观经济指标关联关系",
+        macroIndicatorsDesc: "探索利率、失业率、GDP、债券收益率等宏观经济指标之间的复杂联动关系，深入理解经济传导机制。",
+        macroIndicatorsButton: "查看指标关系",
     },
     test: {
         title: "投资风格测试",
@@ -268,5 +273,192 @@ const translations = {
         terms: "服务条款",
         about: "关于网站",
         copyright: "© 2025 投知罗盘 - A-share.com. 保留所有权利."
+    },
+    macro: {
+        title: "宏观经济指标关联关系 - 利率、失业率、GDP、债券收益率联动分析",
+        description: "探索利率、失业率、债券价格/收益率、进出口额和GDP等宏观经济指标之间的复杂联动关系，分析经济传导机制和货币政策影响，帮助投资者理解宏观经济走势和制定投资策略。",
+        mainTitle: "宏观经济指标关联关系",
+        subTitle: "探索利率、失业率、债券价格/收益率、进出口额和GDP等指标之间的复杂联动关系",
+        overview: "核心关系总览",
+        overviewContent1: "利率、失业率、债券价格/收益率、进出口额和GDP等指标之间存在着复杂而紧密的联动关系，构成了宏观经济分析的骨架。我们可以将它们之间的关系梳理成一个动态的网络，核心是 \"经济增长（GDP）\" 和 \"中央银行（通过利率调控）\"。",
+        overviewContent2: "上图展示了各指标间的主要传导机制，下面我们对每个环节进行具体阐释。",
+        network: "指标关系网络",
+        reset: "重置所有指标",
+        legend: {
+            positive: "正相关 (同向变动)",
+            negative: "负相关 (反向变动)"
+        },
+        importantNotes: "重要提醒",
+        note1: "<strong>预期至关重要</strong>：金融市场交易的是\"预期\"。有时数据尚未变化，但市场已因预期而提前反应（如债券收益率因预期加息而提前上升）。",
+        note2: "<strong>时滞效应</strong>：政策利率变化传导至实体经济（影响GDP、失业率）通常需要6-18个月的时间。",
+        note3: "<strong>外部冲击</strong>：战争、疫情、能源危机等外部冲击会同时扰动多个指标，打破传统关联。",
+        note4: "<strong>因果关系复杂</strong>：这些关系是双向、动态的，并非简单单向。例如，GDP增长本身也会影响利率预期，从而影响债券收益率。",
+        noteConclusion: "理解这些指标的关联，是分析宏观经济走势、进行资产配置和制定投资策略的基础。您可以将它们想象成一个精密的生态系统，任何一个部分的变化都会引发连锁反应。",
+        indicators: {
+            interestRate: "利率",
+            gdp: "GDP",
+            unemployment: "失业率",
+            bondYield: "债券收益率",
+            export: "出口",
+            import: "进口"
+        },
+        controlSection: "指标控制",
+        controlDesc: "点击以下指标的\"上涨\"或\"下跌\"按钮，观察指标间的传导路径和详细解释",
+        transmissionTitle: "传导路径和解释",
+        waitingForChange: "等待指标变化...",
+        clickIndicatorToSee: "点击上方指标的\"上涨\"或\"下跌\"按钮，观察指标间的传导路径和详细解释。",
+        indicatorsDetail: "关键指标详解与传导机制",
+        definition: "定义",
+        howItWorks: "如何作用",
+        keyRelationship: "关键关系",
+        mainInfluencingFactors: "主要影响因素",
+        importExportFactors: "：汇率和国内外的需求强弱。",
+        transmissionChain: "传导链条",
+        keyCharacteristics: "关键特性",
+        relationshipsWithOtherIndicators: "与其它指标的关系",
+        indicator1Title: "1. 利率 —— 整个体系的\"指挥棒\"",
+        indicator2Title: "2. 债券价格/收益率 —— 市场的\"温度计\"",
+        indicator3Title: "3. 进出口额 —— 连接内外的\"桥梁\"",
+        indicator4Title: "4. GDP —— 最终目标的\"记分牌\"",
+        indicator5Title: "5. 失业率 —— 滞后但关键的\"民生指标\"",
+        scenarioExercise: "综合情景演练",
+        scenario1Title: "情景一：经济过热，通胀高企",
+        scenario2Title: "情景二：经济衰退，失业率高企",
+        cause: "起因",
+        centralBankAction: "央行行动",
+        marketTransmission: "市场传导",
+        finalResult: "最终结果",
+        // Button texts
+        rise: "上涨",
+        fall: "下跌",
+        // Relationship descriptions
+        interestRateToGdp: "利率↑ → 融资成本↑ → 投资消费↓ → GDP↓",
+        interestRateToGdp_rise: "利率↑ → 融资成本↑ → 投资消费↓ → GDP↓",
+        interestRateToGdp_fall: "利率↓ → 融资成本↓ → 投资消费↑ → GDP↑",
+        
+        interestRateToBondYield: "利率↑ → 债券价格↓ → 债券收益率↑",
+        interestRateToBondYield_rise: "利率↑ → 债券价格↓ → 债券收益率↑",
+        interestRateToBondYield_fall: "利率↓ → 债券价格↑ → 债券收益率↓",
+        
+        interestRateToUnemployment: "利率↑ → 经济活动↓ → 失业率↑",
+        interestRateToUnemployment_rise: "利率↑ → 经济活动↓ → 失业率↑",
+        interestRateToUnemployment_fall: "利率↓ → 经济活动↑ → 失业率↓",
+        
+        interestRateToExport: "利率↑ → 本币升值 → 出口商品价格↑ → 出口↓",
+        interestRateToExport_rise: "利率↑ → 本币升值 → 出口商品价格↑ → 出口↓",
+        interestRateToExport_fall: "利率↓ → 本币贬值 → 出口商品价格↓ → 出口↑",
+        
+        interestRateToImport: "利率↑ → 本币升值 → 进口商品价格↓ → 进口↑",
+        interestRateToImport_rise: "利率↑ → 本币升值 → 进口商品价格↓ → 进口↑",
+        interestRateToImport_fall: "利率↓ → 本币贬值 → 进口商品价格↑ → 进口↓",
+        
+        gdpToInterestRate: "GDP↑ → 通胀压力↑ → 央行加息 → 利率↑",
+        gdpToInterestRate_rise: "GDP↑ → 通胀压力↑ → 央行加息 → 利率↑",
+        gdpToInterestRate_fall: "GDP↓ → 通胀压力↓ → 央行降息 → 利率↓",
+        
+        gdpToUnemployment: "GDP↑ → 经济活动↑ → 就业机会↑ → 失业率↓",
+        gdpToUnemployment_rise: "GDP↑ → 经济活动↑ → 就业机会↑ → 失业率↓",
+        gdpToUnemployment_fall: "GDP↓ → 经济活动↓ → 就业机会↓ → 失业率↑",
+        
+        gdpToBondYield: "GDP↑ → 经济增长预期↑ → 债券收益率↑",
+        gdpToBondYield_rise: "GDP↑ → 经济增长预期↑ → 债券收益率↑",
+        gdpToBondYield_fall: "GDP↓ → 经济增长预期↓ → 债券收益率↓",
+        
+        gdpToImport: "GDP↑ → 国内需求↑ → 进口↑",
+        gdpToImport_rise: "GDP↑ → 国内需求↑ → 进口↑",
+        gdpToImport_fall: "GDP↓ → 国内需求↓ → 进口↓",
+        
+        unemploymentToInterestRate: "失业率↑ → 央行降息 → 利率↓",
+        unemploymentToInterestRate_rise: "失业率↑ → 央行降息 → 利率↓",
+        unemploymentToInterestRate_fall: "失业率↓ → 央行加息 → 利率↑",
+        
+        unemploymentToGdp: "失业率↑ → 消费能力↓ → GDP↓",
+        unemploymentToGdp_rise: "失业率↑ → 消费能力↓ → GDP↓",
+        unemploymentToGdp_fall: "失业率↓ → 消费能力↑ → GDP↑",
+        
+        unemploymentToBondYield: "失业率↑ → 经济衰退预期↑ → 债券收益率↓",
+        unemploymentToBondYield_rise: "失业率↑ → 经济衰退预期↑ → 债券收益率↓",
+        unemploymentToBondYield_fall: "失业率↓ → 经济复苏预期↑ → 债券收益率↑",
+        
+        bondYieldToInterestRate: "债券收益率↑ → 市场利率预期↑ → 央行加息 → 利率↑",
+        bondYieldToInterestRate_rise: "债券收益率↑ → 市场利率预期↑ → 央行加息 → 利率↑",
+        bondYieldToInterestRate_fall: "债券收益率↓ → 市场利率预期↓ → 央行降息 → 利率↓",
+        
+        bondYieldToGdp: "债券收益率↑ → 融资成本↑ → 投资↓ → GDP↓",
+        bondYieldToGdp_rise: "债券收益率↑ → 融资成本↑ → 投资↓ → GDP↓",
+        bondYieldToGdp_fall: "债券收益率↓ → 融资成本↓ → 投资↑ → GDP↑",
+        
+        exportToGdp: "出口↑ → 净出口↑ → GDP↑",
+        exportToGdp_rise: "出口↑ → 净出口↑ → GDP↑",
+        exportToGdp_fall: "出口↓ → 净出口↓ → GDP↓",
+        
+        exportToInterestRate: "出口↑ → 经济增长↑ → 通胀压力↑ → 利率↑",
+        exportToInterestRate_rise: "出口↑ → 经济增长↑ → 通胀压力↑ → 利率↑",
+        exportToInterestRate_fall: "出口↓ → 经济增长↓ → 通胀压力↓ → 利率↓",
+        
+        exportToUnemployment: "出口↑ → 生产扩张↑ → 就业机会↑ → 失业率↓",
+        exportToUnemployment_rise: "出口↑ → 生产扩张↑ → 就业机会↑ → 失业率↓",
+        exportToUnemployment_fall: "出口↓ → 生产收缩 → 就业机会↓ → 失业率↑",
+        
+        importToGdp: "进口↑ → 净出口↓ → GDP↓",
+        importToGdp_rise: "进口↑ → 净出口↓ → GDP↓",
+        importToGdp_fall: "进口↓ → 净出口↑ → GDP↑",
+        
+        importToInterestRate: "进口↑ → 经济压力↑ → 央行降息 → 利率↓",
+        importToInterestRate_rise: "进口↑ → 经济压力↑ → 央行降息 → 利率↓",
+        importToInterestRate_fall: "进口↓ → 经济压力↓ → 央行加息 → 利率↑",
+        
+        importToUnemployment: "进口↑ → 国内产业竞争↑ → 失业率↑",
+        importToUnemployment_rise: "进口↑ → 国内产业竞争↑ → 失业率↑",
+        importToUnemployment_fall: "进口↓ → 国内产业竞争↓ → 失业率↓",
+        
+        gdpToExport: "GDP↑ → 生产能力提升↑ → 出口竞争力↑ → 出口↑",
+        gdpToExport_rise: "GDP↑ → 生产能力提升↑ → 出口竞争力↑ → 出口↑",
+        gdpToExport_fall: "GDP↓ → 生产能力下降 → 出口竞争力↓ → 出口↓",
+        
+        bondYieldToUnemployment: "债券收益率↑ → 企业融资成本↑ → 裁员↑ → 失业率↑",
+        bondYieldToUnemployment_rise: "债券收益率↑ → 企业融资成本↑ → 裁员↑ → 失业率↑",
+        bondYieldToUnemployment_fall: "债券收益率↓ → 企业融资成本↓ → 招聘↑ → 失业率↓",
+        // Transmission explanation texts
+        initialChange: "初始变化",
+        transmissionPaths: "传导路径",
+        level: "级传导",
+        levelFormat: "第{0}级传导",
+        explanationTitleFormat: "{0}{1}的{2}",
+        valueChangeFormat: "{0}{1}",
+        
+        // Indicator detailed content
+        interestRateDefinition: "这里主要指由中央银行设定的政策利率（如美国的联邦基金利率），它是整个金融市场利率的基准。",
+        interestRateEffect1: "影响国内需求：利率↓ → 企业贷款成本↓、个人房贷/消费贷成本↓ → 刺激企业投资和居民消费 → 总需求↑ → GDP↑。",
+        interestRateEffect2: "影响国际资本流动与汇率：本国利率↑ → 吸引海外资本流入以追求更高回报 → 本币需求↑ → 本币汇率升值。反之亦然。",
+        interestRateEffect3: "直接影响债券价格：市场利率与债券价格存在反向关系。利率↑，则已发行债券的固定利息吸引力下降，其价格↓（债券收益率上升）。",
+        bondYieldDefinition: "债券收益率（尤其是长期国债收益率）是市场利率的体现，反映了市场对经济增长、通胀和货币政策的预期。",
+        bondYieldRelationship1: "债券价格 ↑ = 债券收益率 ↓",
+        bondYieldRelationship2: "债券价格 ↓ = 债券收益率 ↑",
+        bondYieldEffect1: "经济预期：当市场预期未来经济增长（GDP↑）、通胀升温时，会预期央行将加息，从而导致债券价格下跌（收益率上升）。",
+        bondYieldEffect2: "避险情绪：经济前景不佳（GDP↓）或出现危机时，资金涌入国债避险，推高债券价格（收益率下降）。",
+        exportImportEffect1: "利率 → 汇率 → 进出口：如上所述，利率↑ → 本币升值 → 本国出口商品变贵、进口商品变便宜 → 出口额↓，进口额↑（可能恶化贸易差额）。",
+        exportImportEffect2: "GDP（国内需求） → 进口：本国GDP增长强劲 → 内需旺盛 → 通常会增加对国外商品的需求 → 进口额↑。",
+        gdpDefinition: "国内生产总值，衡量一个国家最终产出的总和。从支出法看：GDP = 消费 + 投资 + 政府支出 + 净出口（出口 - 进口）。",
+        gdpEffect1: "它是结果：上述的利率变化通过影响消费、投资、净出口，最终会体现在GDP的增速上。",
+        gdpEffect2: "它是原因：GDP的强弱（经济增长率）反过来又会影响央行政策、失业率和市场预期。",
+        unemploymentDefinition: "失业人口占劳动人口的比例。",
+        unemploymentCharacteristics: "滞后指标。经济变差（GDP↓）时，企业不会立即裁员；经济变好（GDP↑）时，企业也不会立即大规模招聘。",
+        unemploymentRelationship1: "与GDP：存在奥肯定律的经验关系——GDP增长率高于潜在增长率时，失业率会下降。",
+        unemploymentRelationship2: "与利率/央行政策：失业率是央行（尤其是美联储）实施\"双重使命\"（物价稳定、充分就业）时重点关注的指标。高失业率通常支持央行维持低利率或降息。",
+        
+        // Scenario content
+        scenario1Cause: "GDP增长过快，失业率很低，通胀持续上升。",
+        scenario1Action: "中央银行加息以抑制总需求。",
+        scenario1Transmission1: "市场利率上升 → 债券价格下跌（收益率上升）。",
+        scenario1Transmission2: "融资成本上升 → 企业投资和居民消费放缓 → GDP增速预期下降。",
+        scenario1Transmission3: "本币汇率可能升值 → 出口受抑制，进口增加 → 净出口对GDP的贡献可能减少。",
+        scenario1Result: "经济增速（GDP）回归平稳。",
+        scenario2Cause: "GDP连续下滑，失业率攀升，通胀低迷。",
+        scenario2Action: "中央银行降息以刺激经济。",
+        scenario2Transmission1: "市场利率下降 → 债券价格上涨（收益率下降）。",
+        scenario2Transmission2: "融资成本降低 → 鼓励投资和消费。",
+        scenario2Transmission3: "本币汇率可能贬值 → 提升出口竞争力，抑制进口 → 净出口改善。",
+        scenario2Result: "经济走向复苏。"
     }
 };
