@@ -190,7 +190,14 @@ const translations = {
         category: "分类",
         recent: "最新文章",
         popular: "热门文章",
-        basic: "基础文章"
+        basic: "基础文章",
+        categories: {
+            macro: "宏观投资",
+            value: "价值投资",
+            technical: "技术分析",
+            narrative: "叙事投资",
+            comparison: "综合比较"
+        }
     },
     terms: {
         title: "服务条款",

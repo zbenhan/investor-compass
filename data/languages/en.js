@@ -190,7 +190,14 @@ const translations = {
         category: "Category",
         recent: "Recent Articles",
         popular: "Popular Articles",
-        basic: "Basic Articles"
+        basic: "Basic Articles",
+        categories: {
+            macro: "Macro Investing",
+            value: "Value Investing",
+            technical: "Technical Analysis",
+            narrative: "Narrative Investing",
+            comparison: "Comparison"
+        }
     },
     terms: {
         title: "Terms of Service",

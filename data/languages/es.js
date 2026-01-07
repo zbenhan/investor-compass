@@ -190,7 +190,14 @@ const translations = {
         category: "Categoría",
         recent: "Artículos Recientes",
         popular: "Artículos Populares",
-        basic: "Artículos Básicos"
+        basic: "Artículos Básicos",
+        categories: {
+            macro: "Inversión macro",
+            value: "Inversión de valor",
+            technical: "Análisis técnico",
+            narrative: "Inversión narrativa",
+            comparison: "Comparación"
+        }
     },
     about: {
         title: "Sobre Nosotros",
