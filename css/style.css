@@ -253,7 +253,6 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
     border-color: var(--color-primary);
 }
@@ -285,7 +284,6 @@ body {
 }
 
 .hover-card:hover {
-    transform: translateY(-8px) !important;
     box-shadow: var(--shadow-xl) !important;
 }
 
