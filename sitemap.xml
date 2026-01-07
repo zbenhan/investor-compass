@@ -493,4 +493,28 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://a-share.top/articles/zh/macro-indicators-analysis.html</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://a-share.top/articles/en/macro-indicators-analysis.html</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://a-share.top/articles/fr/macro-indicators-analysis.html</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://a-share.top/articles/es/macro-indicators-analysis.html</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
