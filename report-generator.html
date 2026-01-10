@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="report.title">调查报告 - 投知罗盘</title>
+    <meta name="description" data-lang="site.description">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css?v=1767798000000">
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>if(typeof LA!=='undefined'){LA.init({id:"3NlvSR2kT1afN6AF",ck:"3NlvSR2kT1afN6AF"})}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1YGJVMJE8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V1YGJVMJE8');
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" data-lang="site.title">投知罗盘</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-lang="nav.home">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="test.html" data-lang="nav.test">风格测试</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="macro-indicators.html" data-lang="nav.macro">宏观指标</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="articles.html" data-lang="nav.articles">投资知识</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="report-generator.html" data-lang="nav.report">调查报告</a>
+                    </li>
+                </ul>
+                <select id="language-selector" class="form-select form-select-xs" style="width: auto;">
+                    <option value="zh" data-lang="language.zh">中文</option>
+                    <option value="en" data-lang="language.en">English</option>
+                    <option value="fr" data-lang="language.fr">Français</option>
+                    <option value="es" data-lang="language.es">Español</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div id="reportManager" class="report-manager">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 data-lang="report.title">调查报告</h1>
+                <div class="d-flex gap-2">
+                    <button id="newReportBtn" class="btn btn-primary" data-lang="report.newReport">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        <span data-lang="report.newReport">新建报告</span>
+                    </button>
+                    <button id="importReportBtn" class="btn btn-secondary" data-lang="report.importReport">
+                        <i class="bi bi-upload me-2"></i>
+                        <span data-lang="report.importReport">导入报告</span>
+                    </button>
+                    <input type="file" id="importFileInput" accept=".json" style="display: none;">
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" id="searchInput" class="form-control" data-placeholder="report.searchPlaceholder">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select id="filterSelect" class="form-select" data-placeholder="report.filterPlaceholder">
+                        <option value="all" data-lang="report.filterAll">全部</option>
+                        <option value="draft" data-lang="report.filterDraft">草稿</option>
+                        <option value="completed" data-lang="report.filterCompleted">已完成</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select id="sortSelect" class="form-select" data-placeholder="report.sortPlaceholder">
+                        <option value="updated" data-lang="report.sortUpdated">按更新时间</option>
+                        <option value="created" data-lang="report.sortCreated">按创建时间</option>
+                        <option value="name" data-lang="report.sortName">按名称</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="reportList" class="row g-4">
+            </div>
+
+            <div id="emptyState" class="text-center py-5" style="display: none;">
+                <i class="bi bi-file-earmark-text fs-1 text-muted mb-3"></i>
+                <h4 class="text-muted mb-3" data-lang="report.emptyState">还没有报告</h4>
+                <p class="text-muted" data-lang="report.emptyStateDesc">点击"新建报告"开始创建您的第一个调查报告</p>
+            </div>
+        </div>
+
+        <div id="reportEditor" class="report-editor" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 id="editorTitle">编辑报告</h1>
+                <div class="d-flex gap-2">
+                    <button id="backToListBtn" class="btn btn-secondary" data-lang="report.backToList">
+                        <i class="bi bi-arrow-left me-2"></i>
+                        <span data-lang="report.backToList">返回列表</span>
+                    </button>
+                    <button id="saveReportBtn" class="btn btn-success" data-lang="report.saveReport">
+                        <i class="bi bi-save me-2"></i>
+                        <span data-lang="report.saveReport">保存报告</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="saveStatus" class="alert alert-info mb-3" style="display: none;">
+                <i class="bi bi-info-circle me-2"></i>
+                <span id="saveStatusText">已保存</span>
+            </div>
+
+            <div class="progress mb-4" style="height: 25px;">
+                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+
+            <div id="stepIndicator" class="d-flex justify-content-center mb-4">
+            </div>
+
+            <div id="formContainer" class="card">
+                <div class="card-body">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button id="prevStepBtn" class="btn btn-secondary" disabled data-lang="report.prevStep">
+                    <i class="bi bi-chevron-left me-2"></i>
+                    <span data-lang="report.prevStep">上一步</span>
+                </button>
+                <button id="nextStepBtn" class="btn btn-primary" data-lang="report.nextStep">
+                    <span data-lang="report.nextStep">下一步</span>
+                    <i class="bi bi-chevron-right ms-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="reportPreview" class="report-preview" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 data-lang="report.preview">报告预览</h1>
+                <div class="d-flex gap-2">
+                    <button id="backToEditorBtn" class="btn btn-secondary" data-lang="report.backToEditor">
+                        <i class="bi bi-pencil me-2"></i>
+                        <span data-lang="report.backToEditor">返回编辑</span>
+                    </button>
+                    <button id="exportPDFBtn" class="btn btn-primary" data-lang="report.exportPDF">
+                        <i class="bi bi-file-pdf me-2"></i>
+                        <span data-lang="report.exportPDF">导出PDF</span>
+                    </button>
+                    <button id="exportWordBtn" class="btn btn-success" data-lang="report.exportWord">
+                        <i class="bi bi-file-word me-2"></i>
+                        <span data-lang="report.exportWord">导出Word</span>
+                    </button>
+                    <button id="exportJSONBtn" class="btn btn-info" data-lang="report.exportJSON">
+                        <i class="bi bi-file-code me-2"></i>
+                        <span data-lang="report.exportJSON">导出JSON</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="previewContent" class="card">
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 data-lang="footer.contact">联系方式</h5>
+                    <p><span data-lang="footer.email">邮箱</span>: zbenhan0123@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-lang="footer.links">友情链接</h5>
+                    <a href="https://valuegu.com" target="_blank">ValueGu.com</a>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-lang="footer.legal">法律声明</h5>
+                    <a href="privacy.html" data-lang="footer.privacy">隐私政策</a> | 
+                    <a href="terms.html" data-lang="footer.terms">服务条款</a> | 
+                    <a href="about.html" data-lang="footer.about">关于网站</a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p data-lang="footer.copyright">&copy; 2025 投知罗盘 - A-share.com. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="data/report-templates.js"></script>
+    <script src="js/report-generator.js"></script>
+</body>
+</html>

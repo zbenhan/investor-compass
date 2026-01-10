@@ -58,17 +58,17 @@ class LanguageManager {
                 console.log(`Language loaded successfully: ${lang}`);
                 
                 // 更新页面内容
-            this.updatePage();
-            
-            // 更新语言选择器的值
-            const selector = document.getElementById('language-selector');
-            if (selector) {
-                selector.value = this.currentLanguage;
-            }
-            
-            // 触发自定义语言变更事件
-            const languageChangedEvent = new Event('languageChanged');
-            window.dispatchEvent(languageChangedEvent);
+                this.updatePage();
+                
+                // 更新语言选择器的值
+                const selector = document.getElementById('language-selector');
+                if (selector) {
+                    selector.value = this.currentLanguage;
+                }
+                
+                // 触发自定义语言变更事件
+                const languageChangedEvent = new Event('languageChanged');
+                window.dispatchEvent(languageChangedEvent);
                 
                 return true;
             } else {
