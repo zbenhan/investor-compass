@@ -146,6 +146,7 @@ html {
 .navbar-nav {
     overflow-x: hidden;
     width: 100%;
+    justify-content: flex-end;
 }
 
 .navbar-collapse {
