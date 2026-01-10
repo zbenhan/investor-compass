@@ -18,6 +18,13 @@ body {
     background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
     background-position: 0 0, 0 0, 0 0, 0 0;
     min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* 跨浏览器颜色一致性修复 */
@@ -84,6 +91,13 @@ body {
     background: white !important;
     border-bottom: 1px solid #e9ecef;
     transition: none;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.navbar .container {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .navbar-brand {
@@ -95,6 +109,10 @@ body {
     background-clip: none;
     -webkit-background-clip: none;
     -webkit-text-fill-color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .navbar-brand:hover {
@@ -106,7 +124,9 @@ body {
     color: #333 !important;
     transition: none;
     position: relative;
-    padding: 8px 15px !important;
+    padding: 8px 10px !important;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -121,6 +141,23 @@ body {
 .nav-link.active {
     color: #495057 !important;
     font-weight: 600;
+}
+
+.navbar-nav {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.navbar-collapse {
+    overflow-x: hidden;
+}
+
+.navbar-collapse.show {
+    overflow-x: hidden;
+}
+
+.navbar-collapse .container {
+    overflow-x: hidden;
 }
 
 /* 语言选择器 */
@@ -786,6 +823,37 @@ footer a {
     .card-body {
         padding: 1.5rem;
     }
+    
+    .nav-link {
+        padding: 8px 8px !important;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .nav-link {
+        padding: 8px 8px !important;
+        font-size: 0.8rem;
+    }
+    
+    .navbar-collapse {
+        display: none !important;
+        overflow-x: hidden;
+    }
+    
+    .navbar-collapse.show {
+        display: block !important;
+        overflow-x: hidden;
+    }
+    
+    .navbar-toggler {
+        display: block !important;
+    }
+    
+    .navbar-nav {
+        overflow-x: hidden;
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -840,12 +908,13 @@ footer a {
     
     /* 导航栏移动端优化 */
     .navbar-brand {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
     
     .nav-link {
-        padding: 10px 15px !important;
-        font-size: 0.95rem;
+        padding: 10px 12px !important;
+        font-size: 0.875rem;
+        white-space: normal;
     }
     
     /* 移动端卡片间距 */
@@ -1373,6 +1442,15 @@ footer a {
     transition: var(--transition-base);
 }
 
+.step-title {
+    font-size: 0.75rem;
+    color: var(--color-gray);
+    text-align: center;
+    transition: var(--transition-base);
+    max-width: 120px;
+    line-height: 1.3;
+}
+
 .step-item.active .step-number {
     background: var(--gradient-primary);
     color: white;
@@ -1384,14 +1462,7 @@ footer a {
     color: white;
 }
 
-.step-label {
-    font-size: 0.875rem;
-    color: var(--color-gray);
-    text-align: center;
-    transition: var(--transition-base);
-}
-
-.step-item.active .step-label {
+.step-item.active .step-title {
     color: var(--color-primary);
     font-weight: 600;
 }
@@ -1732,11 +1803,28 @@ textarea.form-control {
 
     .step-indicator {
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 6px;
     }
-
+    
     .step-indicator::before {
         display: none;
+    }
+    
+    .step-badge {
+        flex: 1 1 auto;
+        min-width: 70px;
+        max-width: 100px;
+    }
+    
+    .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+    
+    .step-title {
+        font-size: 0.65rem;
+        max-width: 100px;
     }
 
     .step-item {

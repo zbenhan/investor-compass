@@ -510,6 +510,8 @@ const translations = {
         sortUpdated: "Trier par mise à jour",
         sortCreated: "Trier par création",
         sortName: "Trier par nom",
+        emptyState: "Aucun rapport",
+        emptyStateDesc: "Cliquez sur \"Nouveau rapport\" pour créer votre premier rapport d'investissement",
         basicInfo: "Informations de base",
         valueAnalysis: "Analyse d'investissement de valeur",
         trendAnalysis: "Analyse d'investissement de tendance",

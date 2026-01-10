@@ -486,6 +486,8 @@ const translations = {
         sortUpdated: "按更新时间",
         sortCreated: "按创建时间",
         sortName: "按名称",
+        emptyState: "还没有报告",
+        emptyStateDesc: "点击\"新建报告\"开始创建您的第一个调查报告",
         basicInfo: "基本信息",
         valueAnalysis: "价值投资分析",
         trendAnalysis: "趋势投资分析",

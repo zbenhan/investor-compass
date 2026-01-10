@@ -485,6 +485,8 @@ const translations = {
         sortUpdated: "Sort by Updated",
         sortCreated: "Sort by Created",
         sortName: "Sort by Name",
+        emptyState: "No reports yet",
+        emptyStateDesc: "Click \"New Report\" to create your first investment report",
         basicInfo: "Basic Information",
         valueAnalysis: "Value Investment Analysis",
         trendAnalysis: "Trend Investment Analysis",

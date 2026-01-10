@@ -248,6 +248,7 @@ class ReportEditor {
     init() {
         this.bindEvents();
         this.updateLanguage();
+        $('#language-selector').show();
         this.showReportManager();
     }
 
@@ -279,8 +280,9 @@ class ReportEditor {
         const lang = this.currentLanguage;
         document.querySelectorAll('[data-lang]').forEach(el => {
             const key = el.getAttribute('data-lang');
-            if (languageManager.translations.report && languageManager.translations.report[key]) {
-                el.textContent = languageManager.translations.report[key];
+            const value = languageManager.getValueByKey(key);
+            if (value) {
+                el.textContent = value;
             }
         });
     }
@@ -289,6 +291,7 @@ class ReportEditor {
         $('#reportManager').show();
         $('#reportEditor').hide();
         $('#reportPreview').hide();
+        $('#language-selector').show();
         this.renderReportList();
     }
 
@@ -296,6 +299,7 @@ class ReportEditor {
         $('#reportManager').hide();
         $('#reportEditor').show();
         $('#reportPreview').hide();
+        $('#language-selector').hide();
         this.renderForm();
     }
 
@@ -303,6 +307,7 @@ class ReportEditor {
         $('#reportManager').hide();
         $('#reportEditor').hide();
         $('#reportPreview').show();
+        $('#language-selector').hide();
         this.renderPreview();
     }
 
@@ -329,7 +334,7 @@ class ReportEditor {
     }
 
     deleteReport(id) {
-        if (confirm(languageManager.translations.report?.deleteConfirm || '确定要删除此报告吗？')) {
+        if (confirm(languageManager.getValueByKey('report.deleteConfirm') || '确定要删除此报告吗？')) {
             this.reportManager.deleteReport(id);
             this.renderReportList();
         }
@@ -379,8 +384,8 @@ class ReportEditor {
         const progress = this.calculateProgress(report);
         const statusClass = report.isDraft ? 'warning' : 'success';
         const statusText = report.isDraft ? 
-            (languageManager.translations.report?.draft || '草稿') : 
-            (languageManager.translations.report?.completed || '已完成');
+            (languageManager.getValueByKey('report.draft') || '草稿') : 
+            (languageManager.getValueByKey('report.completed') || '已完成');
 
         return `
             <div class="col-md-4 mb-4">
@@ -452,10 +457,10 @@ class ReportEditor {
                 formContainer.html(`
                     <div class="text-center py-5">
                         <i class="bi bi-x-circle fs-1 text-muted mb-3"></i>
-                        <h4 class="text-muted mb-3">${languageManager.translations.report?.dimensionNotSelected || '未选择此维度'}</h4>
-                        <p class="text-muted">${languageManager.translations.report?.selectDimensionFirst || '请先在"选择分析维度"步骤中选择此分析维度'}</p>
+                        <h4 class="text-muted mb-3">${languageManager.getValueByKey('report.dimensionNotSelected') || '未选择此维度'}</h4>
+                        <p class="text-muted">${languageManager.getValueByKey('report.selectDimensionFirst') || '请先在"选择分析维度"步骤中选择此分析维度'}</p>
                         <button class="btn btn-primary" onclick="reportEditor.goToStep(1)">
-                            ${languageManager.translations.report?.goToDimensions || '前往维度选择'}
+                            ${languageManager.getValueByKey('report.goToDimensions') || '前往维度选择'}
                         </button>
                     </div>
                 `);
@@ -511,7 +516,7 @@ class ReportEditor {
                     <div class="mb-3">
                         <label class="form-label">${label}</label>
                         <select class="form-select" id="field-${field.id}" ${field.required ? 'required' : ''}>
-                            <option value="">${languageManager.translations.report?.selectOption || '请选择'}</option>
+                            <option value="">${languageManager.getValueByKey('report.selectOption') || '请选择'}</option>
                             ${options}
                         </select>
                     </div>
@@ -598,7 +603,7 @@ class ReportEditor {
                     <div class="mb-3">
                         <label class="form-label">${label}</label>
                         <select class="form-select" id="field-${field.id}">
-                            <option value="">${languageManager.translations.report?.selectOption || '请选择'}</option>
+                            <option value="">${languageManager.getValueByKey('report.selectOption') || '请选择'}</option>
                             ${options}
                         </select>
                     </div>
@@ -692,7 +697,7 @@ class ReportEditor {
 
     nextStep() {
         if (!this.validateStep(this.steps[this.currentStep])) {
-            alert(languageManager.translations.report?.fillRequired || '请填写所有必填项');
+            alert(languageManager.getValueByKey('report.fillRequired') || '请填写所有必填项');
             return;
         }
 
@@ -737,7 +742,8 @@ class ReportEditor {
 
             container.append(`
                 <div class="step-badge mx-1">
-                    <span class="badge bg-${badgeClass}">${stepNumber}. ${title}</span>
+                    <div class="step-number">${stepNumber}</div>
+                    <div class="step-title">${title}</div>
                 </div>
             `);
         });
@@ -756,8 +762,8 @@ class ReportEditor {
         $('#prevStepBtn').prop('disabled', isFirstStep);
         $('#nextStepBtn').text(
             isLastStep ? 
-            (languageManager.translations.report?.preview || '预览') : 
-            (languageManager.translations.report?.nextStep || '下一步')
+            (languageManager.getValueByKey('report.preview') || '预览') : 
+            (languageManager.getValueByKey('report.nextStep') || '下一步')
         );
     }
 
@@ -770,17 +776,17 @@ class ReportEditor {
             <div class="report-header mb-4">
                 <h1>${this.escapeHtml(report.title)}</h1>
                 <div class="report-meta">
-                    <p><strong>${languageManager.translations.report?.companyName || '公司名称'}:</strong> ${this.escapeHtml(report.company.name)}</p>
-                    <p><strong>${languageManager.translations.report?.stockCode || '股票代码'}:</strong> ${this.escapeHtml(report.company.code)}</p>
-                    <p><strong>${languageManager.translations.report?.industry || '行业'}:</strong> ${this.escapeHtml(report.company.industry)}</p>
-                    <p><strong>${languageManager.translations.report?.reportDate || '报告日期'}:</strong> ${new Date(report.sections.basic?.reportDate || report.createdAt).toLocaleDateString()}</p>
+                    <p><strong>${languageManager.getValueByKey('report.companyName') || '公司名称'}:</strong> ${this.escapeHtml(report.company.name)}</p>
+                    <p><strong>${languageManager.getValueByKey('report.stockCode') || '股票代码'}:</strong> ${this.escapeHtml(report.company.code)}</p>
+                    <p><strong>${languageManager.getValueByKey('report.industry') || '行业'}:</strong> ${this.escapeHtml(report.company.industry)}</p>
+                    <p><strong>${languageManager.getValueByKey('report.reportDate') || '报告日期'}:</strong> ${new Date(report.sections.basic?.reportDate || report.createdAt).toLocaleDateString()}</p>
                 </div>
             </div>
         `;
 
         if (report.sections.basic) {
-            html += `<h3 class="mt-4 mb-3">${languageManager.translations.report?.basicInfo || '基本信息'}</h3>`;
-            html += `<p><strong>${languageManager.translations.report?.investmentGoal || '投资目标'}:</strong></p>`;
+            html += `<h3 class="mt-4 mb-3">${languageManager.getValueByKey('report.basicInfo') || '基本信息'}</h3>`;
+            html += `<p><strong>${languageManager.getValueByKey('report.investmentGoal') || '投资目标'}:</strong></p>`;
             html += `<p>${this.escapeHtml(report.sections.basic.investmentGoal || '')}</p>`;
         }
 
@@ -820,23 +826,23 @@ class ReportEditor {
         });
 
         if (report.sections.summary) {
-            html += `<h3 class="mt-4 mb-3">${languageManager.translations.report?.summary || '综合分析'}</h3>`;
+            html += `<h3 class="mt-4 mb-3">${languageManager.getValueByKey('report.summary') || '综合分析'}</h3>`;
             const summary = report.sections.summary;
             
             if (summary.investmentLogic) {
-                html += `<h5 class="mt-3">${languageManager.translations.report?.investmentLogic || '投资逻辑总结'}</h5>`;
+                html += `<h5 class="mt-3">${languageManager.getValueByKey('report.investmentLogic') || '投资逻辑总结'}</h5>`;
                 html += `<p>${this.escapeHtml(summary.investmentLogic)}</p>`;
             }
             if (summary.riskAnalysis) {
-                html += `<h5 class="mt-3">${languageManager.translations.report?.riskAnalysis || '风险分析'}</h5>`;
+                html += `<h5 class="mt-3">${languageManager.getValueByKey('report.riskAnalysis') || '风险分析'}</h5>`;
                 html += `<p>${this.escapeHtml(summary.riskAnalysis)}</p>`;
             }
             if (summary.investmentAdvice) {
-                html += `<h5 class="mt-3">${languageManager.translations.report?.investmentAdvice || '投资建议'}</h5>`;
+                html += `<h5 class="mt-3">${languageManager.getValueByKey('report.investmentAdvice') || '投资建议'}</h5>`;
                 html += `<p>${this.escapeHtml(summary.investmentAdvice)}</p>`;
             }
             if (summary.followUp) {
-                html += `<h5 class="mt-3">${languageManager.translations.report?.followUp || '后续跟踪计划'}</h5>`;
+                html += `<h5 class="mt-3">${languageManager.getValueByKey('report.followUp') || '后续跟踪计划'}</h5>`;
                 html += `<p>${this.escapeHtml(summary.followUp)}</p>`;
             }
         }
@@ -851,7 +857,7 @@ class ReportEditor {
         report.updatedAt = new Date().toISOString();
         
         this.reportManager.saveReports();
-        this.showSaveStatus(languageManager.translations.report?.saveSuccess || '保存成功');
+        this.showSaveStatus(languageManager.getValueByKey('report.saveSuccess') || '保存成功');
     }
 
     startAutoSave() {
@@ -870,7 +876,8 @@ class ReportEditor {
 
     showSaveStatus(message) {
         const statusEl = $('#saveStatus');
-        $('#saveStatusText').text(message);
+        const statusText = message || languageManager.getValueByKey('report.saveSuccess') || '保存成功';
+        $('#saveStatusText').text(statusText);
         statusEl.fadeIn().delay(2000).fadeOut();
     }
 
@@ -898,7 +905,7 @@ class ReportEditor {
                 if (existingIndex === -1) {
                     this.reportManager.reports.unshift(importedReport);
                 } else {
-                    if (confirm(languageManager.translations.report?.overwriteConfirm || '报告已存在，是否覆盖？')) {
+                    if (confirm(languageManager.getValueByKey('report.overwriteConfirm') || '报告已存在，是否覆盖？')) {
                         this.reportManager.reports[existingIndex] = importedReport;
                     }
                 }
@@ -907,11 +914,11 @@ class ReportEditor {
             this.reportManager.saveReports();
             
             this.renderReportList();
-            alert(languageManager.translations.report?.importSuccess || '导入成功');
+            alert(languageManager.getValueByKey('report.importSuccess') || '导入成功');
             event.target.value = '';
         } catch (error) {
             console.error('Import failed:', error);
-            alert(languageManager.translations.report?.importFailed || '导入失败：' + error.message);
+            alert(languageManager.getValueByKey('report.importFailed') || '导入失败：' + error.message);
         }
     }
 

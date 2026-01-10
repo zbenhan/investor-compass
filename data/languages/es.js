@@ -510,6 +510,8 @@ const translations = {
         sortUpdated: "Por fecha de actualización",
         sortCreated: "Por fecha de creación",
         sortName: "Por nombre",
+        emptyState: "Aún no hay informes",
+        emptyStateDesc: "Haga clic en \"Nuevo Informe\" para crear su primer informe de investigación",
         basicInfo: "Información Básica",
         valueAnalysis: "Análisis de Inversión de Valor",
         trendAnalysis: "Análisis de Inversión de Tendencia",
