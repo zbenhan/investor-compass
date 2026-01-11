@@ -2,6 +2,7 @@
 const translations = {
     site: {
         title: "Brújula de Inversión - Prueba de Estilo de Inversión, Análisis de Indicadores Macroeconómicos, Plataforma de Aprendizaje de Conocimientos de Inversión",
+        brand: "Brújula de Inversión",
         description: "Brújula de Inversión es una plataforma profesional de asistencia a la investigación de inversiones que ofrece pruebas de estilo de inversión, análisis de indicadores macroeconómicos, aprendizaje de conocimientos de inversión y herramientas de informes de encuesta. A través de métodos de prueba científicos, ayudamos a los inversores a comprender sus preferencias de inversión, comprender profundamente los mecanismos de transmisión económica y mejorar sus habilidades de toma de decisiones de inversión.",
         keywords: "prueba de estilo de inversión, escuelas de inversión, inversión de valor, análisis técnico, inversión macro, inversión narrativa, conocimientos de inversión, indicadores macroeconómicos, tasas de interés, PIB, desempleo, rendimientos de bonos, estrategia de inversión, análisis bursátil, educación en inversión, metodología de inversión, inversión A-share, inversor de valor, inversión de tendencia, inversión cíclica, brújula de inversión"
     },

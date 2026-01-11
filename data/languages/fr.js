@@ -2,6 +2,7 @@
 const translations = {
     site: {
         title: "Boussole d'Investissement - Test de Style d'Investissement, Analyse des Indicateurs Macroéconomiques, Plateforme d'Apprentissage des Connaissances en Investissement",
+        brand: "Boussole d'Investissement",
         description: "Boussole d'Investissement est une plateforme professionnelle d'assistance à la recherche en investissement, offrant des tests de style d'investissement, l'analyse des indicateurs macroéconomiques, l'apprentissage des connaissances en investissement et des outils de rapport d'enquête. Grâce à des méthodes de test scientifiques, nous aidons les investisseurs à comprendre leurs préférences d'investissement, à approfondir leur compréhension des mécanismes de transmission économique et à améliorer leurs compétences en prise de décision d'investissement.",
         keywords: "test de style d'investissement, écoles d'investissement, investissement de valeur, analyse technique, investissement macro, investissement narratif, connaissances en investissement, indicateurs macroéconomiques, taux d'intérêt, PIB, chômage, rendements des obligations, stratégie d'investissement, analyse boursière, éducation à l'investissement, méthodologie d'investissement, investissement A-share, investisseur de valeur, investissement de tendance, investissement cyclique, boussole d'investissement"
     },

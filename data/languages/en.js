@@ -2,6 +2,7 @@
 const translations = {
     site: {
         title: "Investment Compass - Investment Style Test, Macroeconomic Indicators Analysis, Investment Knowledge Learning Platform",
+        brand: "Investment Compass",
         description: "Investment Compass is a professional investment research assistance platform providing investment style testing, macroeconomic indicators analysis, investment knowledge learning, and survey report tools. Through scientific testing methods, we help investors understand their investment preferences, deeply comprehend economic transmission mechanisms, and improve investment decision-making skills.",
         keywords: "investment style test, investment schools, value investing, technical analysis, macro investing, narrative investing, investment knowledge, macroeconomic indicators, interest rates, GDP, unemployment, bond yields, investment strategy, stock analysis, investment education, investment methodology, A-share investment, value investor, trend investing, cyclical investing, investment compass"
     },
