@@ -109,6 +109,9 @@ class LanguageManager {
             }
         });
         
+        // 更新SEO相关的meta标签
+        this.updateSEOMetaTags();
+        
         // 更新所有带有data-lang属性的元素
         const elementsWithLang = document.querySelectorAll('[data-lang]');
         console.log(`Found ${elementsWithLang.length} elements with data-lang attribute`);
@@ -132,6 +135,67 @@ class LanguageManager {
                 console.log(`No translation found for key: ${langKey}`);
             }
         });
+    }
+
+    updateSEOMetaTags() {
+        const siteData = this.translations.site;
+        if (!siteData) return;
+
+        // 更新keywords meta标签
+        const keywordsMeta = document.querySelector('meta[name="keywords"]');
+        if (keywordsMeta && siteData.keywords) {
+            keywordsMeta.setAttribute('content', siteData.keywords);
+        }
+
+        // 更新description meta标签
+        const descriptionMeta = document.querySelector('meta[name="description"]');
+        if (descriptionMeta && siteData.description) {
+            descriptionMeta.setAttribute('content', siteData.description);
+        }
+
+        // 更新Open Graph标签
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle && siteData.title) {
+            ogTitle.setAttribute('content', siteData.title);
+        }
+
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        if (ogDescription && siteData.description) {
+            ogDescription.setAttribute('content', siteData.description);
+        }
+
+        // 更新Twitter Card标签
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twitterTitle && siteData.title) {
+            twitterTitle.setAttribute('content', siteData.title);
+        }
+
+        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDescription && siteData.description) {
+            twitterDescription.setAttribute('content', siteData.description);
+        }
+
+        // 更新HTML lang属性
+        document.documentElement.setAttribute('lang', this.currentLanguage);
+
+        // 更新language meta标签
+        const languageMeta = document.querySelector('meta[name="language"]');
+        if (languageMeta) {
+            languageMeta.setAttribute('content', this.currentLanguage);
+        }
+
+        // 更新Open Graph locale标签
+        const localeMap = {
+            'zh': 'zh_CN',
+            'en': 'en_US',
+            'fr': 'fr_FR',
+            'es': 'es_ES'
+        };
+
+        const ogLocale = document.querySelector('meta[property="og:locale"]');
+        if (ogLocale) {
+            ogLocale.setAttribute('content', localeMap[this.currentLanguage] || 'zh_CN');
+        }
     }
 
     getValueByKey(key) {

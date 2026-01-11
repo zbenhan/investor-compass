@@ -1,8 +1,9 @@
 // Spanish language file
 const translations = {
     site: {
-        title: "Brújula de Inversión",
-        description: "Pruebe su estilo de inversión para entender a qué escuela de inversión pertenece"
+        title: "Brújula de Inversión - Prueba de Estilo de Inversión, Análisis de Indicadores Macroeconómicos, Plataforma de Aprendizaje de Conocimientos de Inversión",
+        description: "Brújula de Inversión es una plataforma profesional de asistencia a la investigación de inversiones que ofrece pruebas de estilo de inversión, análisis de indicadores macroeconómicos, aprendizaje de conocimientos de inversión y herramientas de informes de encuesta. A través de métodos de prueba científicos, ayudamos a los inversores a comprender sus preferencias de inversión, comprender profundamente los mecanismos de transmisión económica y mejorar sus habilidades de toma de decisiones de inversión.",
+        keywords: "prueba de estilo de inversión, escuelas de inversión, inversión de valor, análisis técnico, inversión macro, inversión narrativa, conocimientos de inversión, indicadores macroeconómicos, tasas de interés, PIB, desempleo, rendimientos de bonos, estrategia de inversión, análisis bursátil, educación en inversión, metodología de inversión, inversión A-share, inversor de valor, inversión de tendencia, inversión cíclica, brújula de inversión"
     },
     nav: {
         home: "Inicio",
@@ -24,6 +25,18 @@ const translations = {
         styleTestButton: "Estilo de inversión",
         about: "Sobre nosotros",
         aboutContent: "Brújula de Inversión es una plataforma profesional de prueba de estilo de inversión que ayuda a los inversores a comprender sus preferencias y estilos de inversión a través de preguntas de prueba científicas, desarrollando así estrategias de inversión más adecuadas.",
+        featuresTitle: "Características del sitio",
+        testDesc: "Comprenda su estilo y preferencias de inversión a través de preguntas de prueba científicas, y desarrolle estrategias de inversión más adecuadas.",
+        testButton: "Comenzar prueba",
+        macroDesc: "Explore las complejas interrelaciones entre tasas de interés, desempleo, PIB y otros indicadores macroeconómicos para comprender en profundidad los mecanismos de transmisión económica.",
+        macroButton: "Ver indicadores",
+        articlesDesc: "Aprenda conocimientos y teorías de inversión profesionales, mejore su cognición de inversión y domine metodologías de inversión científicas.",
+        articlesButton: "Aprender conocimientos",
+        reportDesc: "Ayude a redactar y registrar informes de investigación de empresas cotizadas, gestione sistemáticamente los procesos de investigación de inversión y los resultados de encuestas.",
+        reportButton: "Comenzar a redactar",
+        aboutPara1: "Brújula de Inversión es una plataforma de asistencia a la investigación de inversión profesional dedicada a proporcionar a los inversores herramientas de inversión integrales y apoyo de conocimientos.",
+        aboutPara2: "A través de pruebas de estilo, ayudamos a los inversores a comprender sus preferencias de inversión; a través del análisis de indicadores macro, comprendemos en profundidad las leyes de funcionamiento económico; a través del aprendizaje de conocimientos de inversión, mejoramos la alfabetización profesional; a través de herramientas de informes de encuesta, gestionamos sistemáticamente el proceso de investigación de inversión.",
+        aboutPara3: "Creemos que los métodos de inversión científicos combinados con herramientas de investigación sistemáticas pueden ayudar a los inversores a tomar decisiones más sabias en entornos de mercado complejos.",
         schools: "Escuelas de Inversión",
         schoolsValue: "Escuela de Valor/Fundamental",
         schoolsValueDesc: "Se enfoca en el valor intrínseco de los activos, realiza investigaciones exhaustivas sobre las finanzas de las empresas, los modelos de negocio y las brechas, y mantiene a largo plazo activos de alta calidad.",

@@ -1,8 +1,9 @@
 // English language file
 const translations = {
     site: {
-        title: "Investment Compass",
-        description: "Test your investment style to understand which investment school you belong to"
+        title: "Investment Compass - Investment Style Test, Macroeconomic Indicators Analysis, Investment Knowledge Learning Platform",
+        description: "Investment Compass is a professional investment research assistance platform providing investment style testing, macroeconomic indicators analysis, investment knowledge learning, and survey report tools. Through scientific testing methods, we help investors understand their investment preferences, deeply comprehend economic transmission mechanisms, and improve investment decision-making skills.",
+        keywords: "investment style test, investment schools, value investing, technical analysis, macro investing, narrative investing, investment knowledge, macroeconomic indicators, interest rates, GDP, unemployment, bond yields, investment strategy, stock analysis, investment education, investment methodology, A-share investment, value investor, trend investing, cyclical investing, investment compass"
     },
     language: {
         zh: "中文",
@@ -17,6 +18,18 @@ const translations = {
         styleTestButton: "Investment Style",
         about: "About Us",
         aboutContent: "Investment Compass is a professional investment style testing platform that helps investors understand their investment preferences and styles through scientific test questions, thereby developing more suitable investment strategies.",
+        featuresTitle: "Website Features",
+        testDesc: "Understand your investment style and preferences through scientific test questions, and develop more suitable investment strategies.",
+        testButton: "Start Test",
+        macroDesc: "Explore the complex interrelationships between interest rates, unemployment, GDP, and other macroeconomic indicators to deeply understand economic transmission mechanisms.",
+        macroButton: "View Indicators",
+        articlesDesc: "Learn professional investment knowledge and theories, improve investment cognition, and master scientific investment methodologies.",
+        articlesButton: "Learn Knowledge",
+        reportDesc: "Assist in writing and recording listed company research reports, systematically managing investment research processes and survey results.",
+        reportButton: "Start Writing",
+        aboutPara1: "Investment Compass is a professional investment research assistance platform dedicated to providing investors with comprehensive investment tools and knowledge support.",
+        aboutPara2: "Through style testing, we help investors understand their investment preferences; through macro indicator analysis, we deeply understand economic operation laws; through investment knowledge learning, we improve professional literacy; through survey report tools, we systematically manage the investment research process.",
+        aboutPara3: "We believe that scientific investment methods combined with systematic research tools can help investors make wiser decisions in complex market environments.",
         schools: "Investment Schools",
         schoolsValue: "Value/Fundamental School",
         schoolsValueDesc: "Focusing on the intrinsic value of assets, conducting in-depth research on company finances, business models and moats, and holding high-quality assets for the long term.",

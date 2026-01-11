@@ -1,8 +1,9 @@
 // French language file
 const translations = {
     site: {
-        title: "Boussole d'Investissement",
-        description: "Testez votre style d'investissement pour comprendre à quelle école d'investissement vous appartenez"
+        title: "Boussole d'Investissement - Test de Style d'Investissement, Analyse des Indicateurs Macroéconomiques, Plateforme d'Apprentissage des Connaissances en Investissement",
+        description: "Boussole d'Investissement est une plateforme professionnelle d'assistance à la recherche en investissement, offrant des tests de style d'investissement, l'analyse des indicateurs macroéconomiques, l'apprentissage des connaissances en investissement et des outils de rapport d'enquête. Grâce à des méthodes de test scientifiques, nous aidons les investisseurs à comprendre leurs préférences d'investissement, à approfondir leur compréhension des mécanismes de transmission économique et à améliorer leurs compétences en prise de décision d'investissement.",
+        keywords: "test de style d'investissement, écoles d'investissement, investissement de valeur, analyse technique, investissement macro, investissement narratif, connaissances en investissement, indicateurs macroéconomiques, taux d'intérêt, PIB, chômage, rendements des obligations, stratégie d'investissement, analyse boursière, éducation à l'investissement, méthodologie d'investissement, investissement A-share, investisseur de valeur, investissement de tendance, investissement cyclique, boussole d'investissement"
     },
     language: {
         zh: "中文",
@@ -17,6 +18,18 @@ const translations = {
         styleTestButton: "Style d'investissement",
         about: "À propos de nous",
         aboutContent: "Boussole d'Investissement est une plateforme professionnelle de test de style d'investissement qui aide les investisseurs à comprendre leurs préférences et leurs styles d'investissement grâce à des questions de test scientifiques, développant ainsi des stratégies d'investissement plus appropriées.",
+        featuresTitle: "Fonctionnalités du site",
+        testDesc: "Comprenez votre style et vos préférences d'investissement grâce à des questions de test scientifiques, et développez des stratégies d'investissement plus appropriées.",
+        testButton: "Commencer le test",
+        macroDesc: "Explorez les relations complexes entre les taux d'intérêt, le chômage, le PIB et d'autres indicateurs macroéconomiques pour comprendre en profondeur les mécanismes de transmission économique.",
+        macroButton: "Voir les indicateurs",
+        articlesDesc: "Apprenez des connaissances et des théories d'investissement professionnelles, améliorez votre cognition en matière d'investissement et maîtrisez des méthodologies d'investissement scientifiques.",
+        articlesButton: "Apprendre les connaissances",
+        reportDesc: "Aidez à rédiger et enregistrer des rapports de recherche sur les sociétés cotées, gérez systématiquement les processus de recherche en investissement et les résultats d'enquête.",
+        reportButton: "Commencer à rédiger",
+        aboutPara1: "Boussole d'Investissement est une plateforme d'assistance à la recherche en investissement professionnelle dédiée à fournir aux investisseurs des outils d'investissement complets et un soutien en matière de connaissances.",
+        aboutPara2: "Grâce aux tests de style, nous aidons les investisseurs à comprendre leurs préférences d'investissement ; grâce à l'analyse des indicateurs macro, nous comprenons en profondeur les lois de fonctionnement économique ; grâce à l'apprentissage des connaissances en investissement, nous améliorons la littératie professionnelle ; grâce aux outils de rapport d'enquête, nous gérons systématiquement le processus de recherche en investissement.",
+        aboutPara3: "Nous croyons que les méthodes d'investissement scientifiques combinées à des outils de recherche systématiques peuvent aider les investisseurs à prendre des décisions plus avisées dans des environnements de marché complexes.",
         schools: "Écoles d'investissement",
         schoolsValue: "École de Valeur/Fondamentale",
         schoolsValueDesc: "Se concentrant sur la valeur intrinsèque des actifs, effectuant des recherches approfondies sur les finances des entreprises, les modèles commerciaux et les fossés, et détenant de manière à long terme des actifs de haute qualité.",
