@@ -61,7 +61,7 @@ const reportTemplates = {
             },
             {
                 id: "industry",
-                type: "select",
+                type: "datalist",
                 label: {
                     zh: "行业分类",
                     en: "Industry Classification",
@@ -74,6 +74,12 @@ const reportTemplates = {
                     en: ["Technology", "Finance", "Healthcare", "Consumer", "Manufacturing", "Energy", "Real Estate", "Other"],
                     fr: ["Technologie", "Finance", "Santé", "Consommation", "Fabrication", "Énergie", "Immobilier", "Autre"],
                     es: ["Tecnología", "Finanzas", "Salud", "Consumo", "Manufactura", "Energía", "Bienes Raíces", "Otro"]
+                },
+                placeholder: {
+                    zh: "选择或输入行业分类",
+                    en: "Select or enter industry classification",
+                    fr: "Sélectionner ou entrer la classification de l'industrie",
+                    es: "Seleccionar o ingresar clasificación de industria"
                 }
             },
             {

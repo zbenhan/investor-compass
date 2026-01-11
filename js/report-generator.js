@@ -168,63 +168,347 @@ class ReportManager {
         pdf.save(`${report.title}.pdf`);
     }
 
-    async exportToWord(report) {
-        const doc = new docx.Document({
-            sections: [{
-                properties: {},
+    async exportToWord(report, lang = 'zh') {
+        const children = [];
+
+        children.push(
+            new docx.Paragraph({
                 children: [
+                    new docx.TextRun({
+                        text: report.title || '调查报告',
+                        bold: true,
+                        size: 48
+                    })
+                ],
+                spacing: { after: 400 }
+            })
+        );
+
+        children.push(
+            new docx.Paragraph({
+                children: [
+                    new docx.TextRun({
+                        text: `公司名称: ${report.company.name || ''}`,
+                        size: 24
+                    })
+                ],
+                spacing: { after: 200 }
+            })
+        );
+
+        children.push(
+            new docx.Paragraph({
+                children: [
+                    new docx.TextRun({
+                        text: `股票代码: ${report.company.code || ''}`,
+                        size: 24
+                    })
+                ],
+                spacing: { after: 200 }
+            })
+        );
+
+        children.push(
+            new docx.Paragraph({
+                children: [
+                    new docx.TextRun({
+                        text: `行业: ${report.company.industry || ''}`,
+                        size: 24
+                    })
+                ],
+                spacing: { after: 200 }
+            })
+        );
+
+        const reportDate = report.sections.basic?.reportDate || report.createdAt;
+        children.push(
+            new docx.Paragraph({
+                children: [
+                    new docx.TextRun({
+                        text: `报告日期: ${new Date(reportDate).toLocaleDateString()}`,
+                        size: 20
+                    })
+                ],
+                spacing: { after: 400 }
+            })
+        );
+
+        if (report.sections.basic) {
+            children.push(
+                new docx.Paragraph({
+                    children: [
+                        new docx.TextRun({
+                            text: '基本信息',
+                            bold: true,
+                            size: 32
+                        })
+                    ],
+                    spacing: { after: 300 }
+                })
+            );
+
+            if (report.sections.basic.investmentGoal) {
+                children.push(
                     new docx.Paragraph({
                         children: [
                             new docx.TextRun({
-                                text: report.title,
+                                text: '投资目标:',
                                 bold: true,
-                                size: 32
-                            })
-                        ],
-                        spacing: { after: 400 }
-                    }),
-                    new docx.Paragraph({
-                        children: [
-                            new docx.TextRun({
-                                text: `公司名称: ${report.company.name}`,
                                 size: 24
                             })
                         ],
                         spacing: { after: 200 }
-                    }),
+                    })
+                );
+                children.push(
                     new docx.Paragraph({
                         children: [
                             new docx.TextRun({
-                                text: `股票代码: ${report.company.code}`,
+                                text: report.sections.basic.investmentGoal,
                                 size: 24
-                            })
-                        ],
-                        spacing: { after: 200 }
-                    }),
-                    new docx.Paragraph({
-                        children: [
-                            new docx.TextRun({
-                                text: `行业: ${report.company.industry}`,
-                                size: 24
-                            })
-                        ],
-                        spacing: { after: 200 }
-                    }),
-                    new docx.Paragraph({
-                        children: [
-                            new docx.TextRun({
-                                text: `创建时间: ${new Date(report.createdAt).toLocaleString()}`,
-                                size: 20
                             })
                         ],
                         spacing: { after: 400 }
                     })
-                ]
+                );
+            }
+        }
+
+        const dimensions = ['value', 'trend', 'macro', 'narrative'];
+        dimensions.forEach(dim => {
+            if (report.sections[dim] && Object.keys(report.sections[dim]).length > 0) {
+                const template = reportTemplates[dim];
+                if (template) {
+                    children.push(
+                        new docx.Paragraph({
+                            children: [
+                                new docx.TextRun({
+                                    text: template.title[lang] || template.title.zh,
+                                    bold: true,
+                                    size: 32
+                                })
+                            ],
+                            spacing: { after: 300 }
+                        })
+                    );
+
+                    template.fields.forEach(field => {
+                        const value = report.sections[dim][field.id];
+                        if (value) {
+                            children.push(
+                                new docx.Paragraph({
+                                    children: [
+                                        new docx.TextRun({
+                                            text: field.label[lang] || field.label.zh,
+                                            bold: true,
+                                            size: 24
+                                        })
+                                    ],
+                                    spacing: { after: 200 }
+                                })
+                            );
+
+                            if (field.type === 'table' && Array.isArray(value)) {
+                                const tableRows = [
+                                    new docx.TableRow({
+                                        children: field.columns[lang].map(col => 
+                                            new docx.TableCell({
+                                                children: [
+                                                    new docx.Paragraph({
+                                                        children: [
+                                                            new docx.TextRun({
+                                                                text: col,
+                                                                bold: true,
+                                                                size: 20
+                                                            })
+                                                        ]
+                                                    })
+                                                ],
+                                                shading: { fill: 'E0E0E0' }
+                                            })
+                                        )
+                                    })
+                                ];
+
+                                value.forEach(row => {
+                                    tableRows.push(
+                                        new docx.TableRow({
+                                            children: row.map(cell => 
+                                                new docx.TableCell({
+                                                    children: [
+                                                        new docx.Paragraph({
+                                                            children: [
+                                                                new docx.TextRun({
+                                                                    text: cell || '',
+                                                                    size: 20
+                                                                })
+                                                            ]
+                                                        })
+                                                    ]
+                                                })
+                                            )
+                                        })
+                                    );
+                                });
+
+                                children.push(
+                                    new docx.Table({
+                                        rows: tableRows,
+                                        width: {
+                                            size: 100,
+                                            type: docx.WidthType.PERCENTAGE
+                                        }
+                                    })
+                                );
+                            } else {
+                                children.push(
+                                    new docx.Paragraph({
+                                        children: [
+                                            new docx.TextRun({
+                                                text: value,
+                                                size: 24
+                                            })
+                                        ],
+                                        spacing: { after: 400 }
+                                    })
+                                );
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+        if (report.sections.summary) {
+            children.push(
+                new docx.Paragraph({
+                    children: [
+                        new docx.TextRun({
+                            text: '综合分析',
+                            bold: true,
+                            size: 32
+                        })
+                    ],
+                    spacing: { after: 300 }
+                })
+            );
+
+            const summary = report.sections.summary;
+            
+            if (summary.investmentLogic) {
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: '投资逻辑总结',
+                                bold: true,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: summary.investmentLogic,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 400 }
+                    })
+                );
+            }
+
+            if (summary.riskAnalysis) {
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: '风险分析',
+                                bold: true,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: summary.riskAnalysis,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 400 }
+                    })
+                );
+            }
+
+            if (summary.investmentAdvice) {
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: '投资建议',
+                                bold: true,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: summary.investmentAdvice,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 400 }
+                    })
+                );
+            }
+
+            if (summary.followUp) {
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: '后续跟踪计划',
+                                bold: true,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+                children.push(
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: summary.followUp,
+                                size: 24
+                            })
+                        ],
+                        spacing: { after: 400 }
+                    })
+                );
+            }
+        }
+
+        const doc = new docx.Document({
+            sections: [{
+                properties: {},
+                children: children
             }]
         });
 
         const blob = await docx.Packer.toBlob(doc);
-        saveAs(blob, `${report.title}.docx`);
+        saveAs(blob, `${report.title || '调查报告'}.docx`);
     }
 }
 
@@ -344,6 +628,13 @@ class ReportEditor {
 
     renderReportList() {
         const reports = this.reportManager.getAllReports();
+        
+        reports.forEach(report => {
+            this.updateReportStatus(report);
+        });
+        
+        this.reportManager.saveReports();
+        
         const searchTerm = $('#searchInput').val().toLowerCase();
         const filter = $('#filterSelect').val();
         const sort = $('#sortSelect').val();
@@ -441,6 +732,17 @@ class ReportEditor {
         return Math.round((completedSteps / totalSteps) * 100);
     }
 
+    updateReportStatus(report) {
+        const sections = report.sections;
+        const hasBasic = sections.basic && Object.keys(sections.basic).length > 0;
+        const hasSummary = sections.summary && Object.keys(sections.summary).length > 0;
+        const hasAtLeastOneDimension = ['value', 'trend', 'macro', 'narrative'].some(dim => 
+            sections[dim] && Object.keys(sections[dim]).length > 0
+        );
+
+        report.isDraft = !(hasBasic && hasSummary && hasAtLeastOneDimension);
+    }
+
     renderForm() {
         const step = this.steps[this.currentStep];
         const template = reportTemplates[step];
@@ -521,6 +823,24 @@ class ReportEditor {
                             <option value="">${languageManager.getValueByKey('report.selectOption') || '请选择'}</option>
                             ${options}
                         </select>
+                    </div>
+                `;
+            } else if (field.type === 'datalist') {
+                const options = field.options[lang].map(opt => 
+                    `<option value="${opt}">${opt}</option>`
+                ).join('');
+                html += `
+                    <div class="mb-3">
+                        <label class="form-label">${label}</label>
+                        <input type="text" class="form-control" 
+                               id="field-${field.id}" 
+                               value="${this.escapeHtml(value)}"
+                               placeholder="${field.placeholder[lang] || ''}"
+                               list="datalist-${field.id}"
+                               ${field.required ? 'required' : ''}>
+                        <datalist id="datalist-${field.id}">
+                            ${options}
+                        </datalist>
                     </div>
                 `;
             } else if (field.type === 'date') {
@@ -610,6 +930,23 @@ class ReportEditor {
                         </select>
                     </div>
                 `;
+            } else if (field.type === 'datalist') {
+                const options = field.options[lang].map(opt => 
+                    `<option value="${opt}">${opt}</option>`
+                ).join('');
+                html += `
+                    <div class="mb-3">
+                        <label class="form-label">${label}</label>
+                        <input type="text" class="form-control" 
+                               id="field-${field.id}" 
+                               value="${this.escapeHtml(value)}"
+                               placeholder="${field.placeholder[lang] || ''}"
+                               list="datalist-${field.id}">
+                        <datalist id="datalist-${field.id}">
+                            ${options}
+                        </datalist>
+                    </div>
+                `;
             } else if (field.type === 'table') {
                 html += `
                     <div class="mb-3">
@@ -686,6 +1023,14 @@ class ReportEditor {
         if (!template) return true;
 
         const data = this.collectFormData();
+        
+        if (step === 'dimensions') {
+            if (!data.selected || data.selected.length === 0) {
+                return false;
+            }
+            return true;
+        }
+        
         const requiredFields = template.fields.filter(f => f.required);
         
         for (const field of requiredFields) {
@@ -706,6 +1051,16 @@ class ReportEditor {
         const data = this.collectFormData();
         const report = this.reportManager.currentReport;
         report.sections[this.steps[this.currentStep]] = data;
+        
+        if (this.steps[this.currentStep] === 'basic') {
+            report.title = data.title || report.title;
+            report.company.name = data.companyName || '';
+            report.company.code = data.stockCode || '';
+            report.company.industry = data.industry || '';
+        }
+        
+        this.updateReportStatus(report);
+        this.reportManager.saveReports();
         
         if (this.currentStep < this.steps.length - 1) {
             this.currentStep++;
@@ -858,6 +1213,14 @@ class ReportEditor {
         report.sections[this.steps[this.currentStep]] = data;
         report.updatedAt = new Date().toISOString();
         
+        if (this.steps[this.currentStep] === 'basic') {
+            report.title = data.title || report.title;
+            report.company.name = data.companyName || '';
+            report.company.code = data.stockCode || '';
+            report.company.industry = data.industry || '';
+        }
+        
+        this.updateReportStatus(report);
         this.reportManager.saveReports();
         this.showSaveStatus(languageManager.getValueByKey('report.saveSuccess') || '保存成功');
     }
@@ -934,7 +1297,7 @@ class ReportEditor {
     exportWord() {
         const report = this.reportManager.currentReport;
         if (report) {
-            this.reportManager.exportToWord(report);
+            this.reportManager.exportToWord(report, this.currentLanguage);
         }
     }
 
