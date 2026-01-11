@@ -292,6 +292,7 @@ class ReportEditor {
         $('#reportEditor').hide();
         $('#reportPreview').hide();
         $('#language-selector').show();
+        $('.nav-item-hide-in-editor').show();
         this.renderReportList();
     }
 
@@ -308,6 +309,7 @@ class ReportEditor {
         $('#reportEditor').hide();
         $('#reportPreview').show();
         $('#language-selector').hide();
+        $('.nav-item-hide-in-editor').hide();
         this.renderPreview();
     }
 
