@@ -118,6 +118,24 @@
                         <li>• <span data-lang="privacy.cookie4">您可以通过浏览器设置拒绝或删除Cookie，但请注意这可能会影响网站的功能。</span></li>
                     </ul>
                     
+                    <h2 class="h5 mt-4" data-lang="privacy.cookieConsent">Cookie 同意机制</h2>
+                    <p class="mb-3" data-lang="privacy.cookieConsentIntro">我们使用 Cookie 同意横幅来获得您的明确同意，特别是在欧盟/英国地区。当您首次访问我们的网站时，您会看到一个 Cookie 同意横幅，询问您是否接受 Cookie。</p>
+                    <p class="mb-3" data-lang="privacy.cookieConsentOptions">您可以选择：</p>
+                    <ul class="list-unstyled ml-3 mb-4">
+                        <li>• <span data-lang="privacy.cookieConsentOption1">接受所有 Cookie：允许所有类型的 Cookie，包括必要、分析和广告 Cookie。</span></li>
+                        <li>• <span data-lang="privacy.cookieConsentOption2">拒绝非必要 Cookie：只接受必要的 Cookie，拒绝分析和广告 Cookie。</span></li>
+                    </ul>
+                    <p class="mb-3" data-lang="privacy.cookieConsentDuration">您的选择将被保存 365 天。您可以随时通过清除浏览器 Cookie 或重新访问网站来更改您的选择。</p>
+                    
+                    <h2 class="h5 mt-4" data-lang="privacy.cookieManagement">如何管理 Cookie</h2>
+                    <p class="mb-3" data-lang="privacy.cookieManagementIntro">您可以通过以下方式管理您的 Cookie 偏好：</p>
+                    <ul class="list-unstyled ml-3 mb-4">
+                        <li>• <span data-lang="privacy.cookieManagementStep1">通过浏览器设置：大多数浏览器允许您查看和删除 Cookie。请访问您的浏览器设置页面，查找 Cookie 或隐私设置。</span></li>
+                        <li>• <span data-lang="privacy.cookieManagementStep2">通过 Google 广告设置：访问 https://adssettings.google.com 来管理您的个性化广告偏好。</span></li>
+                        <li>• <span data-lang="privacy.cookieManagementStep3">通过我们的 Cookie 同意横幅：您可以随时点击横幅上的"设置"按钮来更改您的 Cookie 偏好。</span></li>
+                        <li>• <span data-lang="privacy.cookieManagementStep4">清除所有 Cookie：如果您想重新开始，可以清除浏览器中的所有 Cookie，这将使 Cookie 同意横幅重新出现。</span></li>
+                    </ul>
+                    
                     <h2 class="h5 mt-4" data-lang="privacy.section7">7. 隐私政策的变更</h2>
                     <p class="mb-4" data-lang="privacy.changes">我们可能会不时更新本隐私政策，我们将通过网站公告或其他适当方式通知您。</p>
                     
@@ -154,9 +172,29 @@
         </div>
     </footer>
 
+    <!-- Cookie 同意横幅 -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h5 data-lang="cookie.title">我们使用 Cookie</h5>
+                    <p data-lang="cookie.message">我们使用 Cookie 和类似技术来改善您的浏览体验、分析网站流量和展示个性化广告。您可以随时在隐私政策中了解 Cookie 的使用情况。</p>
+                </div>
+                <div class="col-md-2">
+                    <div class="cookie-buttons">
+                        <button id="cookie-accept" class="btn btn-primary" data-lang="cookie.accept">接受所有</button>
+                        <button id="cookie-reject" class="btn btn-outline-light" data-lang="cookie.reject">拒绝非必要</button>
+                        <button id="cookie-settings" class="btn btn-link text-white" data-lang="cookie.settings">设置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
 </body>
 </html>
