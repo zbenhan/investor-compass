@@ -95,7 +95,7 @@ class LanguageManager {
                 }
             } else {
                 // 如果没有data-lang属性，使用默认的site.title
-                document.title = this.translations.site?.title || "投知罗盘";
+                document.title = this.translations.site?.title || "性格罗盘";
             }
         }
         
