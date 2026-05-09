@@ -1,10 +1,10 @@
 // French language file
 const translations = {
     site: {
-        title: "Boussole d'Investissement - Test de Style d'Investissement, Analyse des Indicateurs Macroéconomiques, Plateforme d'Apprentissage des Connaissances en Investissement",
-        brand: "Boussole d'Investissement",
-        description: "Boussole d'Investissement est une plateforme professionnelle d'assistance à la recherche en investissement, offrant des tests de style d'investissement, l'analyse des indicateurs macroéconomiques, l'apprentissage des connaissances en investissement et des outils de rapport d'enquête. Grâce à des méthodes de test scientifiques, nous aidons les investisseurs à comprendre leurs préférences d'investissement, à approfondir leur compréhension des mécanismes de transmission économique et à améliorer leurs compétences en prise de décision d'investissement.",
-        keywords: "test de style d'investissement, écoles d'investissement, investissement de valeur, analyse technique, investissement macro, investissement narratif, connaissances en investissement, indicateurs macroéconomiques, taux d'intérêt, PIB, chômage, rendements des obligations, stratégie d'investissement, analyse boursière, éducation à l'investissement, méthodologie d'investissement, investissement A-share, investisseur de valeur, investissement de tendance, investissement cyclique, boussole d'investissement"
+        title: "Boussole de Personnalité - Test de Personnalité Jungien | Version Complète 200 Questions",
+        brand: "Boussole de Personnalité",
+        description: "Boussole de Personnalité propose un test de personnalité professionnel de 200 questions basé sur la théorie des types psychologiques de Jung, vous aidant à comprendre votre type de personnalité (E/I, S/N, T/F, J/P) et à révéler votre archétype de personnalité.",
+        keywords: "test de personnalité, test jungien, MBTI, type de personnalité, test psychologique, EI, SN, TF, JP, Boussole de Personnalité"
     },
     language: {
         zh: "中文",
@@ -542,10 +542,10 @@ const translations = {
     },
     nav: {
         home: "Accueil",
-        test: "Test de style",
-        macro: "Indicateurs macroéconomiques",
-        articles: "Connaissances sur les investissements",
-        report: "Rapport d'investissement"
+        test: "Test de Personnalité",
+        macro: "Connaissances de Personnalité",
+        articles: "Connaissances de Personnalité",
+        report: "À Propos"
     },
     cookie: {
         title: "Nous utilisons des cookies",

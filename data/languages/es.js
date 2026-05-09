@@ -1,17 +1,17 @@
 // Spanish language file
 const translations = {
     site: {
-        title: "Brújula de Inversión - Prueba de Estilo de Inversión, Análisis de Indicadores Macroeconómicos, Plataforma de Aprendizaje de Conocimientos de Inversión",
-        brand: "Brújula de Inversión",
-        description: "Brújula de Inversión es una plataforma profesional de asistencia a la investigación de inversiones que ofrece pruebas de estilo de inversión, análisis de indicadores macroeconómicos, aprendizaje de conocimientos de inversión y herramientas de informes de encuesta. A través de métodos de prueba científicos, ayudamos a los inversores a comprender sus preferencias de inversión, comprender profundamente los mecanismos de transmisión económica y mejorar sus habilidades de toma de decisiones de inversión.",
-        keywords: "prueba de estilo de inversión, escuelas de inversión, inversión de valor, análisis técnico, inversión macro, inversión narrativa, conocimientos de inversión, indicadores macroeconómicos, tasas de interés, PIB, desempleo, rendimientos de bonos, estrategia de inversión, análisis bursátil, educación en inversión, metodología de inversión, inversión A-share, inversor de valor, inversión de tendencia, inversión cíclica, brújula de inversión"
+        title: "Brújula de Personalidad - Test de Personalidad Junguiano | Versión Completa de 200 Preguntas",
+        brand: "Brújula de Personalidad",
+        description: "Brújula de Personalidad ofrece un test de personalidad profesional de 200 preguntas basado en la teoría de tipos psicológicos de Jung, ayudándote a comprender tu tipo de personalidad (E/I, S/N, T/F, J/P) y revelar tu arquetipo de personalidad.",
+        keywords: "test de personalidad, test junguiano, MBTI, tipo de personalidad, test psicológico, EI, SN, TF, JP, Brújula de Personalidad"
     },
     nav: {
         home: "Inicio",
-        test: "Prueba de estilo",
-        macro: "Indicadores Macroeconómicos",
-        articles: "Conocimiento de Inversión",
-        report: "Informe de Investigación"
+        test: "Test de Personalidad",
+        macro: "Conocimiento de Personalidad",
+        articles: "Conocimiento de Personalidad",
+        report: "Sobre Nosotros"
     },
     cookie: {
         title: "Usamos cookies",
