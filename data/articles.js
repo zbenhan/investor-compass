@@ -1,223 +1,279 @@
 module.exports = [
   {
-    id: 'fisher-growth-stock-investing',
-    slug: 'fisher-growth-stock-investing',
-    publishDate: '2026-01-13',
+    id: 'jung-personality-types-introduction',
+    slug: 'jung-personality-types-introduction',
+    publishDate: '2026-05-10',
     author: '',
-    categories: ['value-investing'],
+    categories: ['personality'],
     isBasic: true,
     seo: {
       zh: {
-        title: '费雪的成长股投资方法 - 投知罗盘',
-        description: '菲利普·费雪如何将价值投资与成长股投资结合,提出"闲聊法"和15个投资原则,帮助投资者识别优质成长型企业。',
-        keywords: '费雪, 成长股, 闲聊法, 15个原则, 价值投资, 成长股投资'
+        title: '荣格性格类型简介：了解MBTI的基础 - 投知罗盘',
+        description: '探索荣格性格类型理论的核心概念，了解心理类型的基本框架，为深入理解MBTI性格测试奠定基础。',
+        keywords: '荣格, 性格类型, MBTI, 心理类型, 人格理论, 性格测试'
       },
       en: {
-        title: 'Philip Fisher\'s Growth Stock Investment Method - Investment Compass',
-        description: 'How Philip Fisher combines value investing with growth stock investing, proposing "Scuttlebutt" method and 15 investment principles to help investors identify high-quality growth companies.',
-        keywords: 'Fisher, Growth Stocks, Scuttlebutt, 15 Principles, Value Investing, Growth Stock Investing'
+        title: 'Introduction to Jung Personality Types: Understanding MBTI Foundation - Investment Compass',
+        description: 'Explore the core concepts of Jung\'s personality type theory and understand the basic framework of psychological types.',
+        keywords: 'Jung, Personality Types, MBTI, Psychological Types, Personality Theory, Personality Test'
       },
       fr: {
-        title: 'Méthode d\'Investissement en Actions de Croissance de Fisher - Boussole d\'Investissement',
-        description: 'Comment Philip Fisher combine l\'investissement de valeur avec l\'investissement en actions de croissance, proposant la méthode "Scuttlebutt" et 15 principes d\'investissement.',
-        keywords: 'Fisher, Actions de Croissance, Scuttlebutt, 15 Principes, Investissement de Valeur'
+        title: 'Introduction aux Types de Personnalité de Jung - Boussole d\'Investissement',
+        description: 'Explorez les concepts fondamentaux de la théorie des types de personnalité de Jung et comprenez le cadre de base des types psychologiques.',
+        keywords: 'Jung, Types de Personnalité, MBTI, Types Psychologiques, Théorie de la Personnalité'
       },
       es: {
-        title: 'Método de Inversión en Acciones de Crecimiento de Fisher - Brújula de Inversión',
-        description: 'Cómo Philip Fisher combina la inversión de valor con la inversión en acciones de crecimiento, proponiendo el método "Scuttlebutt" y 15 principios de inversión.',
-        keywords: 'Fisher, Acciones de Crecimiento, Scuttlebutt, 15 Principios, Inversión de Valor'
+        title: 'Introducción a los Tipos de Personalidad de Jung - Brújula de Inversión',
+        description: 'Explore los conceptos centrales de la teoría de tipos de personalidad de Jung y comprenda el marco básico de los tipos psicológicos.',
+        keywords: 'Jung, Tipos de Personalidad, MBTI, Tipos Psicológicos, Teoría de la Personalidad'
       }
     },
     content: {
       zh: {
-        title: '费雪的成长股投资方法',
-        summary: '菲利普·费雪如何将价值投资与成长股投资结合,提出"闲聊法"和15个投资原则,帮助投资者识别优质成长型企业。',
+        title: '荣格性格类型简介：了解MBTI的基础',
+        summary: '探索荣格性格类型理论的核心概念，了解心理类型的基本框架，为深入理解MBTI性格测试奠定基础。',
         author: '',
         body: ''
       },
       en: {
-        title: 'Philip Fisher\'s Growth Stock Investment Method',
-        summary: 'How Philip Fisher combines value investing with growth stock investing, proposing "Scuttlebutt" method and 15 investment principles to help investors identify high-quality growth companies.',
+        title: 'Introduction to Jung Personality Types: Understanding MBTI Foundation',
+        summary: 'Explore the core concepts of Jung\'s personality type theory and understand the basic framework of psychological types.',
         author: '',
         body: ''
       },
       fr: {
-        title: 'Méthode d\'Investissement en Actions de Croissance de Fisher',
-        summary: 'Comment Philip Fisher combine l\'investissement de valeur avec l\'investissement en actions de croissance, proposant la méthode "Scuttlebutt" et 15 principes d\'investissement.',
+        title: 'Introduction aux Types de Personnalité de Jung',
+        summary: 'Explorez les concepts fondamentaux de la théorie des types de personnalité de Jung et comprenez le cadre de base des types psychologiques.',
         author: '',
         body: ''
       },
       es: {
-        title: 'Método de Inversión en Acciones de Crecimiento de Fisher',
-        summary: 'Cómo Philip Fisher combina la inversión de valor con la inversión en acciones de crecimiento, proponiendo el método "Scuttlebutt" y 15 principios de inversión.',
+        title: 'Introducción a los Tipos de Personalidad de Jung',
+        summary: 'Explore los conceptos centrales de la teoría de tipos de personalidad de Jung y comprenda el marco básico de los tipos psicológicos.',
         author: '',
         body: ''
       }
     }
   },
   {
-    id: 'dcf-cash-flow-discount-model',
-    slug: 'dcf-cash-flow-discount-model',
-    publishDate: '2026-01-13',
+    id: 'four-psychological-functions',
+    slug: 'four-psychological-functions',
+    publishDate: '2026-05-10',
     author: '',
-    categories: ['value-investing'],
+    categories: ['personality'],
     isBasic: true,
     seo: {
       zh: {
-        title: 'DCF现金流折现模型详解 - 投知罗盘',
-        description: '详细讲解DCF模型的构建方法、参数设定、敏感性分析,以及实际应用中的注意事项,帮助投资者掌握企业估值的核心方法。',
-        keywords: 'DCF, 现金流折现, 估值模型, WACC, 企业估值, 财务分析'
+        title: '四大心理功能：思考、情感、感觉、直觉 - 投知罗盘',
+        description: '深入解析荣格提出的四种基本心理功能：思考、情感、感觉、直觉，了解它们如何塑造我们的认知方式和决策过程。',
+        keywords: '荣格, 四大心理功能, 思考, 情感, 感觉, 直觉, 认知方式'
       },
       en: {
-        title: 'DCF Cash Flow Discount Model Explained - Investment Compass',
-        description: 'Detailed explanation of DCF model construction, parameter setting, sensitivity analysis, and practical application considerations, helping investors master core methods of company valuation.',
-        keywords: 'DCF, Cash Flow Discount, Valuation Model, WACC, Company Valuation, Financial Analysis'
+        title: 'Four Psychological Functions: Thinking, Feeling, Sensing, Intuition - Investment Compass',
+        description: 'Deep analysis of Jung\'s four basic psychological functions: thinking, feeling, sensing, and intuition, and how they shape our cognition and decision-making.',
+        keywords: 'Jung, Four Psychological Functions, Thinking, Feeling, Sensing, Intuition, Cognition'
       },
       fr: {
-        title: 'Modèle DCF Expliqué - Boussole d\'Investissement',
-        description: 'Explication détaillée de la construction du modèle DCF, du paramétrage, de l\'analyse de sensibilité et des considérations d\'application pratique.',
-        keywords: 'DCF, Actualisation des Flux de Trésorerie, Modèle d\'Évaluation, WACC'
+        title: 'Les Quatre Fonctions Psychologiques - Boussole d\'Investissement',
+        description: 'Analyse approfondie des quatre fonctions psychologiques fondamentales de Jung : pensée, sentiment, sensation et intuition.',
+        keywords: 'Jung, Quatre Fonctions Psychologiques, Pensée, Sentiment, Sensation, Intuition'
       },
       es: {
-        title: 'Modelo DCF Explicado - Brújula de Inversión',
-        description: 'Explicación detallada de la construcción del modelo DCF, el parametrización, el análisis de sensibilidad y las consideraciones de aplicación práctica.',
-        keywords: 'DCF, Descuento de Flujo de Caja, Modelo de Valoración, WACC'
+        title: 'Las Cuatro Funciones Psicológicas - Brújula de Inversión',
+        description: 'Análisis profundo de las cuatro funciones psicológicas básicas de Jung: pensamiento, sentimiento, sensación e intuición.',
+        keywords: 'Jung, Cuatro Funciones Psicológicas, Pensamiento, Sentimiento, Sensación, Intuición'
       }
     },
     content: {
       zh: {
-        title: 'DCF现金流折现模型详解',
-        summary: '详细讲解DCF模型的构建方法、参数设定、敏感性分析,以及实际应用中的注意事项,帮助投资者掌握企业估值的核心方法。',
+        title: '四大心理功能：思考、情感、感觉、直觉',
+        summary: '深入解析荣格提出的四种基本心理功能：思考、情感、感觉、直觉，了解它们如何塑造我们的认知方式和决策过程。',
         author: '',
         body: ''
       },
       en: {
-        title: 'DCF Cash Flow Discount Model Explained',
-        summary: 'Detailed explanation of DCF model construction, parameter setting, sensitivity analysis, and practical application considerations, helping investors master core methods of company valuation.',
+        title: 'Four Psychological Functions: Thinking, Feeling, Sensing, Intuition',
+        summary: 'Deep analysis of Jung\'s four basic psychological functions: thinking, feeling, sensing, and intuition, and how they shape our cognition and decision-making.',
         author: '',
         body: ''
       },
       fr: {
-        title: 'Modèle DCF Expliqué',
-        summary: 'Explication détaillée de la construction du modèle DCF, du paramétrage, de l\'analyse de sensibilité et des considérations d\'application pratique.',
+        title: 'Les Quatre Fonctions Psychologiques',
+        summary: 'Analyse approfondie des quatre fonctions psychologiques fondamentales de Jung : pensée, sentiment, sensation et intuition.',
         author: '',
         body: ''
       },
       es: {
-        title: 'Modelo DCF Explicado',
-        summary: 'Explicación detallada de la construcción del modelo DCF, el parametrización, el análisis de sensibilidad y las consideraciones de aplicación práctica.',
+        title: 'Las Cuatro Funciones Psicológicas',
+        summary: 'Análisis profundo de las cuatro funciones psicológicas básicas de Jung: pensamiento, sentimiento, sensación e intuición.',
         author: '',
         body: ''
       }
     }
   },
   {
-    id: 'pe-pb-ps-peg-valuation-metrics',
-    slug: 'pe-pb-ps-peg-valuation-metrics',
-    publishDate: '2026-01-13',
+    id: 'extraversion-introversion',
+    slug: 'extraversion-introversion',
+    publishDate: '2026-05-10',
     author: '',
-    categories: ['value-investing'],
+    categories: ['personality'],
     isBasic: true,
     seo: {
       zh: {
-        title: 'PE/PB/PS/PEG估值指标应用 - 投知罗盘',
-        description: '深入分析PE、PB、PS、PEG四大常用估值指标的计算方法、适用场景、局限性,以及如何综合使用这些指标进行投资决策。',
-        keywords: 'PE, PB, PS, PEG, 估值指标, 市盈率, 市净率, 市销率, 投资分析'
+        title: '内外向人格：能量指向与心理定位 - 投知罗盘',
+        description: '详解荣格理论中最具影响力的概念之一：内外向性格，了解能量指向如何影响我们的行为模式和人际交往方式。',
+        keywords: '荣格, 内外向, 外向, 内向, 能量指向, 性格类型'
       },
       en: {
-        title: 'PE/PB/PS/PEG Valuation Metrics Application - Investment Compass',
-        description: 'In-depth analysis of PE, PB, PS, PEG valuation metrics calculation methods, applicable scenarios, limitations, and how to comprehensively use these metrics for investment decisions.',
-        keywords: 'PE, PB, PS, PEG, Valuation Metrics, P/E Ratio, P/B Ratio, P/S Ratio, Investment Analysis'
+        title: 'Extraversion and Introversion: Energy Direction - Investment Compass',
+        description: 'Detailed explanation of one of Jung\'s most influential concepts: extraversion and introversion, and how energy direction affects our behavior.',
+        keywords: 'Jung, Extraversion, Introversion, Energy Direction, Personality Types, Behavior Patterns'
       },
       fr: {
-        title: 'Métriques d\'Évaluation PE/PB/PS/PEG - Boussole d\'Investissement',
-        description: 'Analyse approfondie des méthodes de calcul, scenarios applicables et limitations des métriques d\'évaluation PE, PB, PS, PEG.',
-        keywords: 'PE, PB, PS, PEG, Métriques d\'Évaluation, Ratio P/E, Ratio P/B'
+        title: 'Extraversion et Introversion - Boussole d\'Investissement',
+        description: 'Explication détaillée de l\'un des concepts les plus influents de Jung : l\'extraversion et l\'introversion.',
+        keywords: 'Jung, Extraversion, Introversion, Direction de l\'Énergie, Types de Personnalité'
       },
       es: {
-        title: 'Métricas de Valoración PE/PB/PS/PEG - Brújula de Inversión',
-        description: 'Análisis profundo de los métodos de cálculo, escenarios aplicables y limitaciones de las métricas de valoración PE, PB, PS, PEG.',
-        keywords: 'PE, PB, PS, PEG, Métricas de Valoración, Ratio P/E, Ratio P/B'
+        title: 'Extraversión e Introversión - Brújula de Inversión',
+        description: 'Explicación detallada de uno de los conceptos más influyentes de Jung: la extraversión e introversión.',
+        keywords: 'Jung, Extraversión, Introversión, Dirección de la Energía, Tipos de Personalidad'
       }
     },
     content: {
       zh: {
-        title: 'PE/PB/PS/PEG估值指标应用',
-        summary: '深入分析PE、PB、PS、PEG四大常用估值指标的计算方法、适用场景、局限性,以及如何综合使用这些指标进行投资决策。',
+        title: '内外向人格：能量指向与心理定位',
+        summary: '详解荣格理论中最具影响力的概念之一：内外向性格，了解能量指向如何影响我们的行为模式和人际交往方式。',
         author: '',
         body: ''
       },
       en: {
-        title: 'PE/PB/PS/PEG Valuation Metrics Application',
-        summary: 'In-depth analysis of PE, PB, PS, PEG valuation metrics calculation methods, applicable scenarios, limitations, and how to comprehensively use these metrics for investment decisions.',
+        title: 'Extraversion and Introversion: Energy Direction',
+        summary: 'Detailed explanation of one of Jung\'s most influential concepts: extraversion and introversion, and how energy direction affects our behavior.',
         author: '',
         body: ''
       },
       fr: {
-        title: 'Métriques d\'Évaluation PE/PB/PS/PEG',
-        summary: 'Analyse approfondie des méthodes de calcul, scenarios applicables et limitations des métriques d\'évaluation PE, PB, PS, PEG.',
+        title: 'Extraversion et Introversion',
+        summary: 'Explication détaillée de l\'un des concepts les plus influents de Jung : l\'extraversion et l\'introversion.',
         author: '',
         body: ''
       },
       es: {
-        title: 'Métricas de Valoración PE/PB/PS/PEG',
-        summary: 'Análisis profundo de los métodos de cálculo, escenarios aplicables y limitaciones de las métricas de valoración PE, PB, PS, PEG.',
+        title: 'Extraversión e Introversión',
+        summary: 'Explicación detallada de uno de los conceptos más influyentes de Jung: la extraversión e introversión.',
         author: '',
         body: ''
       }
     }
   },
   {
-    id: 'roe-roic-profitability-metrics',
-    slug: 'roe-roic-profitability-metrics',
-    publishDate: '2026-01-13',
+    id: '16-personality-types-mbti',
+    slug: '16-personality-types-mbti',
+    publishDate: '2026-05-10',
     author: '',
-    categories: ['value-investing'],
+    categories: ['personality'],
     isBasic: true,
     seo: {
       zh: {
-        title: 'ROE/ROIC等盈利能力指标分析 - 投知罗盘',
-        description: '讲解ROE、ROIC、ROA等盈利能力指标的含义、计算方法,以及如何评估企业的盈利质量,帮助投资者全面了解企业盈利能力。',
-        keywords: 'ROE, ROIC, ROA, 盈利能力, 杜邦分析, 财务指标, 投资分析'
+        title: '16种人格类型：MBTI的诞生与应用 - 投知罗盘',
+        description: '从荣格理论到MBTI量表的发展历程，解析十六种人格类型的分类体系及其在职业发展、人际交往中的实际应用。',
+        keywords: 'MBTI, 16种人格, 性格分类, 人格类型, 职业发展, 人际交往'
       },
       en: {
-        title: 'ROE/ROIC Profitability Metrics Analysis - Investment Compass',
-        description: 'Explanation of ROE, ROIC, ROA profitability metrics meanings, calculation methods, and how to assess company earnings quality, helping investors fully understand company profitability.',
-        keywords: 'ROE, ROIC, ROA, Profitability, DuPont Analysis, Financial Metrics, Investment Analysis'
+        title: '16 Personality Types: The Birth and Application of MBTI - Investment Compass',
+        description: 'From Jung\'s theory to MBTI development, analyzing the classification system of sixteen personality types and their applications.',
+        keywords: 'MBTI, 16 Personality Types, Personality Classification, Career Development, Interpersonal Communication'
       },
       fr: {
-        title: 'Analyse des Métriques de Rentabilité ROE/ROIC - Boussole d\'Investissement',
-        description: 'Explication des significations, méthodes de calcul des métriques de rentabilité ROE, ROIC, ROA et comment évaluer la qualité des bénéfices.',
-        keywords: 'ROE, ROIC, ROA, Rentabilité, Analyse DuPont, Métriques Financières'
+        title: '16 Types de Personnalité - Boussole d\'Investissement',
+        description: 'De la théorie de Jung au développement du MBTI, analysant le système de classification des seize types de personnalité.',
+        keywords: 'MBTI, 16 Types de Personnalité, Classification de la Personnalité, Développement de Carrière'
       },
       es: {
-        title: 'Análisis de Métricas de Rentabilidad ROE/ROIC - Brújula de Inversión',
-        description: 'Explicación de los significados, métodos de cálculo de las métricas de rentabilidad ROE, ROIC, ROA y cómo evaluar la calidad de los beneficios.',
-        keywords: 'ROE, ROIC, ROA, Rentabilidad, Análisis DuPont, Métricas Financieras'
+        title: '16 Tipos de Personalidad - Brújula de Inversión',
+        description: 'Desde la teoría de Jung hasta el desarrollo del MBTI, analizando el sistema de clasificación de dieciséis tipos de personalidad.',
+        keywords: 'MBTI, 16 Tipos de Personalidad, Clasificación de Personalidad, Desarrollo Profesional'
       }
     },
     content: {
       zh: {
-        title: 'ROE/ROIC等盈利能力指标分析',
-        summary: '讲解ROE、ROIC、ROA等盈利能力指标的含义、计算方法,以及如何评估企业的盈利质量,帮助投资者全面了解企业盈利能力。',
+        title: '16种人格类型：MBTI的诞生与应用',
+        summary: '从荣格理论到MBTI量表的发展历程，解析十六种人格类型的分类体系及其在职业发展、人际交往中的实际应用。',
         author: '',
         body: ''
       },
       en: {
-        title: 'ROE/ROIC Profitability Metrics Analysis',
-        summary: 'Explanation of ROE, ROIC, ROA profitability metrics meanings, calculation methods, and how to assess company earnings quality, helping investors fully understand company profitability.',
+        title: '16 Personality Types: The Birth and Application of MBTI',
+        summary: 'From Jung\'s theory to MBTI development, analyzing the classification system of sixteen personality types and their applications.',
         author: '',
         body: ''
       },
       fr: {
-        title: 'Analyse des Métriques de Rentabilité ROE/ROIC',
-        summary: 'Explication des significations, méthodes de calcul des métriques de rentabilité ROE, ROIC, ROA et comment évaluer la qualité des bénéfices.',
+        title: '16 Types de Personnalité',
+        summary: 'De la théorie de Jung au développement du MBTI, analysant le système de classification des seize types de personnalité.',
         author: '',
         body: ''
       },
       es: {
-        title: 'Análisis de Métricas de Rentabilidad ROE/ROIC',
-        summary: 'Explicación de los significados, métodos de cálculo de las métricas de rentabilidad ROE, ROIC, ROA y cómo evaluar la calidad de los beneficios.',
+        title: '16 Tipos de Personalidad',
+        summary: 'Desde la teoría de Jung hasta el desarrollo del MBTI, analizando el sistema de clasificación de dieciséis tipos de personalidad.',
+        author: '',
+        body: ''
+      }
+    }
+  },
+  {
+    id: 'jung-personality-theory-applications',
+    slug: 'jung-personality-theory-applications',
+    publishDate: '2026-05-10',
+    author: '',
+    categories: ['personality'],
+    isBasic: true,
+    seo: {
+      zh: {
+        title: '荣格性格理论在实际生活和工作中的应用 - 投知罗盘',
+        description: '探讨荣格性格理论如何帮助我们理解自我、改善人际关系、优化职业选择，以及在团队建设和领导力发展中的应用。',
+        keywords: '荣格, 性格应用, 自我认知, 人际关系, 职业选择, 团队建设, 领导力'
+      },
+      en: {
+        title: 'Application of Jung Personality Theory in Real Life - Investment Compass',
+        description: 'Exploring how Jung\'s personality theory helps us understand ourselves, improve relationships, optimize career choices, and apply in team building.',
+        keywords: 'Jung, Personality Application, Self-awareness, Relationships, Career Choice, Team Building, Leadership'
+      },
+      fr: {
+        title: 'Application de la Théorie de la Personnalité de Jung - Boussole d\'Investissement',
+        description: 'Explorer comment la théorie de la personnalité de Jung nous aide à nous comprendre, améliorer les relations et développer le leadership.',
+        keywords: 'Jung, Application de la Personnalité, Connaissance de Soi, Relations, Choix de Carrière, Leadership'
+      },
+      es: {
+        title: 'Aplicación de la Teoría de Personalidad de Jung - Brújula de Inversión',
+        description: 'Explorar cómo la teoría de personalidad de Jung nos ayuda a entendernos, mejorar relaciones y desarrollar el liderazgo.',
+        keywords: 'Jung, Aplicación de Personalidad, Autoconocimiento, Relaciones, Elección de Carrera, Liderazgo'
+      }
+    },
+    content: {
+      zh: {
+        title: '荣格性格理论在实际生活和工作中的应用',
+        summary: '探讨荣格性格理论如何帮助我们理解自我、改善人际关系、优化职业选择，以及在团队建设和领导力发展中的应用。',
+        author: '',
+        body: ''
+      },
+      en: {
+        title: 'Application of Jung Personality Theory in Real Life',
+        summary: 'Exploring how Jung\'s personality theory helps us understand ourselves, improve relationships, optimize career choices, and apply in team building.',
+        author: '',
+        body: ''
+      },
+      fr: {
+        title: 'Application de la Théorie de la Personnalité de Jung',
+        summary: 'Explorer comment la théorie de la personnalité de Jung nous aide à nous comprendre, améliorer les relations et développer le leadership.',
+        author: '',
+        body: ''
+      },
+      es: {
+        title: 'Aplicación de la Teoría de Personalidad de Jung',
+        summary: 'Explorar cómo la teoría de personalidad de Jung nos ayuda a entendernos, mejorar relaciones y desarrollar el liderazgo.',
         author: '',
         body: ''
       }
